@@ -1,5 +1,10 @@
 <script>
-  // Colophon page
+  import { onMount } from 'svelte';
+  import { gardenPanel } from '$lib/gardenStore.js';
+
+  onMount(() => {
+    gardenPanel.set({ widget: 'hieroglyph' });
+  });
 </script>
 
 <svelte:head>

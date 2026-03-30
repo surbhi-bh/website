@@ -2,19 +2,20 @@
   import '../app.css';
   import { page } from '$app/stores';
   import FootnoteChart from '$lib/components/FootnoteChart.svelte';
+  import HierogylphWidget from '$lib/components/HieroglyphWidget.svelte';
   import { gardenPanel } from '$lib/gardenStore.js';
 
   const mainLinks = [
     { href: '/', label: 'read.me' },
     { href: '/visual-stories', label: 'visual stories' },
     { href: '/talks', label: 'talks' },
-    { href: '/vizardry', label: 'vizardry' },
+    { href: '/vizardry', label: 'vizardry', disabled: true },
   ];
 
   const gardenLinks = [
-    { href: '/seeds', label: 'seeds' },
-    { href: '/thoughts', label: 'thoughts' },
-    { href: '/bookmarks', label: 'bookmarks' },
+    { href: '/seeds', label: 'seeds', disabled: true },
+    { href: '/thoughts', label: 'thoughts', disabled: true },
+    { href: '/bookmarks', label: 'bookmarks', disabled: true },
     { href: '/garden', label: 'garden' },
     { href: '/colophon', label: 'colophon' },
   ];
@@ -32,7 +33,7 @@
   };
 
   // Clear panel when navigating away from pages that use it
-  $: if (!$page.url.pathname.startsWith('/garden') && !$page.url.pathname.startsWith('/talks')) {
+  $: if (!$page.url.pathname.startsWith('/garden') && !$page.url.pathname.startsWith('/talks') && !$page.url.pathname.startsWith('/colophon')) {
     gardenPanel.set(null);
   }
 </script>
@@ -55,11 +56,15 @@
       <ul class="nav-links">
         {#each mainLinks as link}
           <li>
-            <a
-              href={link.href}
-              class="nav-link"
-              class:active={isActive(link.href, $page.url.pathname)}
-            >{link.label}</a>
+            {#if link.disabled}
+              <span class="nav-link nav-link-dim">{link.label}</span>
+            {:else}
+              <a
+                href={link.href}
+                class="nav-link"
+                class:active={isActive(link.href, $page.url.pathname)}
+              >{link.label}</a>
+            {/if}
           </li>
         {/each}
       </ul>
@@ -70,8 +75,8 @@
       <ul class="nav-links">
         {#each gardenLinks as link}
           <li class:li-garden={link.href === '/garden'}>
-            {#if link.href === '/bookmarks'}
-              <span class="nav-link" style="cursor:default;color:#ccc;">{link.label}</span>
+            {#if link.disabled}
+              <span class="nav-link nav-link-dim">{link.label}</span>
             {:else}
               <a
                 href={link.href}
@@ -102,31 +107,38 @@
     {@const item = $gardenPanel}
     <aside class="third-panel" style="--tc:{typeColor[item.type] || '#1a6b3a'}">
       <button class="third-panel-close" on:click={() => gardenPanel.set(null)}>×</button>
-      <div class="tp-type" style="color:{typeColor[item.type] || '#888'}">{item.type}</div>
-      <div class="tp-title">{item.title}</div>
-      {#if item.image}
-        <img src={item.image} alt={item.title} class="tp-photo" />
-      {/if}
-      {#if item.publisher}
-        <div class="tp-pub">{item.publisher}</div>
-      {/if}
-      {#if item.event}
-        <div class="tp-pub">{item.event}{#if item.location} · {item.location}{/if}</div>
-      {/if}
-      <div class="tp-year">{item.year}</div>
-      {#if item.description}
-        <p class="tp-desc">{item.description}</p>
-      {/if}
-      {#if item.collaborators && item.collaborators.length}
-        <div class="tp-collab"><span class="tp-label">with</span> {item.collaborators.join(', ')}</div>
-      {/if}
-      <div class="tp-tags">
-        {#each item.tags as t}
-          <span class="tp-tag">{t}</span>
-        {/each}
-      </div>
-      {#if item.link && item.link !== '#'}
-        <a href={item.link} target="_blank" rel="noopener" class="tp-link">read / view ↗</a>
+
+      {#if item.widget === 'hieroglyph'}
+        <!-- Hieroglyph widget panel (colophon page) -->
+        <HierogylphWidget />
+      {:else}
+        <!-- Standard item panel (garden, talks pages) -->
+        <div class="tp-type" style="color:{typeColor[item.type] || '#888'}">{item.type}</div>
+        <div class="tp-title">{item.title}</div>
+        {#if item.image}
+          <img src={item.image} alt={item.title} class="tp-photo" />
+        {/if}
+        {#if item.publisher}
+          <div class="tp-pub">{item.publisher}</div>
+        {/if}
+        {#if item.event}
+          <div class="tp-pub">{item.event}{#if item.location} · {item.location}{/if}</div>
+        {/if}
+        <div class="tp-year">{item.year}</div>
+        {#if item.description}
+          <p class="tp-desc">{item.description}</p>
+        {/if}
+        {#if item.collaborators && item.collaborators.length}
+          <div class="tp-collab"><span class="tp-label">with</span> {item.collaborators.join(', ')}</div>
+        {/if}
+        <div class="tp-tags">
+          {#each item.tags as t}
+            <span class="tp-tag">{t}</span>
+          {/each}
+        </div>
+        {#if item.link && item.link !== '#'}
+          <a href={item.link} target="_blank" rel="noopener" class="tp-link">read / view ↗</a>
+        {/if}
       {/if}
     </aside>
   {/if}
@@ -266,4 +278,15 @@
   }
 
   .tp-link:hover { border-bottom-color: #d0116f; }
+
+  :global(.nav-link-dim) {
+    font-size: 18px;
+    font-weight: 300;
+    font-family: inherit;
+    letter-spacing: normal;
+    color: #ccc;
+    cursor: default;
+    padding: 0px 0 0px 28px;
+    display: block;
+  }
 </style>

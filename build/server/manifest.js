@@ -7,24 +7,24 @@ function __memo(fn) {
 return {
 	appDir: "_app",
 	appPath: "_app",
-	assets: new Set(["flower.svg","images/30daychartchallenge-2026/day1.png","images/global-partnership-finalist.png","images/indiaspend-ias.png","images/kontinentalist_bollywood.png","images/lede-gurgaon.png","images/lede-met-cats.png","images/mint-bollywood-remakes.png","images/mint-fiscal-deficit.png","images/mint-nobel-prize.png","images/mint-rbi.png","images/revisuallabs_arkavathy.png","images/sabew-nikkei-winner.png","images/the-pudding-cup-winner.png","images/thibi_ejnacademy.png","images/tmc-passport.png","images/training-thibi-ejn.png","images/words-of-wordle.png","world-map.svg"]),
+	assets: new Set([".DS_Store","favicon.svg","flower.svg","images/30daychartchallenge-2026/day1.png","images/global-partnership-finalist.png","images/indiaspend-ias.png","images/kontinentalist_bollywood.png","images/lede-gurgaon.png","images/lede-met-cats.png","images/mint-bollywood-remakes.png","images/mint-fiscal-deficit.png","images/mint-nobel-prize.png","images/mint-rbi.png","images/revisuallabs_arkavathy.png","images/sabew-nikkei-winner.png","images/the-pudding-cup-winner.png","images/thibi_ejnacademy.png","images/tmc-passport.png","images/training-thibi-ejn.png","images/words-of-wordle.png","world-map.svg"]),
 	mimeTypes: {".svg":"image/svg+xml",".png":"image/png"},
 	_: {
-		client: {start:"_app/immutable/entry/start.BXtDFDey.js",app:"_app/immutable/entry/app.dDWFTu5O.js",imports:["_app/immutable/entry/start.BXtDFDey.js","_app/immutable/chunks/le7NKftF.js","_app/immutable/chunks/C3dTbOl3.js","_app/immutable/chunks/DgPHfiCu.js","_app/immutable/chunks/C6Psu_r3.js","_app/immutable/entry/app.dDWFTu5O.js","_app/immutable/chunks/C3dTbOl3.js","_app/immutable/chunks/BGsz7Puc.js","_app/immutable/chunks/v_o_gDag.js","_app/immutable/chunks/C6Psu_r3.js","_app/immutable/chunks/CB-bHNDz.js","_app/immutable/chunks/BHAMHhP8.js","_app/immutable/chunks/CNmZtFVe.js","_app/immutable/chunks/DgPHfiCu.js"],stylesheets:[],fonts:[],uses_env_dynamic_public:false},
+		client: {start:"_app/immutable/entry/start.D3NVox3t.js",app:"_app/immutable/entry/app.D2hidAbA.js",imports:["_app/immutable/entry/start.D3NVox3t.js","_app/immutable/chunks/MkPAkPzk.js","_app/immutable/chunks/IjKCb9nO.js","_app/immutable/chunks/Cv_BG7n1.js","_app/immutable/chunks/i0pD18No.js","_app/immutable/entry/app.D2hidAbA.js","_app/immutable/chunks/IjKCb9nO.js","_app/immutable/chunks/CYK3iPNf.js","_app/immutable/chunks/B2z4TIb2.js","_app/immutable/chunks/i0pD18No.js","_app/immutable/chunks/8lk0kcdJ.js","_app/immutable/chunks/B_SlPviu.js","_app/immutable/chunks/DaywnT6T.js","_app/immutable/chunks/Cv_BG7n1.js"],stylesheets:[],fonts:[],uses_env_dynamic_public:false},
 		nodes: [
-			__memo(() => import('./chunks/0-Blq8JB5n.js')),
-			__memo(() => import('./chunks/1-CaiiLrnr.js')),
-			__memo(() => import('./chunks/2-BWFGMqai.js')),
-			__memo(() => import('./chunks/3-C5l20XbY.js')),
-			__memo(() => import('./chunks/4-BnaN5ltI.js')),
-			__memo(() => import('./chunks/5-0dvTUzl-.js')),
-			__memo(() => import('./chunks/6-nqSaXgrB.js')),
-			__memo(() => import('./chunks/7-SXBYm6Ji.js')),
-			__memo(() => import('./chunks/8-omTXhHHp.js')),
-			__memo(() => import('./chunks/9-CwF6CN2o.js')),
-			__memo(() => import('./chunks/12-CbmMUHHL.js')),
-			__memo(() => import('./chunks/13-CiUw-Wr8.js')),
-			__memo(() => import('./chunks/14-CGznbZZL.js'))
+			__memo(() => import('./chunks/0-BqjssMgk.js')),
+			__memo(() => import('./chunks/1-BTpGhPsg.js')),
+			__memo(() => import('./chunks/2-Bak0GrBA.js')),
+			__memo(() => import('./chunks/3-DqQbgHIv.js')),
+			__memo(() => import('./chunks/4-Dq7KYZe5.js')),
+			__memo(() => import('./chunks/5-BONFhAnA.js')),
+			__memo(() => import('./chunks/6-Dxx1WHP9.js')),
+			__memo(() => import('./chunks/7-CfN_Vv8m.js')),
+			__memo(() => import('./chunks/8-Dw7jW9Xy.js')),
+			__memo(() => import('./chunks/9-CmlboNJ6.js')),
+			__memo(() => import('./chunks/12-qnYRqVVx.js')),
+			__memo(() => import('./chunks/13-IRnq1zoP.js')),
+			__memo(() => import('./chunks/14-6D5yQk50.js'))
 		],
 		remotes: {
 			

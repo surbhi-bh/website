@@ -19,105 +19,111 @@
     }
   }
 
+  const STEPS_API = 'https://script.google.com/macros/s/AKfycbxeRS2zSYEzwc_uh4RIy3h6tuo8BR846GHegMsBZhnJlxukbtUmISsZmy_YqViIk7GKNg/exec';
+
+  const MONTH_SHORT = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+
   const fnSubLabels = {
     daily: 'steps yesterday',
     weekly: 'steps last week',
     monthly: 'steps last month'
   };
 
-  const fnDaily = [
-    { date: 'Jan 19', steps: 7812,  weekStart: false, monthStart: false },
-    { date: 'Jan 20', steps: 4230,  weekStart: false, monthStart: false },
-    { date: 'Jan 21', steps: 9102,  weekStart: false, monthStart: false },
-    { date: 'Jan 22', steps: 3411,  weekStart: false, monthStart: false },
-    { date: 'Jan 23', steps: 8540,  weekStart: false, monthStart: false },
-    { date: 'Jan 24', steps: 11203, weekStart: false, monthStart: false },
-    { date: 'Jan 25', steps: 6780,  weekStart: false, monthStart: false },
-    { date: 'Jan 26', steps: 5230,  weekStart: true,  monthStart: false },
-    { date: 'Jan 27', steps: 9812,  weekStart: false, monthStart: false },
-    { date: 'Jan 28', steps: 2901,  weekStart: false, monthStart: false },
-    { date: 'Jan 29', steps: 7654,  weekStart: false, monthStart: false },
-    { date: 'Jan 30', steps: 10382, weekStart: false, monthStart: false },
-    { date: 'Jan 31', steps: 8110,  weekStart: false, monthStart: false },
-    { date: 'Feb 1',  steps: 4901,  weekStart: false, monthStart: true  },
-    { date: 'Feb 2',  steps: 12045, weekStart: true,  monthStart: false },
-    { date: 'Feb 3',  steps: 6018,  weekStart: false, monthStart: false },
-    { date: 'Feb 4',  steps: 3280,  weekStart: false, monthStart: false },
-    { date: 'Feb 5',  steps: 8732,  weekStart: false, monthStart: false },
-    { date: 'Feb 6',  steps: 9450,  weekStart: false, monthStart: false },
-    { date: 'Feb 7',  steps: 5612,  weekStart: false, monthStart: false },
-    { date: 'Feb 8',  steps: 11100, weekStart: false, monthStart: false },
-    { date: 'Feb 9',  steps: 7203,  weekStart: true,  monthStart: false },
-    { date: 'Feb 10', steps: 4511,  weekStart: false, monthStart: false },
-    { date: 'Feb 11', steps: 9870,  weekStart: false, monthStart: false },
-    { date: 'Feb 12', steps: 6340,  weekStart: false, monthStart: false },
-    { date: 'Feb 13', steps: 10980, weekStart: false, monthStart: false },
-    { date: 'Feb 14', steps: 8210,  weekStart: false, monthStart: false },
-    { date: 'Feb 15', steps: 3765,  weekStart: false, monthStart: false },
-    { date: 'Feb 16', steps: 7890,  weekStart: true,  monthStart: false },
-    { date: 'Feb 17', steps: 11320, weekStart: false, monthStart: false },
-    { date: 'Feb 18', steps: 5420,  weekStart: false, monthStart: false },
-    { date: 'Feb 19', steps: 9100,  weekStart: false, monthStart: false },
-    { date: 'Feb 20', steps: 4823,  weekStart: false, monthStart: false },
-    { date: 'Feb 21', steps: 12380, weekStart: false, monthStart: false },
-    { date: 'Feb 22', steps: 7605,  weekStart: false, monthStart: false },
-    { date: 'Feb 23', steps: 6210,  weekStart: true,  monthStart: false },
-    { date: 'Feb 24', steps: 8920,  weekStart: false, monthStart: false },
-    { date: 'Feb 25', steps: 3110,  weekStart: false, monthStart: false },
-    { date: 'Feb 26', steps: 10450, weekStart: false, monthStart: false },
-    { date: 'Feb 27', steps: 7340,  weekStart: false, monthStart: false },
-    { date: 'Feb 28', steps: 5890,  weekStart: false, monthStart: false },
-    { date: 'Mar 1',  steps: 9230,  weekStart: false, monthStart: true  },
-    { date: 'Mar 2',  steps: 6780,  weekStart: true,  monthStart: false },
-    { date: 'Mar 3',  steps: 2173,  weekStart: false, monthStart: false },
-    { date: 'Mar 4',  steps: 6605,  weekStart: false, monthStart: false },
-    { date: 'Mar 5',  steps: 11890, weekStart: false, monthStart: false },
-    { date: 'Mar 6',  steps: 8340,  weekStart: false, monthStart: false },
-    { date: 'Mar 7',  steps: 10149, weekStart: false, monthStart: false },
-    { date: 'Mar 8',  steps: 8051,  weekStart: false, monthStart: false },
-    { date: 'Mar 9',  steps: 8882,  weekStart: true,  monthStart: false },
-    { date: 'Mar 10', steps: 4522,  weekStart: false, monthStart: false },
-    { date: 'Mar 11', steps: 11548, weekStart: false, monthStart: false },
-    { date: 'Mar 12', steps: 6897,  weekStart: false, monthStart: false },
-    { date: 'Mar 13', steps: 7007,  weekStart: false, monthStart: false },
-    { date: 'Mar 14', steps: 9120,  weekStart: false, monthStart: false },
-    { date: 'Mar 15', steps: 5430,  weekStart: false, monthStart: false },
-    { date: 'Mar 16', steps: 10780, weekStart: true,  monthStart: false },
-    { date: 'Mar 17', steps: 8210,  weekStart: false, monthStart: false },
-    { date: 'Mar 18', steps: 6340,  weekStart: false, monthStart: false },
-    { date: 'Mar 19', steps: 7007,  weekStart: false, monthStart: false },
-  ];
+  // Derived data sets — populated after fetch
+  let fnDaily   = [];
+  let fnWeekly  = [];
+  let fnMonthly = [];
+  let dataReady = false;
 
-  const fnWeekly = [
-    { date: 'W1 Nov', steps: 48200 },
-    { date: 'W2 Nov', steps: 52400 },
-    { date: 'W3 Nov', steps: 41800 },
-    { date: 'W4 Nov', steps: 61200 },
-    { date: 'W1 Dec', steps: 38900 },
-    { date: 'W2 Dec', steps: 55600 },
-    { date: 'W3 Dec', steps: 29800 },
-    { date: 'W4 Dec', steps: 44100 },
-    { date: 'W1 Jan', steps: 57300 },
-    { date: 'W2 Jan', steps: 63800 },
-    { date: 'W3 Feb', steps: 49200 },
-    { date: 'W4 Feb', steps: 58100 },
-    { date: 'W1 Mar', steps: 52400 },
-  ];
+  // Parse any of the three date formats from the API into { year, month (0-based), day }
+  // Formats seen:
+  //   "2026-03-02T18:29:00.000Z"  → use only the YYYY-MM-DD portion before T
+  //   "03/13/2026 23:59"          → MM/DD/YYYY ...
+  //   "3/18/26, 11:59 PM"         → M/D/YY, ...
+  function parseDate(raw) {
+    // ISO-like: starts with YYYY-
+    if (/^\d{4}-/.test(raw)) {
+      const [y, m, d] = raw.split('T')[0].split('-').map(Number);
+      return { year: y, month: m - 1, day: d };
+    }
+    // MM/DD/YYYY or M/D/YY (with optional time after space or comma)
+    const datePart = raw.split(/[\s,]/)[0];
+    const parts = datePart.split('/').map(Number);
+    if (parts.length === 3) {
+      let [mo, d, y] = parts;
+      if (y < 100) y += 2000;
+      return { year: y, month: mo - 1, day: d };
+    }
+    return null;
+  }
 
-  const fnMonthly = [
-    { date: 'Apr 25', steps: 192000 },
-    { date: 'May 25', steps: 245000 },
-    { date: 'Jun 25', steps: 178000 },
-    { date: 'Jul 25', steps: 210000 },
-    { date: 'Aug 25', steps: 198000 },
-    { date: 'Sep 25', steps: 231000 },
-    { date: 'Oct 25', steps: 187000 },
-    { date: 'Nov 25', steps: 220000 },
-    { date: 'Dec 25', steps: 165000 },
-    { date: 'Jan 26', steps: 241000 },
-    { date: 'Feb 26', steps: 228000 },
-    { date: 'Mar 26', steps: 94049  },
-  ];
+  function toSortKey(p) {
+    return p.year * 10000 + p.month * 100 + p.day;
+  }
+
+  function fmtShort(p) {
+    return `${MONTH_SHORT[p.month]} ${p.day}`;
+  }
+
+  function fmtTooltip(p) {
+    const d = new Date(p.year, p.month, p.day);
+    return d.toLocaleDateString('en-GB', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
+  }
+
+  function processAPI(rows) {
+    // Parse and filter out any rows with unparseable dates.
+    // Also drop rows where the raw date string looks like an ISO timestamp
+    // ("YYYY-MM-DDTHH:..." from Google Sheets) — these have timezone-shifted
+    // months and are bad data entries.
+    const parsed = rows
+      .map(r => ({ raw: r.date, p: parseDate(r.date), steps: Number(r.steps) }))
+      .filter(r => r.p !== null && !isNaN(r.steps) && !/^\d{4}-\d{2}-\d{2}T/.test(r.raw))
+      .sort((a, b) => toSortKey(a.p) - toSortKey(b.p));
+
+    // ── Daily ──────────────────────────────────────────────────
+    fnDaily = parsed.map(({ p, steps }, i) => {
+      const d       = new Date(p.year, p.month, p.day);
+      const prevMon = i > 0 ? parsed[i-1].p.month : p.month;
+      return {
+        date:        fmtShort(p),
+        tooltipDate: fmtTooltip(p),
+        steps,
+        weekStart:   d.getDay() === 1,
+        monthStart:  p.month !== prevMon,
+      };
+    });
+
+    // ── Weekly ─────────────────────────────────────────────────
+    const weekMap = new Map();
+    parsed.forEach(({ p, steps }) => {
+      const d    = new Date(p.year, p.month, p.day);
+      const jan4 = new Date(p.year, 0, 4);
+      const week = Math.ceil(((d - jan4) / 86400000 + jan4.getDay() + 1) / 7);
+      const key  = `${p.year}-W${String(week).padStart(2,'0')}`;
+      if (!weekMap.has(key)) weekMap.set(key, { steps: 0, p });
+      weekMap.get(key).steps += steps;
+    });
+    fnWeekly = [...weekMap.values()].map(({ p, steps }) => ({
+      date:        `W ${MONTH_SHORT[p.month]} ${p.day}`,
+      tooltipDate: `Week of ${new Date(p.year, p.month, p.day).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}`,
+      steps,
+    }));
+
+    // ── Monthly ────────────────────────────────────────────────
+    const monMap = new Map();
+    parsed.forEach(({ p, steps }) => {
+      const key = `${p.year}-${String(p.month + 1).padStart(2,'0')}`;
+      if (!monMap.has(key)) monMap.set(key, { steps: 0, year: p.year, month: p.month });
+      monMap.get(key).steps += steps;
+    });
+    fnMonthly = [...monMap.values()].map(({ year, month, steps }) => ({
+      date:        `${MONTH_SHORT[month]} '${String(year).slice(2)}`,
+      tooltipDate: `${MONTH_SHORT[month]} ${year}`,
+      steps,
+    }));
+
+    dataReady = true;
+  }
 
   function animateCount(el, target, duration) {
     const start = performance.now();
@@ -190,7 +196,7 @@
     const width = fullWidth;
 
     const y = d3.scaleLinear()
-      .domain([0, d3.max(data, d => d.steps) * 1.1])
+      .domain([-d3.max(data, d => d.steps) * 0.08, d3.max(data, d => d.steps) * 1.1])
       .range([height, 0]);
 
     // helper: snap to nearest grid line
@@ -342,8 +348,9 @@
             // dot screen position
             const screenX = svgRect.left + offsetX + cx - containerRect.left;
             const screenY = svgRect.top  + cy - containerRect.top;
+            const label = d.tooltipDate || d.date;
             fnTooltip.style('opacity', 1)
-              .html(`<span class="tt-date">${d.date}</span><span class="tt-steps">${d.steps.toLocaleString()}</span><span class="tt-unit">steps</span>`)
+              .html(`<span class="tt-date">${label}</span><span class="tt-steps">${d.steps.toLocaleString()}</span><span class="tt-unit">steps</span>`)
               .style('left', (screenX + 10) + 'px')
               .style('top',  (screenY - 36) + 'px');
           })
@@ -384,20 +391,28 @@
 
   onMount(() => {
     hasMounted = true;
-    if (!collapsed) {
-      function tryDraw() {
-        if (window.d3 && window.rough) {
-          drawChart('daily');
-        } else {
-          setTimeout(tryDraw, 100);
-        }
+
+    function tryDraw() {
+      if (window.d3 && window.rough && dataReady) {
+        if (!collapsed) drawChart('daily');
+      } else {
+        setTimeout(tryDraw, 100);
       }
-      tryDraw();
     }
+
+    fetch(STEPS_API)
+      .then(r => r.json())
+      .then(rows => {
+        processAPI(rows);
+        tryDraw();
+      })
+      .catch(() => {
+        // API failed — nothing to draw
+      });
   });
 
   // Redraw when page navigates back to read.me (collapsed goes false)
-  $: if (hasMounted && !collapsed && chartContainer) {
+  $: if (hasMounted && !collapsed && chartContainer && dataReady) {
     setTimeout(() => drawChart(currentFnPeriod), 50);
   }
 </script>
