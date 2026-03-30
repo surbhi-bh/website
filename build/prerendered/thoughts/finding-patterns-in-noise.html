@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Surbhi Bhatia</title>
+    <link href="../_app/immutable/entry/start.BXtDFDey.js" rel="modulepreload">
+		<link href="../_app/immutable/chunks/le7NKftF.js" rel="modulepreload">
+		<link href="../_app/immutable/chunks/C3dTbOl3.js" rel="modulepreload">
+		<link href="../_app/immutable/chunks/DgPHfiCu.js" rel="modulepreload">
+		<link href="../_app/immutable/chunks/C6Psu_r3.js" rel="modulepreload">
+		<link href="../_app/immutable/entry/app.dDWFTu5O.js" rel="modulepreload">
+		<link href="../_app/immutable/chunks/BGsz7Puc.js" rel="modulepreload">
+		<link href="../_app/immutable/chunks/v_o_gDag.js" rel="modulepreload">
+		<link href="../_app/immutable/chunks/CB-bHNDz.js" rel="modulepreload">
+		<link href="../_app/immutable/chunks/BHAMHhP8.js" rel="modulepreload">
+		<link href="../_app/immutable/chunks/CNmZtFVe.js" rel="modulepreload">
+		<link href="../_app/immutable/nodes/0.pm1ba5CX.js" rel="modulepreload">
+		<link href="../_app/immutable/chunks/D9S6Kcrz.js" rel="modulepreload">
+		<link href="../_app/immutable/chunks/BnjrGzVC.js" rel="modulepreload">
+		<link href="../_app/immutable/chunks/CUWrn5pX.js" rel="modulepreload">
+		<link href="../_app/immutable/chunks/CvB5-GRQ.js" rel="modulepreload">
+		<link href="../_app/immutable/chunks/IoJ5_3wD.js" rel="modulepreload">
+		<link href="../_app/immutable/chunks/Cj8nzUF1.js" rel="modulepreload">
+		<link href="../_app/immutable/chunks/CwN-rFay.js" rel="modulepreload">
+		<link href="../_app/immutable/chunks/vJByk_tV.js" rel="modulepreload">
+		<link href="../_app/immutable/chunks/DCqqE_o0.js" rel="modulepreload">
+		<link href="../_app/immutable/chunks/Csc5AOGc.js" rel="modulepreload">
+		<link href="../_app/immutable/nodes/11.CdVmo37O.js" rel="modulepreload">
+		<link href="../_app/immutable/chunks/sXO3RUz4.js" rel="modulepreload">
+		<!--12qhfyh--><link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400&amp;family=Inter:wght@200;300;400&amp;display=swap" rel="stylesheet"/> <script src="https://d3js.org/d3.v7.min.js"></script> <script src="https://cdn.jsdelivr.net/npm/roughjs@4.5.2/bundled/rough.js"></script><!----><!--1o03hth--><!----><title>Finding Patterns in Noise — Surbhi Bhatia</title>
+		<link href="../_app/immutable/assets/0.3-vPp9lt.css" rel="stylesheet">
+		<link href="../_app/immutable/assets/11.B7GtResU.css" rel="stylesheet">
+  </head>
+  <body data-sveltekit-preload-data="hover">
+    <div style="display: contents"><!--[--><!--[0--><!--[--><div class="container"><aside class="sidebar"><div class="brand-name">Surbhi Bhatia</div> <div class="nav-section"><div class="nav-title">now · here</div> <ul class="nav-links"><!--[--><li><a href="/" class="nav-link">read.me</a></li><li><a href="/visual-stories" class="nav-link">visual stories</a></li><li><a href="/talks" class="nav-link">talks</a></li><li><a href="/vizardry" class="nav-link">vizardry</a></li><!--]--></ul></div> <div class="nav-section"><div class="nav-title">garden</div> <ul class="nav-links"><!--[--><li><!--[-1--><a href="/seeds" class="nav-link">seeds</a><!--]--></li><li><!--[-1--><a href="/thoughts" class="nav-link active">thoughts</a><!--]--></li><li><!--[0--><span class="nav-link" style="cursor:default;color:#ccc;">bookmarks</span><!--]--></li><li class="li-garden"><!--[-1--><a href="/garden" class="nav-link nav-link-garden">garden</a><!--]--></li><li><!--[-1--><a href="/colophon" class="nav-link" style="margin-top: 1rem;">colophon</a><!--]--></li><!--]--></ul></div> <div class="nav-spacer"></div> <div class="sidebar-footer"></div></aside> <main class="main"><div class="main-inner"><!--[--><!--[-1--><!--[--><article class="section post svelte-1o03hth"><div class="post-meta svelte-1o03hth"><a href="/thoughts" class="post-back svelte-1o03hth">← thoughts</a> <span class="post-date svelte-1o03hth">14 February 2026</span></div> <h1 class="headline">Finding Patterns in Noise</h1> <div class="post-tags svelte-1o03hth"><!--[--><span class="post-tag svelte-1o03hth">data</span><span class="post-tag svelte-1o03hth">journalism</span><span class="post-tag svelte-1o03hth">visualisation</span><!--]--></div> <div class="post-body text-body svelte-1o03hth"><p>There is a particular kind of frustration that comes with a dataset that refuses to cooperate. You have a story in mind. The data has other plans.</p> <p>I spent three weeks last year with a spreadsheet of <a href="https://data.gov.in/" rel="nofollow">district-level crop yield data</a> across six Indian states. I was looking for evidence of a rainfall-yield correlation that my editor and I were convinced existed. The scatterplot looked like someone had sneezed on graph paper.</p> <h2>The wrong question</h2> <p>The problem, I eventually realised, was not the data. It was the question. I was asking <em>whether</em> rainfall correlated with yield, when the more interesting question was <em>when</em> it stopped correlating — and what filled that gap.</p> <p>Irrigation infrastructure. Specifically, the uneven rollout of drip irrigation subsidies in Maharashtra versus Madhya Pradesh between 2018 and 2022.</p> <h2>What I learned</h2> <p>A few things I now do before any analysis:</p> <ol><li><strong>Write down your assumption explicitly.</strong> Not “I think X causes Y” but “I expect that when X increases by one unit, Y increases by approximately Z, holding everything else constant.” The specificity forces honesty.</li> <li><strong>Plot the residuals, not just the fit.</strong> The noise is where the story lives.</li> <li><strong>Find the exception first.</strong> The district that doesn’t fit the pattern is usually the most interesting one.</li></ol> <p>The story that ran was not the one we planned. It was better.</p><!----></div></article><!--]--><!--]--><!--]--></div></main> <!--[-1--><!--]--></div> <!--[0--><div class="footnote-band footnote-collapsed" role="button" tabindex="0"><div class="footnote-label footnote-label-slim">foot(er)-note ↑</div></div><!--]--><!----><!--]--><!--]--> <!--[-1--><!--]--><!--]-->
+			
+			<script>
+				{
+					__sveltekit_tgs75r = {
+						base: new URL("..", location).pathname.slice(0, -1)
+					};
+
+					const element = document.currentScript.parentElement;
+
+					Promise.all([
+						import("../_app/immutable/entry/start.BXtDFDey.js"),
+						import("../_app/immutable/entry/app.dDWFTu5O.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 11],
+							data: [null,null],
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+  </body>
+</html>

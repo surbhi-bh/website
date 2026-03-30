@@ -1,0 +1,1 @@
+My work has featured in [Kontinentalist](#), [Nikkei Asia](#), [Mint](#), [IndiaSpend](#), [The Hindu](#), [Moneycontrol](#), and more. Some of it has been recognised by [Festival De Datos](#), [SABEW](#), and [The Pudding](#).
