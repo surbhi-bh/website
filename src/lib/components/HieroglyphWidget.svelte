@@ -13,7 +13,7 @@
     y:{g:'𓇌',n:'two reeds'}, z:{g:'𓊃',n:'door bolt'}
   };
 
-  const R='#d94f3d', Y='#e8a820', B='#4a7fa5', W='#ffffff', K='#1a1a1a';
+  const R='#d0116f', Y='#1a6b3a', B='#1a6b3a', W='#ffffff', K='#1a1a1a';
 
   let hwLetters = [];
   let outputVisible = false;
@@ -210,7 +210,7 @@
   }
 
   .hw-go {
-    background: #d94f3d;
+    background: #d0116f;
     color: #ffffff;
     border: none;
     font-family: 'Slabo 27px', serif;
@@ -220,7 +220,7 @@
     transition: background 0.2s;
   }
 
-  .hw-go:hover { background: #b8392a; }
+  .hw-go:hover { background: #a80e58; }
 
   .hw-output {
     display: flex;
@@ -295,5 +295,5 @@
   }
 
   .hw-dl:hover { background: rgba(0,0,0,0.04); }
-  .hw-dl.done { border-color: #4a7fa5; color: #4a7fa5; }
+  .hw-dl.done { border-color: #1a6b3a; color: #1a6b3a; }
 </style>

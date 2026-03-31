@@ -7,11 +7,6 @@
 </svelte:head>
 
 <section class="section">
-  <div class="section-header">
-    <span class="section-number">04</span>
-    <span class="section-title">Seeds</span>
-  </div>
-
   <div class="text-block">
     <div class="headline">Ideas before they bloom.</div>
     <p class="text-body">

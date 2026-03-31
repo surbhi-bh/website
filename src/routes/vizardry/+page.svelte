@@ -7,10 +7,6 @@
 </svelte:head>
 
 <section class="section">
-  <div class="section-header">
-    <span class="section-title">Vizardry</span>
-  </div>
-
   <p class="text-body" style="margin-bottom: 2rem; margin-top: 0.25rem;">
     Experiments, explorations, and tools in data visualisation. Where the technical meets the aesthetic.
   </p>

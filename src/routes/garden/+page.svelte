@@ -19,8 +19,6 @@
     { id: 'vs-15', type: 'visual story', year: 2019, title: 'What the Nobel says about economics', publisher: 'Mint', collaborators: ['Vishnu Padmanabhan'], tags: ['economy', 'policy'], link: 'https://www.livemint.com/news/india/what-the-nobel-says-about-economics-11571680373108.html', description: 'Unpacking the Nobel Prize in Economics through data.' },
     { id: 'tk-1',  type: 'talk', year: 2023, title: 'Using data journalism to promote gender equality', publisher: 'Equal Measures 2030 & Tableau Foundation', collaborators: [], tags: ['gender', 'data journalism'], link: 'https://equalmeasures2030.org/blogs/using-data-journalism-to-promote-gender-equality-with-surbhi-bhatia/', description: 'Spoke about data stories on women\'s representation at the global climate summit.' },
     { id: 'tk-2',  type: 'talk', year: 2022, title: "Mapping India's law-tech landscape", publisher: 'DAKSH Centre, IIT-Delhi', collaborators: [], tags: ['policy', 'data journalism'], link: 'https://daksh-lawtech-iitd.org/event/authors-roundtable-i/', description: 'Curated discussions on how legal-technology is changing the landscape for courts and lawyers.' },
-    { id: 'th-1',  type: 'thought', year: 2024, title: 'Finding patterns in noise', publisher: '', collaborators: [], tags: ['method'], link: '/thoughts/finding-patterns-in-noise', description: 'On the art of knowing when signal is just noise in disguise.' },
-    { id: 'th-2',  type: 'thought', year: 2024, title: 'Colour is not decoration', publisher: '', collaborators: [], tags: ['design'], link: '/thoughts/colour-is-not-decoration', description: 'Why colour choices in data vis are always an argument.' },
   ];
 
   const groupModes = ['by year', 'by publication', 'by collaborator'];
@@ -50,9 +48,9 @@
         groups[key].push(item);
       }
     });
-    const keys = Object.keys(groups).sort((a, b) =>
-      mode === 'by year' ? Number(b) - Number(a) : a.localeCompare(b)
-    );
+    const keys = Object.keys(groups)
+      .filter(k => k !== 'personal / other')
+      .sort((a, b) => mode === 'by year' ? Number(b) - Number(a) : a.localeCompare(b));
     return keys.map(k => ({ key: k, items: groups[k] }));
   }
 
@@ -71,7 +69,6 @@
 <section class="section garden-section">
 
   <div class="garden-header">
-    <span class="section-title">Garden</span>
     <div class="mode-tabs">
       {#each groupModes as mode}
         <button class="mode-btn" class:active={activeMode === mode} on:click={() => activeMode = mode}>{mode}</button>

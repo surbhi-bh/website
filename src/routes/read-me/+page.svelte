@@ -4,7 +4,7 @@
   const bio = [
     { level: 1, html: `I turn numbers into meaningful insights and memorable stories using visuals, design, code, and storytelling techniques.` },
     { level: 2, html: `My work has featured in Kontinentalist, Nikkei Asia, Mint, IndiaSpend, The Hindu, Moneycontrol, and <a href="/visual-stories" class="inline-link">more</a>.` },
-    { level: 3, html: `Some of it has been recognised by <a href="https://www.data4sdgs.org/blog/announcing-our-three-data-viz-contest-finalists" target="_blank" rel="noopener" class="inline-link">Festival De Datos</a>, <a href="https://asia.nikkei.com/announcements/nikkei-asia-wins-two-sabew-best-in-business-awards" target="_blank" rel="noopener" class="inline-link">Society of American Business Editors and Writers</a>, and <a href="https://pudding.cool/pudding-cup/" target="_blank" rel="noopener" class="inline-link">The Pudding</a>.` },
+    { level: 3, html: `Some of it has been recognised by <a href="https://www.data4sdgs.org/blog/announcing-our-three-data-viz-contest-finalists" target="_blank" rel="noopener" class="inline-link">Festival De Datos</a>, <a href="https://asia.nikkei.com/announcements/nikkei-asia-wins-two-sabew-best-in-business-awards" target="_blank" rel="noopener" class="inline-link">SABEW</a>, and <a href="https://pudding.cool/pudding-cup/" target="_blank" rel="noopener" class="inline-link">The Pudding</a>.` },
 
     { break: true },
 
@@ -18,8 +18,9 @@
 
     { break: true, minLevel: 2 },
 
-    { only: 2, html: `I studied economics and started my career working with professors on financial data. That's where I made my first few graphs in R using ggplot. It was life-changing.` },
-    { level: 3, html: `I studied economics and started my career in academic settings, working with professors on high-frequency financial data and econometric models. That's also where I made my first few graphs in R using ggplot. It was life-changing because it brought together analysis and art, both sides of my brain.` },
+    { level: 2, html: `I studied economics and started my career in academic settings, working with professors on high-frequency financial data and econometric models.` },
+    { level: 3, html: `That's also where I made my first few graphs in R using ggplot.` },
+    { level: 1, html: `It was life-changing because it brought together analysis and art, both sides of my brain.` },
 
     { break: true, minLevel: 2 },
 
@@ -45,7 +46,7 @@
     { level: 1, html: `I track my foot-steps in the foot-er… foot-note… of this page using a step-chart.` },
   ];
 
-  let level = 1;
+  let level = 2;
 
   $: visible = bio.filter(s => {
     if (s.break) return s.minLevel ? level >= s.minLevel : true;
@@ -65,22 +66,22 @@
   </div>
 
   <div class="slider-wrap">
-    <div class="slider-track">
-      <button class="slider-stop" class:active={level === 1} on:click={() => level = 1}>
-        <img src="/flower.svg" alt="" class="stop-flower" />
-      </button>
-      <div class="slider-segment" class:filled={level >= 2}></div>
-      <button class="slider-stop" class:active={level === 2} on:click={() => level = 2}>
-        <img src="/flower.svg" alt="" class="stop-flower" />
-      </button>
-      <div class="slider-segment" class:filled={level >= 3}></div>
-      <button class="slider-stop" class:active={level === 3} on:click={() => level = 3}>
-        <img src="/flower.svg" alt="" class="stop-flower" />
-      </button>
+    <div class="slider-track-area">
+      <input
+        type="range"
+        min="1" max="3"
+        bind:value={level}
+        class="verbosity-slider"
+      />
+      <div class="slider-ticks">
+        <span class="tick"></span>
+        <span class="tick"></span>
+        <span class="tick"></span>
+      </div>
     </div>
     <div class="slider-labels">
       <span class="slider-label" class:active={level === 1} on:click={() => level = 1}>~80 words</span>
-      <span class="slider-label" class:active={level === 2} on:click={() => level = 2}>~270 words</span>
+      <span class="slider-label mid" class:active={level === 2} on:click={() => level = 2}>~270 words</span>
       <span class="slider-label" class:active={level === 3} on:click={() => level = 3}>~370 words</span>
     </div>
   </div>
@@ -103,58 +104,71 @@
   .slider-wrap {
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 5px;
     margin-bottom: 1.6rem;
-    width: 200px;
+    width: 180px;
   }
 
-  .slider-track {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    height: 20px;
-  }
-
-  .slider-segment {
-    flex: 1;
-    height: 1px;
-    background: #e0e0e0;
-    transition: background 0.2s;
-  }
-
-  .slider-segment.filled {
-    background: rgba(208,17,111,0.3);
-  }
-
-  .slider-stop {
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 20px;
-    height: 20px;
-    flex-shrink: 0;
+  .slider-track-area {
     position: relative;
+    width: 100%;
   }
 
-  .stop-flower {
-    width: 13px;
-    height: 13px;
-    opacity: 0.25;
-    transition: opacity 0.15s, transform 0.15s;
+  .slider-ticks {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 8px;
+    pointer-events: none;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+  }
+
+  .tick {
+    width: 1px;
+    height: 6px;
+    background: #ccc;
+    display: block;
+    margin-top: -3px;
+  }
+
+  .verbosity-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 1px;
+    background: #d8d8d8;
+    outline: none;
+    cursor: pointer;
+    border-radius: 0;
     display: block;
   }
 
-  .slider-stop.active .stop-flower {
-    opacity: 1;
-    transform: scale(1.2);
+  .verbosity-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 0;
+    background-image: url('/flower.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
   }
 
-  .slider-stop:not(.active):hover .stop-flower {
-    opacity: 0.5;
+  .verbosity-slider::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    border-radius: 0;
+    background-image: url('/flower.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
   }
 
   .slider-labels {
@@ -165,13 +179,17 @@
 
   .slider-label {
     font-family: "DM Mono", monospace;
-    font-size: 9.5px;
-    color: #ccc;
+    font-size: 10px;
+    color: #bbb;
     letter-spacing: 0.04em;
     cursor: pointer;
     transition: color 0.15s;
     user-select: none;
     line-height: 1;
+  }
+
+  .slider-label.mid {
+    text-align: center;
   }
 
   .slider-label.active {

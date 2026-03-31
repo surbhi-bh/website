@@ -1,3 +1,31 @@
+@font-face {
+  font-family: "TT Jenevers";
+  src: url('/fonts/TT Jenevers Trial Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "TT Jenevers";
+  src: url('/fonts/TT Jenevers Trial Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "TT Jenevers";
+  src: url('/fonts/TT Jenevers Trial Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "TT Jenevers";
+  src: url('/fonts/TT Jenevers Trial Medium Italic.otf') format('opentype');
+  font-weight: 500;
+  font-style: italic;
+}
+
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
@@ -11,7 +39,7 @@
   --border:   #eeeeee;
 
   --font-mono: "DM Mono", monospace;
-  --font-sans: "Inter", sans-serif;
+  --font-sans: "TT Jenevers", serif;
 }
 
 html {
@@ -22,7 +50,7 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: var(--font-sans);
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
@@ -37,9 +65,7 @@ a:hover {
 }
 
 .text-body a::after {
-  content: '↗';
-  margin-left: 0.3rem;
-  font-size: 0.85em;
+  content: '';
 }
 
 /* ══════════════════════════════
@@ -56,7 +82,7 @@ a:hover {
 ══════════════════════════════ */
 .sidebar {
   background: #fff;
-  padding: 2.5rem 2rem 120px;
+  padding: 2.5rem 2rem 178px;
   display: flex;
   flex-direction: column;
   font-family: var(--font-sans);
@@ -67,9 +93,11 @@ a:hover {
 }
 
 .brand-name {
-  font-size: 31px;
-  font-weight: 1000;
+  font-size: 22px;
+  font-weight: 500;
   color: #d0116f;
+  font-family: "TT Jenevers", serif;
+  white-space: nowrap;
 }
 
 .brand-tagline {
@@ -110,11 +138,11 @@ a:hover {
 .nav-link::before {
   content: '';
   position: absolute;
-  left: 2px;
+  left: 0px;
   top: 50%;
   transform: translateY(-50%) rotate(-90deg);
-  width: 14px;
-  height: 14px;
+  width: 20px;
+  height: 20px;
   background-image: url('/flower.svg');
   background-size: contain;
   background-repeat: no-repeat;
@@ -252,6 +280,68 @@ a:hover {
 }
 
 /* ══════════════════════════════
+   ELSEWHERE BAR
+══════════════════════════════ */
+.elsewhere-bar {
+  position: fixed;
+  bottom: 110px;
+  left: 0;
+  right: 0;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  background: #fff;
+  border-top: 1px solid rgba(26,107,58,0.2);
+  z-index: 101;
+  transition: bottom 0.2s;
+}
+
+.elsewhere-label {
+  font-family: "DM Mono", monospace;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: lowercase;
+  color: #1a6b3a;
+  flex-shrink: 0;
+}
+
+.elsewhere-sep {
+  color: rgba(26,107,58,0.3);
+  font-size: 14px;
+}
+
+.elsewhere-link {
+  font-family: "DM Mono", monospace;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: #888;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.elsewhere-link:hover {
+  color: #d0116f;
+}
+
+.elsewhere-email {
+  font-family: "DM Mono", monospace;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: #888;
+}
+
+.elsewhere-flower {
+  width: 14px;
+  height: 14px;
+  opacity: 0.4;
+}
+
+/* ══════════════════════════════
    FOOTER
 ══════════════════════════════ */
 .footer {
@@ -274,7 +364,7 @@ a:hover {
   height: 110px;
   display: grid;
   grid-template-columns: 280px 1fr;
-  z-index: 100;
+  z-index: 102;
 }
 
 /* shared graph-paper grid across entire footer */
@@ -468,7 +558,7 @@ a:hover {
 ══════════════════════════════ */
 .main {
   background: #fff;
-  padding: 3rem 3.5rem 130px;
+  padding: 3rem 3.5rem 178px;
   font-family: var(--font-sans);
   position: relative;
 }
@@ -516,9 +606,21 @@ a:hover {
   letter-spacing: -0.02em;
 }
 
+.inline-link {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: rgba(208,17,111,0.4);
+  text-underline-offset: 3px;
+  transition: text-decoration-color 0.2s;
+}
+
+.inline-link:hover {
+  text-decoration-color: #d0116f;
+}
+
 .text-body {
   font-size: 17px;
-  font-weight: 350;
+  font-weight: 400;
   color: black;
   line-height: 1.5;
   margin-bottom: 1rem;

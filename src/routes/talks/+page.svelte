@@ -135,10 +135,7 @@
   onMount(() => { gardenPanel.set(ejnItem); });
 
   function handleClick(item) {
-    if (item.id === '4') return; // EJN stays, panel already open
-    if (item.link && item.link !== '#') {
-      window.open(item.link, '_blank', 'noopener,noreferrer');
-    }
+    gardenPanel.set(item);
   }
 </script>
 
@@ -147,136 +144,129 @@
 </svelte:head>
 
 <section class="section">
-  <div class="section-header">
-    <span class="section-title">Talks</span>
-  </div>
-
-  <p class="text-body" style="margin-bottom: 2rem; margin-top: 0.25rem;">
+  <p class="text-body intro-text">
     Speaking, teaching, and in conversation — on data journalism, visualisation, and the craft of making numbers matter.
   </p>
 
-  <!-- Talks + Trainings side by side -->
-  <div class="two-col">
-    <!-- Talks column -->
-    <div class="col">
-      <div class="col-heading" style="color:{typeColor.talk}">talks</div>
-      {#each talks as item}
-        <button class="item-row" on:click={() => handleClick(item)}>
-          <div class="item-title">{item.title}</div>
-          <div class="item-event">
-            {item.event}{#if item.location} · <span class="item-location">{item.location}</span>{/if}
-          </div>
-          <div class="item-meta">
-            <span class="item-year">{item.year}</span>
+  <!-- TALKS -->
+  <div class="group">
+    <div class="group-label" style="color:{typeColor.talk}">talks</div>
+    {#each talks as item}
+      <a class="item-card" href={item.link !== '#' ? item.link : null} target={item.link !== '#' ? '_blank' : null} rel="noopener noreferrer" on:click|preventDefault={() => handleClick(item)}>
+        <div class="item-top">
+          <span class="item-year">{item.year}</span>
+          <div class="item-tags">
             {#each item.tags as tag}
               <span class="item-tag">{tag}</span>
             {/each}
           </div>
-        </button>
-      {/each}
-    </div>
+        </div>
+        <div class="item-title">{item.title}</div>
+        <div class="item-event">{item.event}{#if item.location} · <span class="item-location">{item.location}</span>{/if}</div>
+        {#if item.description}
+          <div class="item-desc">{item.description}</div>
+        {/if}
+      </a>
+    {/each}
+  </div>
 
-    <!-- Trainings column -->
-    <div class="col">
-      <div class="col-heading" style="color:{typeColor.training}">trainings</div>
-      {#each trainings as item}
-        <button class="item-row" on:click={() => handleClick(item)}>
-          <div class="item-title">{item.title}</div>
-          <div class="item-event">
-            {item.event}{#if item.location} · <span class="item-location">{item.location}</span>{/if}
-          </div>
-          <div class="item-meta">
-            {#if item.year}<span class="item-year">{item.year}</span>{/if}
+  <!-- TRAININGS -->
+  <div class="group">
+    <div class="group-label" style="color:{typeColor.training}">trainings</div>
+    {#each trainings as item}
+      <a class="item-card" href={item.link !== '#' ? item.link : null} target={item.link !== '#' ? '_blank' : null} rel="noopener noreferrer" on:click|preventDefault={() => handleClick(item)}>
+        <div class="item-top">
+          {#if item.year}<span class="item-year">{item.year}</span>{/if}
+          <div class="item-tags">
             {#each item.tags as tag}
               <span class="item-tag">{tag}</span>
             {/each}
           </div>
-        </button>
-      {/each}
-    </div>
+        </div>
+        <div class="item-title">{item.title}</div>
+        <div class="item-event">{item.event}{#if item.location} · <span class="item-location">{item.location}</span>{/if}</div>
+        {#if item.description}
+          <div class="item-desc">{item.description}</div>
+        {/if}
+      </a>
+    {/each}
   </div>
 
-  <!-- Panels below -->
-  <div class="panels-section">
-    <div class="col-heading" style="color:{typeColor.panel}">panels</div>
-    <div class="panels-list">
-      {#each panels as item}
-        <button class="panel-row" on:click={() => handleClick(item)}>
-          <div class="panel-left">
-            <div class="item-title">{item.title}</div>
-            <div class="item-event">
-              {item.event}{#if item.location} · <span class="item-location">{item.location}</span>{/if}
-            </div>
+  <!-- PANELS -->
+  <div class="group">
+    <div class="group-label" style="color:{typeColor.panel}">panels</div>
+    {#each panels as item}
+      <a class="item-card" href={item.link !== '#' ? item.link : null} target={item.link !== '#' ? '_blank' : null} rel="noopener noreferrer" on:click|preventDefault={() => handleClick(item)}>
+        <div class="item-top">
+          <span class="item-year">{item.year}</span>
+          <div class="item-tags">
+            {#each item.tags as tag}
+              <span class="item-tag">{tag}</span>
+            {/each}
           </div>
-          <div class="panel-right">
-            <span class="item-year">{item.year}</span>
-            <div class="panel-tags">
-              {#each item.tags as tag}
-                <span class="item-tag">{tag}</span>
-              {/each}
-            </div>
-          </div>
-        </button>
-      {/each}
-    </div>
+        </div>
+        <div class="item-title">{item.title}</div>
+        <div class="item-event">{item.event}{#if item.location} · <span class="item-location">{item.location}</span>{/if}</div>
+        {#if item.description}
+          <div class="item-desc">{item.description}</div>
+        {/if}
+      </a>
+    {/each}
   </div>
-
 </section>
 
 <style>
-  /* ── Two column layout ── */
-  .two-col {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0 48px;
+  .intro-text {
     margin-bottom: 2.5rem;
-    padding-bottom: 2rem;
-    border-bottom: 1px solid rgba(26,107,58,0.1);
   }
 
-  .col {
-    display: flex;
-    flex-direction: column;
+  .group {
+    margin-bottom: 3rem;
   }
 
-  .col-heading {
+  .group-label {
     font-family: "DM Mono", monospace;
     font-size: 9px;
     font-weight: 700;
-    letter-spacing: 0.16em;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
-    margin-bottom: 10px;
-    padding-bottom: 6px;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
     border-bottom: 1px solid rgba(26,107,58,0.1);
   }
 
-  /* ── Item rows ── */
-  .item-row {
-    display: flex;
-    flex-direction: column;
-    gap: 3px;
-    padding: 9px 0;
+  .item-card {
+    display: block;
+    padding: 16px 0;
     border-bottom: 1px solid rgba(26,107,58,0.06);
-    background: none;
-    border-left: none;
-    border-right: none;
-    border-top: none;
-    text-align: left;
+    text-decoration: none;
+    color: inherit;
     cursor: pointer;
     transition: background 0.15s;
-    width: 100%;
   }
 
-  .item-row:last-child { border-bottom: none; }
+  .item-card:last-child { border-bottom: none; }
+  .item-card:hover { background: rgba(26,107,58,0.02); }
 
-  .item-row:hover { background: rgba(26,107,58,0.03); }
-
-  .item-meta {
+  .item-top {
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 10px;
+    margin-bottom: 6px;
+  }
+
+  .item-year {
+    font-family: "DM Mono", monospace;
+    font-size: 9px;
+    color: #bbb;
+    letter-spacing: 0.08em;
+    flex-shrink: 0;
+  }
+
+  .item-tags {
+    display: flex;
+    gap: 4px;
     flex-wrap: wrap;
-    margin-top: 2px;
   }
 
   .item-tag {
@@ -290,78 +280,29 @@
   }
 
   .item-title {
-    font-size: 13px;
-    font-weight: 600;
+    font-family: "TT Jenevers", serif;
+    font-size: 22px;
+    font-weight: 500;
     color: #111;
-    line-height: 1.35;
+    line-height: 1.25;
+    margin-bottom: 5px;
   }
-
 
   .item-event {
     font-family: "DM Mono", monospace;
     font-size: 9px;
     color: #999;
     letter-spacing: 0.03em;
+    margin-bottom: 8px;
   }
 
   .item-location { color: #ccc; }
 
-  .item-year {
-    font-family: "DM Mono", monospace;
-    font-size: 8px;
-    color: #bbb;
-    letter-spacing: 0.06em;
-  }
-
-  /* ── Panels section ── */
-  .panels-section {
-    margin-top: 0;
-  }
-
-  .panels-list {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .panel-row {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 24px;
-    padding: 9px 0;
-    border-bottom: 1px solid rgba(26,107,58,0.06);
-    background: none;
-    border-left: none;
-    border-right: none;
-    border-top: none;
-    text-align: left;
-    cursor: pointer;
-    transition: background 0.15s;
-    width: 100%;
-  }
-
-  .panel-row:last-child { border-bottom: none; }
-  .panel-row:hover { background: rgba(26,107,58,0.03); }
-
-  .panel-left {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 3px;
-  }
-
-  .panel-right {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 4px;
-    flex-shrink: 0;
-  }
-
-  .panel-tags {
-    display: flex;
-    gap: 4px;
-    flex-wrap: wrap;
-    justify-content: flex-end;
+  .item-desc {
+    font-family: "TT Jenevers", serif;
+    font-size: 15px;
+    font-weight: 400;
+    color: #555;
+    line-height: 1.6;
   }
 </style>

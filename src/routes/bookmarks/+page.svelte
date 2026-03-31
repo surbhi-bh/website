@@ -7,11 +7,6 @@
 </svelte:head>
 
 <section class="section">
-  <div class="section-header">
-    <span class="section-number">06</span>
-    <span class="section-title">Bookmarks</span>
-  </div>
-
   <div class="text-block">
     <div class="headline">Links worth keeping.</div>
     <p class="text-body">

@@ -12,11 +12,6 @@
 </svelte:head>
 
 <section class="section">
-  <div class="section-header">
-    <span class="section-number">08</span>
-    <span class="section-title">Colophon</span>
-  </div>
-
   <div class="text-block">
     <div class="headline">How this site is made.</div>
     <p class="text-body">

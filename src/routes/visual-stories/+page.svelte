@@ -192,10 +192,6 @@
 </svelte:head>
 
 <section class="section">
-  <div class="section-header">
-    <span class="section-title">Visual Stories</span>
-  </div>
-
   <p class="text-body vs-intro">
     Several pieces have won international awards — including the SABEW Best in Business Award, The Pudding Cup, and a World Bank Global Partnership finalist recognition.
   </p>

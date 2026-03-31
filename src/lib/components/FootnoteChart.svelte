@@ -1,22 +1,21 @@
 <script>
   import { onMount } from 'svelte';
+  import { footerExpanded } from '$lib/gardenStore.js';
 
   export let collapsed = false;
 
-  let isExpanded = false;
   let currentFnPeriod = 'daily';
   let chartContainer;
   let tooltipEl;
 
-  $: showFull = !collapsed || isExpanded;
+  $: showFull = !collapsed || $footerExpanded;
+
+  // Draw chart when expanding
+  $: if ($footerExpanded) setTimeout(() => drawChart(currentFnPeriod), 50);
 
   function toggleExpand() {
     if (!collapsed) return;
-    isExpanded = !isExpanded;
-    if (isExpanded) {
-      // wait for DOM to show chart container, then draw
-      setTimeout(() => drawChart(currentFnPeriod), 50);
-    }
+    footerExpanded.update(v => !v);
   }
 
   const STEPS_API = 'https://script.google.com/macros/s/AKfycbxeRS2zSYEzwc_uh4RIy3h6tuo8BR846GHegMsBZhnJlxukbtUmISsZmy_YqViIk7GKNg/exec';
@@ -417,7 +416,20 @@
   }
 </script>
 
-{#if collapsed && !isExpanded}
+<!-- Elsewhere bar — always visible, sits above footnote -->
+<div class="elsewhere-bar" style="bottom: {collapsed && !$footerExpanded ? 28 : 110}px">
+  <span class="elsewhere-label">elsewhere</span>
+  <span class="elsewhere-sep">·</span>
+  <a class="elsewhere-link" href="https://www.linkedin.com/in/surbhi-bhatia" target="_blank" rel="noopener">linkedin</a>
+  <img src="/flower.svg" alt="" class="elsewhere-flower" />
+  <a class="elsewhere-link" href="https://twitter.com/surbhi_bh" target="_blank" rel="noopener">twitter</a>
+  <img src="/flower.svg" alt="" class="elsewhere-flower" />
+  <a class="elsewhere-link" href="https://bsky.app/profile/surbhi-bh.bsky.social" target="_blank" rel="noopener">bluesky</a>
+  <img src="/flower.svg" alt="" class="elsewhere-flower" />
+  <a class="elsewhere-link elsewhere-email" href="mailto:surbhibhatia1906@gmail.com">surbhibhatia1906[at]gmail[dot]com</a>
+</div>
+
+{#if collapsed && !$footerExpanded}
   <!-- Collapsed state: slim bar, click to expand -->
   <div class="footnote-band footnote-collapsed" on:click={toggleExpand} role="button" tabindex="0" on:keydown={(e) => e.key === 'Enter' && toggleExpand()}>
     <div class="footnote-label footnote-label-slim">foot(er)-note ↑</div>

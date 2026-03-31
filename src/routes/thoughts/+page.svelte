@@ -7,10 +7,6 @@
 </svelte:head>
 
 <section class="section">
-  <div class="section-header">
-    <span class="section-title">thoughts</span>
-  </div>
-
   <div class="numbered-list">
     {#each data.posts as post, i}
       <div class="list-item">

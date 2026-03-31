@@ -3,7 +3,10 @@
   import { page } from '$app/stores';
   import FootnoteChart from '$lib/components/FootnoteChart.svelte';
   import HierogylphWidget from '$lib/components/HieroglyphWidget.svelte';
-  import { gardenPanel } from '$lib/gardenStore.js';
+  import { gardenPanel, footerExpanded } from '$lib/gardenStore.js';
+
+  // Reset footer when navigating away from home
+  $: if ($page.url.pathname !== '/home') footerExpanded.set(false);
 
   const mainLinks = [
     { href: '/', label: 'read.me' },
@@ -17,6 +20,7 @@
     { href: '/thoughts', label: 'thoughts', disabled: true },
     { href: '/bookmarks', label: 'bookmarks', disabled: true },
     { href: '/garden', label: 'garden' },
+    { href: '/places', label: 'places' },
     { href: '/colophon', label: 'colophon' },
   ];
 
@@ -33,14 +37,15 @@
   };
 
   // Clear panel when navigating away from pages that use it
-  $: if (!$page.url.pathname.startsWith('/garden') && !$page.url.pathname.startsWith('/talks') && !$page.url.pathname.startsWith('/colophon')) {
+  const panelPages = ['/garden', '/talks', '/colophon', '/places'];
+  $: if (!panelPages.some(p => $page.url.pathname.startsWith(p))) {
     gardenPanel.set(null);
   }
 </script>
 
 <svelte:head>
   <title>Surbhi Bhatia | Data Journalist & Visual Storyteller</title>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400&family=Inter:wght@200;300;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
   <script src="https://d3js.org/d3.v7.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/roughjs@4.5.2/bundled/rough.js"></script>
 </svelte:head>
@@ -49,7 +54,9 @@
 
   <!-- SIDEBAR -->
   <aside class="sidebar">
-    <div class="brand-name">Surbhi Bhatia</div>
+    <a href="/home" class="brand-name" class:active={isActive('/home', $page.url.pathname)}>
+      <img src="/flower.svg" class="brand-flower" class:brand-flower-visible={isActive('/home', $page.url.pathname)} alt="" />Surbhi Bhatia
+    </a>
 
     <div class="nav-section">
       <div class="nav-title">now · here</div>
@@ -71,7 +78,6 @@
     </div>
 
     <div class="nav-section">
-      <div class="nav-title">garden</div>
       <ul class="nav-links">
         {#each gardenLinks as link}
           <li class:li-garden={link.href === '/garden'}>
@@ -83,7 +89,7 @@
                 class="nav-link"
                 class:nav-link-garden={link.href === '/garden'}
                 class:active={isActive(link.href, $page.url.pathname)}
-                style={link.label === 'colophon' ? 'margin-top: 1rem;' : ''}
+                style={link.label === 'places' ? 'margin-top: 1rem;' : ''}
               >{link.label}</a>
             {/if}
           </li>
@@ -111,6 +117,11 @@
       {#if item.widget === 'hieroglyph'}
         <!-- Hieroglyph widget panel (colophon page) -->
         <HierogylphWidget />
+      {:else if item.widget === 'place'}
+        <!-- Place panel (places page) -->
+        <div class="tp-type" style="color:{item.mode === 'lived' ? '#d0116f' : '#1a6b3a'}">{item.mode}</div>
+        <div class="tp-title">{item.name}{#if item.isLive} <span style="font-size:12px; color:#d0116f;">✦ now</span>{/if}</div>
+        <p class="tp-desc">{item.note}</p>
       {:else}
         <!-- Standard item panel (garden, talks pages) -->
         <div class="tp-type" style="color:{typeColor[item.type] || '#888'}">{item.type}</div>
@@ -278,6 +289,28 @@
   }
 
   .tp-link:hover { border-bottom-color: #d0116f; }
+
+  :global(.brand-name) {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    color: #d0116f;
+  }
+
+  :global(.brand-flower) {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    opacity: 0;
+    transform: rotate(-90deg) scale(0.5);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  :global(.brand-flower-visible) {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+  }
 
   :global(.nav-link-dim) {
     font-size: 18px;
