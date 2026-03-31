@@ -10,8 +10,16 @@
 
   $: showFull = !collapsed || $footerExpanded;
 
-  // Draw chart when expanding
-  $: if ($footerExpanded) setTimeout(() => drawChart(currentFnPeriod), 50);
+  // Draw chart when expanding — wait for data if needed
+  $: if ($footerExpanded) {
+    if (dataReady) {
+      setTimeout(() => drawChart(currentFnPeriod), 50);
+    } else {
+      const waitAndDraw = setInterval(() => {
+        if (dataReady) { clearInterval(waitAndDraw); drawChart(currentFnPeriod); }
+      }, 100);
+    }
+  }
 
   function toggleExpand() {
     if (!collapsed) return;
@@ -391,29 +399,16 @@
   onMount(() => {
     hasMounted = true;
 
-    function tryDraw() {
-      if (window.d3 && window.rough && dataReady) {
-        if (!collapsed) drawChart('daily');
-      } else {
-        setTimeout(tryDraw, 100);
-      }
-    }
-
     fetch(STEPS_API)
       .then(r => r.json())
       .then(rows => {
         processAPI(rows);
-        tryDraw();
       })
       .catch(() => {
         // API failed — nothing to draw
       });
   });
 
-  // Redraw when page navigates back to read.me (collapsed goes false)
-  $: if (hasMounted && !collapsed && chartContainer && dataReady) {
-    setTimeout(() => drawChart(currentFnPeriod), 50);
-  }
 </script>
 
 <!-- Elsewhere bar — always visible, sits above footnote -->

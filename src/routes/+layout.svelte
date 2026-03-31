@@ -1,15 +1,19 @@
 <script>
   import '../app.css';
   import { page } from '$app/stores';
+  import { beforeNavigate } from '$app/navigation';
   import FootnoteChart from '$lib/components/FootnoteChart.svelte';
   import HierogylphWidget from '$lib/components/HieroglyphWidget.svelte';
   import { gardenPanel, footerExpanded } from '$lib/gardenStore.js';
 
   // Reset footer when navigating away from home
-  $: if ($page.url.pathname !== '/home') footerExpanded.set(false);
+  $: if ($page.url.pathname !== '/') footerExpanded.set(false);
+
+  // Clear the panel on every page navigation
+  beforeNavigate(() => gardenPanel.set(null));
 
   const mainLinks = [
-    { href: '/', label: 'read.me' },
+    { href: '/read-me', label: 'read.me' },
     { href: '/visual-stories', label: 'visual stories' },
     { href: '/talks', label: 'talks' },
     { href: '/vizardry', label: 'vizardry', disabled: true },
@@ -26,6 +30,7 @@
 
   function isActive(href, pathname) {
     if (href === '/') return pathname === '/';
+    if (href === '/read-me') return pathname === '/read-me';
     return pathname.startsWith(href);
   }
 
@@ -36,11 +41,6 @@
     'seed':         '#b87333',
   };
 
-  // Clear panel when navigating away from pages that use it
-  const panelPages = ['/garden', '/talks', '/colophon', '/places'];
-  $: if (!panelPages.some(p => $page.url.pathname.startsWith(p))) {
-    gardenPanel.set(null);
-  }
 </script>
 
 <svelte:head>
@@ -54,8 +54,8 @@
 
   <!-- SIDEBAR -->
   <aside class="sidebar">
-    <a href="/home" class="brand-name" class:active={isActive('/home', $page.url.pathname)}>
-      <img src="/flower.svg" class="brand-flower" class:brand-flower-visible={isActive('/home', $page.url.pathname)} alt="" />Surbhi Bhatia
+    <a href="/" class="brand-name" class:active={isActive('/', $page.url.pathname)}>
+      <img src="/flower.svg" class="brand-flower" class:brand-flower-visible={isActive('/', $page.url.pathname)} alt="" />Surbhi Bhatia
     </a>
 
     <div class="nav-section">
@@ -157,7 +157,7 @@
 </div>
 
 <!-- FOOTNOTE FOOTER BAND -->
-<FootnoteChart collapsed={$page.url.pathname !== '/'} />
+<FootnoteChart collapsed={true} />
 
 <style>
   /* Three-column layout when panel is open */
