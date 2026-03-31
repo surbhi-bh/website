@@ -6,14 +6,14 @@
   import HierogylphWidget from '$lib/components/HieroglyphWidget.svelte';
   import { gardenPanel, footerExpanded } from '$lib/gardenStore.js';
 
-  // Reset footer when navigating away from home
-  $: if ($page.url.pathname !== '/') footerExpanded.set(false);
+  // Reset footer when navigating away from home or readme
+  $: if ($page.url.pathname !== '/' && $page.url.pathname !== '/readme') footerExpanded.set(false);
 
   // Clear the panel on every page navigation
   beforeNavigate(() => gardenPanel.set(null));
 
   const mainLinks = [
-    { href: '/read-me', label: 'read.me' },
+    { href: '/readme', label: 'read.me' },
     { href: '/visual-stories', label: 'visual stories' },
     { href: '/talks', label: 'talks' },
     { href: '/vizardry', label: 'vizardry', disabled: true },
@@ -30,7 +30,7 @@
 
   function isActive(href, pathname) {
     if (href === '/') return pathname === '/';
-    if (href === '/read-me') return pathname === '/read-me';
+    if (href === '/readme') return pathname === '/readme';
     return pathname.startsWith(href);
   }
 

@@ -1,4 +1,10 @@
 <script>
+  import { onMount, onDestroy } from 'svelte';
+  import { footerExpanded } from '$lib/gardenStore.js';
+
+  onMount(() => footerExpanded.set(true));
+  onDestroy(() => footerExpanded.set(false));
+
   // level: minimum level to show
   // only: exact level — hides at other levels (used for alternate versions of same content)
   const bio = [
