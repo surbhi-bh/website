@@ -16,7 +16,7 @@
     { href: '/readme', label: 'read.me' },
     { href: '/visual-stories', label: 'visual stories' },
     { href: '/talks', label: 'talks' },
-    { href: '/vizardry', label: 'vizardry', disabled: true },
+    { href: '/vizardry', label: 'vizardry' },
   ];
 
   const gardenLinks = [
@@ -25,7 +25,7 @@
     { href: '/bookmarks', label: 'bookmarks', disabled: true },
     { href: '/garden', label: 'garden' },
     { href: '/places', label: 'places' },
-    { href: '/colophon', label: 'colophon' },
+    { href: '/colophon', label: 'colophon', disabled: true },
   ];
 
   function isActive(href, pathname) {

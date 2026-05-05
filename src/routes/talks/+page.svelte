@@ -144,10 +144,6 @@
 </svelte:head>
 
 <section class="section">
-  <p class="text-body intro-text">
-    Speaking, teaching, and in conversation — on data journalism, visualisation, and the craft of making numbers matter.
-  </p>
-
   <!-- TALKS -->
   <div class="group">
     <div class="group-label" style="color:{typeColor.talk}">talks</div>

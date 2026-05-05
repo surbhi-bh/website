@@ -82,14 +82,15 @@ a:hover {
 ══════════════════════════════ */
 .sidebar {
   background: #fff;
-  padding: 2.5rem 2rem 178px;
+  padding: 2.5rem 2rem 1.5rem;
   display: flex;
   flex-direction: column;
   font-family: var(--font-sans);
   position: sticky;
   top: 0;
-  height: 100vh;
+  height: calc(100vh - 162px);
   overflow: hidden;
+  z-index: 103;
 }
 
 .brand-name {

@@ -7,18 +7,25 @@
 </svelte:head>
 
 <section class="section">
-  <p class="text-body" style="margin-bottom: 2rem; margin-top: 0.25rem;">
-    Experiments, explorations, and tools in data visualisation. Where the technical meets the aesthetic.
-  </p>
-
   <div class="vz-grid">
     <a href="/vizardry/30-day-chart-challenge-2026" class="vz-card">
       <div class="vz-card-inner">
         <div class="vz-meta">
           <span class="vz-tag">30-day-chart-challenge 2026</span>
         </div>
-        <div class="vz-title">A chart a day keeps the fog away</div>
+        <div class="vz-title">Thirty charts in thirty days <span class="vz-hashtag">#30DayChartChallenge2026</span></div>
         <div class="vz-sub">My experience doing the 30-day chart challenge</div>
+        <div class="vz-arrow">↗</div>
+      </div>
+    </a>
+
+    <a href="/vizardry/30-day-map-challenge-2026" class="vz-card">
+      <div class="vz-card-inner">
+        <div class="vz-meta">
+          <span class="vz-tag">30-day-map-challenge 2026</span>
+        </div>
+        <div class="vz-title">Thirty maps in thirty days <span class="vz-hashtag">#30DayMapChallenge2026</span></div>
+        <div class="vz-sub">My experience doing the 30-day map challenge</div>
         <div class="vz-arrow">↗</div>
       </div>
     </a>
@@ -80,6 +87,15 @@
     font-weight: 700;
     color: #111;
     line-height: 1.3;
+  }
+
+  .vz-hashtag {
+    font-family: "DM Mono", monospace;
+    font-size: 10px;
+    font-weight: 400;
+    color: #1a6b3a;
+    letter-spacing: 0.02em;
+    margin-left: 4px;
   }
 
   .vz-sub {

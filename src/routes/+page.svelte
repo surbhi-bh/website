@@ -83,15 +83,16 @@
       <div class="card-detail muted">data · design · cities · culture</div>
     </a>
 
-    <!-- VIZARDRY — bottom right, dim -->
-    <div class="card card-vizardry" style="top:190px; left:530px; --rot:2.5deg;">
-      <img src="/flower.svg" class="pin pin-dim" alt="" />
+    <!-- VIZARDRY — bottom right -->
+    <a class="card card-vizardry" href="/vizardry/30-day-chart-challenge-2026" style="top:190px; left:495px; --rot:2.5deg;">
+      <img src="/flower.svg" class="pin" alt="" />
       <div class="card-tag">vizardry</div>
       <div class="card-divider"></div>
-      <div class="card-title">30-day chart challenge & experiments</div>
+      <div class="card-feature" style="background-image:url('/images/30daychartchallenge-2026/day24-south-china-morning-post.png')"></div>
+      <div class="card-title">30-day-chart-challenge</div>
       <div class="card-divider dashed"></div>
-      <div class="card-detail muted coming">coming soon</div>
-    </div>
+      <div class="card-detail">30 charts · April 2026</div>
+    </a>
 
     <!-- FOOTER TOGGLE — bottom right corner tab -->
     <button class="footer-btn" class:open={$footerExpanded} on:click={() => footerExpanded.update(v => !v)}>
@@ -118,7 +119,8 @@
       linear-gradient(90deg, rgba(26,107,58,0.07) 1px, transparent 1px);
     background-size: 10px 10px;
     border: 1px solid rgba(26,107,58,0.12);
-    overflow: visible;
+    overflow-x: clip;
+    overflow-y: visible;
     padding-top: 14px;
   }
 
@@ -170,22 +172,21 @@
   .card-talks   { border-color: rgba(26,107,58,0.2);   z-index: 2; }
   .card-readme  { border-color: rgba(208,17,111,0.18); z-index: 4; }
   .card-garden  { border-color: rgba(26,107,58,0.18);  z-index: 3; }
-  .card-vizardry { border-color: rgba(0,0,0,0.07); opacity: 0.5; cursor: default; z-index: 1; }
+  .card-vizardry { border-color: rgba(26,107,58,0.22); z-index: 5; }
 
   /* ── Tag ── */
   .card-tag {
-    font-family: "DM Mono", monospace;
-    font-size: 7.5px;
-    font-weight: 600;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
+    font-family: "TT Jenevers", serif;
+    font-size: 12px;
+    font-weight: 400;
+    font-style: italic;
+    letter-spacing: 0.01em;
     color: #1a6b3a;
     padding-top: 4px;
   }
 
   .card-stories .card-tag,
   .card-readme  .card-tag { color: #d0116f; }
-  .card-vizardry .card-tag { color: #bbb; }
 
   /* ── Dividers ── */
   .card-divider {
@@ -344,5 +345,16 @@
   .card-talks::after   { transform: rotate(-10deg); }
   .card-readme::after  { transform: rotate(25deg); opacity: 0.13; }
   .card-garden::after  { transform: rotate(-15deg); }
-  .card-vizardry::after { display: none; }
+  .card-vizardry::after { transform: rotate(20deg); }
+
+  /* ── Vizardry feature image (single chart) ── */
+  .card-feature {
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    background-size: cover;
+    background-position: center;
+    background-color: #f7f9f7;
+    flex-shrink: 0;
+    filter: grayscale(8%);
+  }
 </style>
