@@ -7,24 +7,27 @@ function __memo(fn) {
 return {
 	appDir: "_app",
 	appPath: "_app",
-	assets: new Set([".DS_Store","favicon.svg","flower.svg","images/30daychartchallenge-2026/day1.png","images/global-partnership-finalist.png","images/indiaspend-ias.png","images/kontinentalist_bollywood.png","images/lede-gurgaon.png","images/lede-met-cats.png","images/mint-bollywood-remakes.png","images/mint-fiscal-deficit.png","images/mint-nobel-prize.png","images/mint-rbi.png","images/revisuallabs_arkavathy.png","images/sabew-nikkei-winner.png","images/the-pudding-cup-winner.png","images/thibi_ejnacademy.png","images/tmc-passport.png","images/training-thibi-ejn.png","images/words-of-wordle.png","world-map.svg"]),
-	mimeTypes: {".svg":"image/svg+xml",".png":"image/png"},
+	assets: new Set(["favicon.svg","flower.svg","fonts/TT Jenevers Trial Light.otf","fonts/TT Jenevers Trial Medium Italic.otf","fonts/TT Jenevers Trial Medium.otf","fonts/TT Jenevers Trial Regular.otf","images/30daychartchallenge-2026/day1.png","images/global-partnership-finalist.png","images/indiaspend-ias.png","images/kontinentalist_bollywood.png","images/lede-gurgaon.png","images/lede-met-cats.png","images/mint-bollywood-remakes.png","images/mint-fiscal-deficit.png","images/mint-nobel-prize.png","images/mint-rbi.png","images/revisuallabs_arkavathy.png","images/sabew-nikkei-winner.png","images/the-pudding-cup-winner.png","images/thibi_ejnacademy.png","images/tmc-passport.png","images/training-thibi-ejn.png","images/words-of-wordle.png","world-map.svg"]),
+	mimeTypes: {".svg":"image/svg+xml",".otf":"font/otf",".png":"image/png"},
 	_: {
-		client: {start:"_app/immutable/entry/start.D3NVox3t.js",app:"_app/immutable/entry/app.D2hidAbA.js",imports:["_app/immutable/entry/start.D3NVox3t.js","_app/immutable/chunks/MkPAkPzk.js","_app/immutable/chunks/IjKCb9nO.js","_app/immutable/chunks/Cv_BG7n1.js","_app/immutable/chunks/i0pD18No.js","_app/immutable/entry/app.D2hidAbA.js","_app/immutable/chunks/IjKCb9nO.js","_app/immutable/chunks/CYK3iPNf.js","_app/immutable/chunks/B2z4TIb2.js","_app/immutable/chunks/i0pD18No.js","_app/immutable/chunks/8lk0kcdJ.js","_app/immutable/chunks/B_SlPviu.js","_app/immutable/chunks/DaywnT6T.js","_app/immutable/chunks/Cv_BG7n1.js"],stylesheets:[],fonts:[],uses_env_dynamic_public:false},
+		client: {start:"_app/immutable/entry/start.CEdWCBYR.js",app:"_app/immutable/entry/app.CzMt4AKM.js",imports:["_app/immutable/entry/start.CEdWCBYR.js","_app/immutable/chunks/B93BnXt0.js","_app/immutable/chunks/C2vq7jDC.js","_app/immutable/chunks/8xnrZX9H.js","_app/immutable/chunks/BusnrD9v.js","_app/immutable/chunks/UUpkyAZx.js","_app/immutable/entry/app.CzMt4AKM.js","_app/immutable/chunks/8xnrZX9H.js","_app/immutable/chunks/BusnrD9v.js","_app/immutable/chunks/Bzak7iHL.js","_app/immutable/chunks/C2vq7jDC.js","_app/immutable/chunks/BHVE5eft.js","_app/immutable/chunks/DFnQD04B.js","_app/immutable/chunks/_uJ4Q_jL.js","_app/immutable/chunks/CBAr5Qi8.js","_app/immutable/chunks/UUpkyAZx.js"],stylesheets:[],fonts:[],uses_env_dynamic_public:false},
 		nodes: [
-			__memo(() => import('./chunks/0-BqjssMgk.js')),
-			__memo(() => import('./chunks/1-BTpGhPsg.js')),
-			__memo(() => import('./chunks/2-Bak0GrBA.js')),
-			__memo(() => import('./chunks/3-DqQbgHIv.js')),
-			__memo(() => import('./chunks/4-Dq7KYZe5.js')),
-			__memo(() => import('./chunks/5-BONFhAnA.js')),
-			__memo(() => import('./chunks/6-Dxx1WHP9.js')),
-			__memo(() => import('./chunks/7-CfN_Vv8m.js')),
-			__memo(() => import('./chunks/8-Dw7jW9Xy.js')),
-			__memo(() => import('./chunks/9-CmlboNJ6.js')),
-			__memo(() => import('./chunks/12-qnYRqVVx.js')),
-			__memo(() => import('./chunks/13-IRnq1zoP.js')),
-			__memo(() => import('./chunks/14-6D5yQk50.js'))
+			__memo(() => import('./chunks/0-Ci-sG8lm.js')),
+			__memo(() => import('./chunks/1-9nKtjNo8.js')),
+			__memo(() => import('./chunks/2-qQP_hsTP.js')),
+			__memo(() => import('./chunks/3-7wNCzx50.js')),
+			__memo(() => import('./chunks/4-fnFOO4Ub.js')),
+			__memo(() => import('./chunks/5-DFMkGZSh.js')),
+			__memo(() => import('./chunks/6-B5uq8xc0.js')),
+			__memo(() => import('./chunks/7-8VTvNyu_.js')),
+			__memo(() => import('./chunks/8-DNiGnK7J.js')),
+			__memo(() => import('./chunks/9-Yfb0HVQX.js')),
+			__memo(() => import('./chunks/10-TehVljaJ.js')),
+			__memo(() => import('./chunks/11-Bu2Gu3qN.js')),
+			__memo(() => import('./chunks/12-3qBYtUm5.js')),
+			__memo(() => import('./chunks/15-BQrHEXb1.js')),
+			__memo(() => import('./chunks/16-CXd1t-RN.js')),
+			__memo(() => import('./chunks/17-BuaL15Fs.js'))
 		],
 		remotes: {
 			
@@ -87,38 +90,59 @@ return {
 				endpoint: null
 			},
 			{
+				id: "/home",
+				pattern: /^\/home\/?$/,
+				params: [],
+				page: { layouts: [0,], errors: [1,], leaf: 8 },
+				endpoint: null
+			},
+			{
+				id: "/places",
+				pattern: /^\/places\/?$/,
+				params: [],
+				page: { layouts: [0,], errors: [1,], leaf: 9 },
+				endpoint: null
+			},
+			{
+				id: "/readme",
+				pattern: /^\/readme\/?$/,
+				params: [],
+				page: { layouts: [0,], errors: [1,], leaf: 10 },
+				endpoint: null
+			},
+			{
 				id: "/seeds",
 				pattern: /^\/seeds\/?$/,
 				params: [],
-				page: { layouts: [0,], errors: [1,], leaf: 8 },
+				page: { layouts: [0,], errors: [1,], leaf: 11 },
 				endpoint: null
 			},
 			{
 				id: "/talks",
 				pattern: /^\/talks\/?$/,
 				params: [],
-				page: { layouts: [0,], errors: [1,], leaf: 9 },
+				page: { layouts: [0,], errors: [1,], leaf: 12 },
 				endpoint: null
 			},
 			{
 				id: "/visual-stories",
 				pattern: /^\/visual-stories\/?$/,
 				params: [],
-				page: { layouts: [0,], errors: [1,], leaf: 10 },
+				page: { layouts: [0,], errors: [1,], leaf: 13 },
 				endpoint: null
 			},
 			{
 				id: "/vizardry",
 				pattern: /^\/vizardry\/?$/,
 				params: [],
-				page: { layouts: [0,], errors: [1,], leaf: 11 },
+				page: { layouts: [0,], errors: [1,], leaf: 14 },
 				endpoint: null
 			},
 			{
 				id: "/vizardry/30-day-chart-challenge-2026",
 				pattern: /^\/vizardry\/30-day-chart-challenge-2026\/?$/,
 				params: [],
-				page: { layouts: [0,2,], errors: [1,,], leaf: 12 },
+				page: { layouts: [0,2,], errors: [1,,], leaf: 15 },
 				endpoint: null
 			}
 		],
