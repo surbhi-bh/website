@@ -1,1 +1,0 @@
-import{o as y,p as o,a5 as u,a6 as _,h as t,C as p,a4 as i,w as l,s as d,x as g,q as m}from"./C3dTbOl3.js";function C(n,r){let a=null,E=t;var s;if(t){a=g;for(var e=m(document.head);e!==null&&(e.nodeType!==p||e.data!==n);)e=i(e);if(e===null)l(!1);else{var f=i(e);e.remove(),d(f)}}t||(s=document.head.appendChild(y()));try{o(()=>r(s),u|_)}finally{E&&(l(!0),d(a))}}export{C as h};
