@@ -411,21 +411,6 @@
 
 </script>
 
-<!-- Elsewhere bar — always visible, sits above footnote -->
-<div class="elsewhere-bar" style="bottom: {collapsed && !$footerExpanded ? 28 : 110}px">
-  <span class="elsewhere-label">elsewhere</span>
-  <span class="elsewhere-sep">·</span>
-  <a class="elsewhere-link" href="https://www.linkedin.com/in/surbhi-bhatia" target="_blank" rel="noopener">linkedin</a>
-  <img src="/flower.svg" alt="" class="elsewhere-flower" />
-  <a class="elsewhere-link" href="https://x.com/surbhaai" target="_blank" rel="noopener">x</a>
-  <img src="/flower.svg" alt="" class="elsewhere-flower" />
-  <a class="elsewhere-link" href="https://bsky.app/profile/surbhaai.bsky.social" target="_blank" rel="noopener">bluesky</a>
-  <img src="/flower.svg" alt="" class="elsewhere-flower" />
-  <a class="elsewhere-link" href="https://github.com/surbhi-bh" target="_blank" rel="noopener">github</a>
-  <img src="/flower.svg" alt="" class="elsewhere-flower" />
-  <a class="elsewhere-link elsewhere-email" href="mailto:surbhibhatia1906@gmail.com">surbhibhatia1906[at]gmail[dot]com</a>
-</div>
-
 {#if collapsed && !$footerExpanded}
   <!-- Collapsed state: slim bar, click to expand -->
   <div class="footnote-band footnote-collapsed" on:click={toggleExpand} role="button" tabindex="0" on:keydown={(e) => e.key === 'Enter' && toggleExpand()}>

@@ -213,7 +213,7 @@
               {/each}
             </div>
             <div class="vs-title">{story.title}</div>
-            <div class="vs-pub">{story.publisher} · {story.date}</div>
+            <div class="vs-pub">{story.publisher}, {story.date}</div>
           </div>
         </a>
       {/each}
@@ -351,17 +351,17 @@
 
   .vs-tag {
     font-family: "DM Mono", monospace;
-    font-size: 7px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
+    font-size: 9px;
+    letter-spacing: 0.04em;
+    text-transform: lowercase;
     color: #1a6b3a;
-    font-weight: 500;
+    font-weight: 700;
   }
 
   .vs-tag + .vs-tag::before {
-    content: '·';
+    content: '';
     margin-right: 4px;
-    opacity: 0.5;
+    opacity: 0.7;
   }
 
   .vs-tag.vs-tag-pink {
@@ -389,10 +389,10 @@
   /* ── Publisher + year ── */
   .vs-pub {
     font-family: "DM Mono", monospace;
-    font-size: 8px;
-    font-weight: 500;
-    color: #999;
-    letter-spacing: 0.04em;
+    font-size: 11px;
+    font-weight: 700;
+    color: #444;
+    letter-spacing: 0.02em;
     margin-top: auto;
   }
 </style>

@@ -88,7 +88,7 @@ a:hover {
   font-family: var(--font-sans);
   position: sticky;
   top: 0;
-  height: calc(100vh - 162px);
+  height: calc(100vh - 110px);
   overflow: hidden;
   z-index: 103;
 }
@@ -281,65 +281,52 @@ a:hover {
 }
 
 /* ══════════════════════════════
-   ELSEWHERE BAR
+   SIDEBAR ELSEWHERE
 ══════════════════════════════ */
-.elsewhere-bar {
-  position: fixed;
-  bottom: 110px;
-  left: 0;
-  right: 0;
-  height: 52px;
+.sidebar-elsewhere {
+  margin-bottom: 1.25rem;
+  padding-left: 28px;
+}
+
+.elsewhere-row {
   display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.elsewhere-label-inline {
+  font-size: 13px;
+  font-weight: 400;
+  color: #555;
+  font-family: var(--font-sans);
+  letter-spacing: 0.01em;
+}
+
+.elsewhere-icons {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 7px 11px;
+  border: 1px solid rgba(26,107,58,0.35);
+  background-color: #fff;
+  background-image:
+    linear-gradient(rgba(26,107,58,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(26,107,58,0.05) 1px, transparent 1px);
+  background-size: 10px 10px;
+}
+
+.elsewhere-icon {
+  color: #1a6b3a;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 16px;
-  background: #fff;
-  border-top: 1px solid rgba(26,107,58,0.2);
-  z-index: 101;
-  transition: bottom 0.2s;
+  transition: color 0.2s, transform 0.2s;
 }
 
-.elsewhere-label {
-  font-family: "DM Mono", monospace;
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: lowercase;
-  color: #1a6b3a;
-  flex-shrink: 0;
-}
-
-.elsewhere-sep {
-  color: rgba(26,107,58,0.3);
-  font-size: 14px;
-}
-
-.elsewhere-link {
-  font-family: "DM Mono", monospace;
-  font-size: 13px;
-  font-weight: 400;
-  letter-spacing: 0.04em;
-  color: #888;
-  text-decoration: none;
-  transition: color 0.2s;
-}
-
-.elsewhere-link:hover {
+.elsewhere-icon:hover {
   color: #d0116f;
-}
-
-.elsewhere-email {
-  font-family: "DM Mono", monospace;
-  font-size: 13px;
-  font-weight: 400;
-  letter-spacing: 0.04em;
-  color: #888;
-}
-
-.elsewhere-flower {
-  width: 14px;
-  height: 14px;
-  opacity: 0.4;
+  transform: translateY(-1px);
 }
 
 /* ══════════════════════════════
@@ -395,12 +382,9 @@ a:hover {
 }
 
 .footnote-label {
-  font-size: 10px;
-  letter-spacing: .12em;
+  font-size: 14px;
   color: #1a6b3a;
-  font-family: var(--font-mono);
-  font-weight: 600;
-  text-transform: uppercase;
+  font-weight: 700;
   margin-bottom: 1px;
 }
 
@@ -530,12 +514,9 @@ a:hover {
 }
 
 .footnote-label-slim {
-  font-size: 10px;
-  letter-spacing: .12em;
+  font-size: 14px;
   color: #1a6b3a;
-  font-family: var(--font-mono);
-  font-weight: 600;
-  text-transform: uppercase;
+  font-weight: 700;
   cursor: pointer;
   user-select: none;
 }

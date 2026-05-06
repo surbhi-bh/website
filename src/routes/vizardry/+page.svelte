@@ -8,29 +8,14 @@
 
 <section class="section">
   <div class="vz-grid">
-    <a href="/vizardry/30-day-chart-challenge-2026" class="vz-card">
-      <div class="vz-card-inner">
-        <div class="vz-meta">
-          <span class="vz-tag">30-day-chart-challenge 2026</span>
-        </div>
-        <div class="vz-title">Thirty charts in thirty days <span class="vz-hashtag">#30DayChartChallenge2026</span></div>
-        <div class="vz-sub">My experience doing the 30-day chart challenge</div>
-        <div class="vz-arrow">↗</div>
-      </div>
-    </a>
-
-    <a href="/vizardry/30-day-map-challenge-2026" class="vz-card">
-      <div class="vz-card-inner">
-        <div class="vz-meta">
-          <span class="vz-tag">30-day-map-challenge 2026</span>
-        </div>
-        <div class="vz-title">Thirty maps in thirty days <span class="vz-hashtag">#30DayMapChallenge2026</span></div>
-        <div class="vz-sub">My experience doing the 30-day map challenge</div>
-        <div class="vz-arrow">↗</div>
-      </div>
+    <a href="/vizardry/30-day-chart-challenge-2026" class="vz-card" target="_blank" rel="noopener noreferrer">
+      <div class="vz-eyebrow">April 2026</div>
+      <div class="vz-heading">Thirty charts in thirty days</div>
+      <div class="vz-title">My experience doing the 30 day chart challenge</div>
+      <div class="vz-hashtag">#30DayChartChallenge2026</div>
+      <div class="vz-arrow">↗</div>
     </a>
   </div>
-
 </section>
 
 <style>
@@ -44,77 +29,69 @@
   .vz-card {
     display: block;
     text-decoration: none;
-    border: 1px solid rgba(26,107,58,0.2);
-    padding: 20px 24px;
+    color: inherit;
+    border: 1px solid rgba(26,107,58,0.25);
+    padding: 22px 26px 24px;
     background-color: #fff;
     background-image:
-      linear-gradient(rgba(26,107,58,0.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(26,107,58,0.04) 1px, transparent 1px);
+      linear-gradient(rgba(26,107,58,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(26,107,58,0.05) 1px, transparent 1px);
     background-size: 20px 20px;
     transition: border-color 0.2s, box-shadow 0.2s;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
   }
 
   .vz-card:hover {
-    border-color: rgba(26,107,58,0.45);
+    border-color: rgba(208,17,111,0.5);
     box-shadow: 0 4px 16px rgba(26,107,58,0.08);
   }
 
-  .vz-card-inner {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-  }
-
-  .vz-meta {
-    display: flex;
-    gap: 6px;
-    margin-bottom: 2px;
-  }
-
-  .vz-tag {
+  .vz-eyebrow {
     font-family: "DM Mono", monospace;
-    font-size: 7px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: rgba(26,107,58,0.6);
-    border: 1px solid rgba(26,107,58,0.2);
-    padding: 1px 6px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #d0116f;
+    letter-spacing: 0.02em;
+  }
+
+  .vz-heading {
+    font-size: 17px;
+    font-weight: 700;
+    color: #1a6b3a;
+    line-height: 1.3;
   }
 
   .vz-title {
-    font-size: 16px;
-    font-weight: 700;
+    font-family: "TT Jenevers", serif;
+    font-size: 18px;
+    font-weight: 500;
     color: #111;
-    line-height: 1.3;
+    line-height: 1.35;
   }
 
   .vz-hashtag {
     font-family: "DM Mono", monospace;
-    font-size: 10px;
-    font-weight: 400;
+    font-size: 11px;
+    font-weight: 600;
     color: #1a6b3a;
     letter-spacing: 0.02em;
-    margin-left: 4px;
-  }
-
-  .vz-sub {
-    font-family: "DM Mono", monospace;
-    font-size: 10px;
-    color: #999;
-    letter-spacing: 0.04em;
+    margin-top: 2px;
   }
 
   .vz-arrow {
     position: absolute;
-    top: 20px;
-    right: 24px;
-    font-size: 16px;
-    color: rgba(26,107,58,0.3);
-    transition: color 0.2s;
+    top: 22px;
+    right: 26px;
+    font-size: 18px;
+    color: rgba(26,107,58,0.4);
+    transition: color 0.2s, transform 0.2s;
   }
 
   .vz-card:hover .vz-arrow {
-    color: #1a6b3a;
+    color: #d0116f;
+    transform: translate(2px, -2px);
   }
 </style>

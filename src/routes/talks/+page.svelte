@@ -129,7 +129,7 @@
   $: trainings = items.filter(i => i.type === 'training');
   $: panels    = items.filter(i => i.type === 'panel');
 
-  const typeColor = { talk: '#1a6b3a', training: '#d0116f', panel: '#7b5ea7' };
+  const typeColor = { talk: '#1a6b3a', training: '#1a6b3a', panel: '#1a6b3a' };
 
   const ejnItem = items.find(i => i.id === '4');
   onMount(() => { gardenPanel.set(ejnItem); });
@@ -144,155 +144,126 @@
 </svelte:head>
 
 <section class="section">
-  <!-- TALKS -->
+  <!-- TRAININGS -->
   <div class="group">
-    <div class="group-label" style="color:{typeColor.talk}">talks</div>
-    {#each talks as item}
+    <div class="group-label">Trainings</div>
+    {#each trainings as item}
       <a class="item-card" href={item.link !== '#' ? item.link : null} target={item.link !== '#' ? '_blank' : null} rel="noopener noreferrer" on:click|preventDefault={() => handleClick(item)}>
-        <div class="item-top">
-          <span class="item-year">{item.year}</span>
-          <div class="item-tags">
-            {#each item.tags as tag}
-              <span class="item-tag">{tag}</span>
-            {/each}
-          </div>
-        </div>
+        {#if item.year}<div class="item-year">{item.year}</div>{/if}
         <div class="item-title">{item.title}</div>
-        <div class="item-event">{item.event}{#if item.location} · <span class="item-location">{item.location}</span>{/if}</div>
+        <div class="item-event">{item.event}{#if item.location}, <span class="item-location">{item.location}</span>{/if}</div>
         {#if item.description}
           <div class="item-desc">{item.description}</div>
         {/if}
+        <div class="item-tags">
+          {#each item.tags as tag}
+            <span class="item-tag">{tag}</span>
+          {/each}
+        </div>
       </a>
     {/each}
   </div>
 
-  <!-- TRAININGS -->
+  <!-- TALKS -->
   <div class="group">
-    <div class="group-label" style="color:{typeColor.training}">trainings</div>
-    {#each trainings as item}
+    <div class="group-label">Talks</div>
+    {#each talks as item}
       <a class="item-card" href={item.link !== '#' ? item.link : null} target={item.link !== '#' ? '_blank' : null} rel="noopener noreferrer" on:click|preventDefault={() => handleClick(item)}>
-        <div class="item-top">
-          {#if item.year}<span class="item-year">{item.year}</span>{/if}
-          <div class="item-tags">
-            {#each item.tags as tag}
-              <span class="item-tag">{tag}</span>
-            {/each}
-          </div>
-        </div>
+        <div class="item-year">{item.year}</div>
         <div class="item-title">{item.title}</div>
-        <div class="item-event">{item.event}{#if item.location} · <span class="item-location">{item.location}</span>{/if}</div>
+        <div class="item-event">{item.event}{#if item.location}, <span class="item-location">{item.location}</span>{/if}</div>
         {#if item.description}
           <div class="item-desc">{item.description}</div>
         {/if}
+        <div class="item-tags">
+          {#each item.tags as tag}
+            <span class="item-tag">{tag}</span>
+          {/each}
+        </div>
       </a>
     {/each}
   </div>
 
   <!-- PANELS -->
   <div class="group">
-    <div class="group-label" style="color:{typeColor.panel}">panels</div>
+    <div class="group-label">Panels</div>
     {#each panels as item}
       <a class="item-card" href={item.link !== '#' ? item.link : null} target={item.link !== '#' ? '_blank' : null} rel="noopener noreferrer" on:click|preventDefault={() => handleClick(item)}>
-        <div class="item-top">
-          <span class="item-year">{item.year}</span>
-          <div class="item-tags">
-            {#each item.tags as tag}
-              <span class="item-tag">{tag}</span>
-            {/each}
-          </div>
-        </div>
+        <div class="item-year">{item.year}</div>
         <div class="item-title">{item.title}</div>
-        <div class="item-event">{item.event}{#if item.location} · <span class="item-location">{item.location}</span>{/if}</div>
+        <div class="item-event">{item.event}{#if item.location}, <span class="item-location">{item.location}</span>{/if}</div>
         {#if item.description}
           <div class="item-desc">{item.description}</div>
         {/if}
+        <div class="item-tags">
+          {#each item.tags as tag}
+            <span class="item-tag">{tag}</span>
+          {/each}
+        </div>
       </a>
     {/each}
   </div>
 </section>
 
 <style>
-  .intro-text {
-    margin-bottom: 2.5rem;
-  }
-
   .group {
     margin-bottom: 3rem;
   }
 
   .group-label {
-    font-family: "DM Mono", monospace;
-    font-size: 9px;
+    font-size: 17px;
     font-weight: 700;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    margin-bottom: 12px;
-    padding-bottom: 8px;
-    border-bottom: 1px solid rgba(26,107,58,0.1);
+    line-height: 1.35;
+    color: #1a6b3a;
+    margin-bottom: 14px;
   }
 
   .item-card {
     display: block;
-    padding: 16px 0;
-    border-bottom: 1px solid rgba(26,107,58,0.06);
+    padding: 18px 0;
+    border-bottom: 1px solid rgba(26,107,58,0.08);
     text-decoration: none;
     color: inherit;
     cursor: pointer;
     transition: background 0.15s;
+    position: relative;
   }
 
   .item-card:last-child { border-bottom: none; }
   .item-card:hover { background: rgba(26,107,58,0.02); }
 
-  .item-top {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 6px;
-  }
-
   .item-year {
     font-family: "DM Mono", monospace;
-    font-size: 9px;
-    color: #bbb;
-    letter-spacing: 0.08em;
-    flex-shrink: 0;
-  }
-
-  .item-tags {
-    display: flex;
-    gap: 4px;
-    flex-wrap: wrap;
-  }
-
-  .item-tag {
-    font-family: "DM Mono", monospace;
-    font-size: 7px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: rgba(26,107,58,0.5);
-    border: 1px solid rgba(26,107,58,0.15);
-    padding: 1px 5px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #1a6b3a;
+    letter-spacing: 0.04em;
+    margin-bottom: 6px;
   }
 
   .item-title {
     font-family: "TT Jenevers", serif;
-    font-size: 22px;
+    font-size: 18px;
     font-weight: 500;
     color: #111;
-    line-height: 1.25;
-    margin-bottom: 5px;
+    line-height: 1.3;
+    margin-bottom: 6px;
   }
 
   .item-event {
     font-family: "DM Mono", monospace;
-    font-size: 9px;
-    color: #999;
-    letter-spacing: 0.03em;
+    font-size: 12px;
+    font-weight: 700;
+    color: #d0116f;
+    letter-spacing: 0.02em;
     margin-bottom: 8px;
+    line-height: 1.5;
   }
 
-  .item-location { color: #ccc; }
+  .item-location {
+    color: #d0116f;
+    font-weight: 600;
+  }
 
   .item-desc {
     font-family: "TT Jenevers", serif;
@@ -300,5 +271,24 @@
     font-weight: 400;
     color: #555;
     line-height: 1.6;
+    margin-bottom: 12px;
+    padding-right: 30%;
+  }
+
+  .item-tags {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  .item-tag {
+    font-family: "DM Mono", monospace;
+    font-size: 8px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(26,107,58,0.7);
+    border: 1px solid rgba(26,107,58,0.25);
+    padding: 2px 6px;
   }
 </style>
