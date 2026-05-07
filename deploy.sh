@@ -1,17 +1,16 @@
 #!/bin/bash
-# Usage: ./deploy.sh ubuntu@your-ec2-ip
 set -e
-HOST=${1:?Usage: ./deploy.sh user@host}
+
+echo "Installing dependencies..."
+npm install
 
 echo "Building..."
 npm run build
 
-echo "Syncing to $HOST..."
-rsync -avz --exclude=node_modules --exclude=.env \
-  build/ package.json package-lock.json ecosystem.config.cjs \
-  "$HOST:~/surbhi-site/"
+echo "Clearing port 3000 if in use..."
+fuser -k 3000/tcp 2>/dev/null || true
 
-echo "Restarting on server..."
-ssh "$HOST" "cd ~/surbhi-site && npm install --omit=dev && pm2 restart ecosystem.config.cjs --update-env"
+echo "Restarting..."
+pm2 restart ecosystem.config.cjs --update-env
 
 echo "Done."
