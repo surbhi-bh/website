@@ -1,6 +1,6 @@
-import { D as DevalueError, i as is_primitive, g as get_type, a as is_plain_object, e as enumerable_symbols, s as stringify_key, b as stringify_string, v as valid_array_indices, B as BROWSER, u as uneval } from './chunks/index2-Dtzs9Eij.js';
-import { w as with_request_store, t as text_decoder, b as base64_decode, r as root, d as decode_pathname, n as normalize_path, a as disable_search, c as decode_params, v as validate_layout_server_exports, e as validate_layout_exports, f as validate_page_server_exports, g as validate_page_exports, h as text_encoder$1, i as resolve, m as make_trackable, j as get_relative_path, k as base64_encode } from './chunks/root-CkIx9lyk.js';
-import { r as readable, w as writable } from './chunks/index-BFt50uPn.js';
+import { D as DevalueError, i as is_primitive, g as get_type, a as is_plain_object, e as enumerable_symbols, s as stringify_key, b as stringify_string, v as valid_array_indices, c as DEV, u as uneval } from './chunks/index2-GBKyrREV.js';
+import { w as with_request_store, t as text_decoder, b as base64_decode, r as root, d as decode_pathname, n as normalize_path, a as disable_search, c as decode_params, v as validate_layout_server_exports, e as validate_layout_exports, f as validate_page_server_exports, g as validate_page_exports, h as text_encoder$1, i as resolve, m as make_trackable, j as get_relative_path, k as base64_encode } from './chunks/root-CFvm7p1C.js';
+import { r as readable, w as writable } from './chunks/index-C7ZLNncY.js';
 
 /** @import { StandardSchemaV1 } from '@standard-schema/spec' */
 
@@ -1574,7 +1574,7 @@ const options = {
 		<div class="error">
 			<span class="status">` + status + '</span>\n			<div class="message">\n				<h1>' + message + "</h1>\n			</div>\n		</div>\n	</body>\n</html>\n"
   },
-  version_hash: "5f8jfc"
+  version_hash: "1yatcpf"
 };
 async function get_hooks() {
   let handle;
@@ -2334,7 +2334,7 @@ async function handle_action_json_request(event, event_state, options2, server) 
   check_named_default_separate(actions);
   try {
     const data = await call_action(event, event_state, actions);
-    if (BROWSER) ;
+    if (DEV) ;
     if (data instanceof ActionFailure) {
       return action_json({
         type: "failure",
@@ -2419,7 +2419,7 @@ async function handle_action_request(event, event_state, server) {
   check_named_default_separate(actions);
   try {
     const data = await call_action(event, event_state, actions);
-    if (BROWSER) ;
+    if (DEV) ;
     if (data instanceof ActionFailure) {
       return {
         type: "failure",
@@ -3727,7 +3727,7 @@ async function render_response({
       ) : void 0
     };
     try {
-      if (BROWSER) ;
+      if (DEV) ;
       event_state.allows_commands = false;
       rendered = await with_request_store({ event, state: event_state }, async () => {
         if (relative) override({ base: base$1, assets: assets$1 });
@@ -4622,7 +4622,7 @@ async function render_page(event, event_state, page, options2, manifest, state, 
     const ssr = nodes.ssr();
     const csr = nodes.csr();
     if (ssr === false && !(state.prerendering && should_prerender_data)) {
-      if (BROWSER && action_result && !event.request.headers.has("x-sveltekit-action")) ;
+      if (DEV && action_result && !event.request.headers.has("x-sveltekit-action")) ;
       return await render_response({
         branch: [],
         fetched,
@@ -5504,12 +5504,12 @@ async function internal_respond(request, options2, manifest, state) {
       if (url.pathname === base || url.pathname === base + "/") {
         trailing_slash = "always";
       } else if (page_nodes) {
-        if (BROWSER) ;
+        if (DEV) ;
         trailing_slash = page_nodes.trailing_slash();
       } else if (route.endpoint) {
         const node = await route.endpoint();
         trailing_slash = node.trailingSlash ?? "never";
-        if (BROWSER) ;
+        if (DEV) ;
       }
       if (!is_data_request) {
         const normalized = normalize_path(url.pathname, trailing_slash);
@@ -5770,7 +5770,7 @@ async function internal_respond(request, options2, manifest, state) {
         });
       }
       if (state.depth === 0) {
-        if (BROWSER && event2.url.pathname === "/.well-known/appspecific/com.chrome.devtools.json") ;
+        if (DEV && event2.url.pathname === "/.well-known/appspecific/com.chrome.devtools.json") ;
         return await respond_with_error({
           event: event2,
           event_state,
