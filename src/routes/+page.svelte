@@ -57,7 +57,7 @@
     </a>
 
     <!-- READ.ME — bottom left, overlapping talks -->
-    <a class="card card-readme" href="/read-me" style="top:200px; left:100px; --rot:1.2deg;">
+    <a class="card card-readme" href="/readme" style="top:200px; left:100px; --rot:1.2deg;">
       <img src="/flower.svg" class="pin" alt="" />
       <div class="card-tag">read.me</div>
       <div class="card-desc">About my journey as a data journalist and data viz-ard, searching for insights and turning numbers into memorable visual stories.</div>
