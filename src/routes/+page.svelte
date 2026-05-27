@@ -51,27 +51,39 @@
       <img src="/flower.svg" class="pin" alt="" />
       <div class="card-tag">Talks</div>
       <div class="card-detail upcoming-label">Upcoming</div>
-      <div class="card-title">Designing to minimise the need for shadow systems</div>
-      <div class="card-detail">The Other Interface, Gitlab</div>
-      <div class="card-detail">Bangalore, May 2026</div>
+      <div class="upcoming-entry">
+        <div class="card-title upcoming-title">DraftGPT</div>
+        <div class="card-detail upcoming-sub">Fast ≠ Finished in Vibe-Coding Data Visualisation</div>
+        <div class="card-detail">Outlier Conference, Jun 2026</div>
+      </div>
+      <div class="upcoming-entry">
+        <div class="card-title upcoming-title">Kuch Kuch Data Hai</div>
+        <div class="card-detail upcoming-sub">Bollywood, Visualised</div>
+        <div class="card-detail">Vizchitra, Jul 2026</div>
+      </div>
+      <div class="upcoming-entry">
+        <div class="card-title upcoming-title">Too hot to open</div>
+        <div class="card-detail upcoming-sub">India's extreme temperatures through doors</div>
+        <div class="card-detail">Data, Otherwise @ Vizchitra, Jul 2026</div>
+      </div>
     </a>
 
     <!-- READ.ME — bottom left, overlapping talks -->
-    <a class="card card-readme" href="/readme" style="top:200px; left:100px; --rot:1.2deg;">
+    <a class="card card-readme" href="/readme" style="top:210px; left:50px; --rot:1.2deg;">
       <img src="/flower.svg" class="pin" alt="" />
       <div class="card-tag">read.me</div>
       <div class="card-desc">About my journey as a data journalist and data viz-ard, searching for insights and turning numbers into memorable visual stories.</div>
     </a>
 
     <!-- GARDEN — bottom centre -->
-    <a class="card card-garden" href="/garden" style="top:200px; left:312px; --rot:-1.8deg;">
+    <a class="card card-garden" href="/garden" style="top:215px; left:260px; --rot:-1.8deg;">
       <img src="/flower.svg" class="pin" alt="" />
       <div class="card-tag">Garden</div>
       <div class="card-desc">A growing archive of my work, gathered across years, publications, and fellow-makers.</div>
     </a>
 
     <!-- VIZARDRY — bottom right -->
-    <a class="card card-vizardry" href="/vizardry/30-day-chart-challenge-2026" style="top:190px; left:495px; --rot:2.5deg;">
+    <a class="card card-vizardry" href="/vizardry/30-day-chart-challenge-2026" style="top:220px; left:495px; --rot:2.5deg;">
       <img src="/flower.svg" class="pin" alt="" />
       <div class="card-tag">Vizardry</div>
       <div class="card-title">30 Day Chart Challenge 2026</div>
@@ -186,9 +198,9 @@
   /* ── Accent colours ── */
   .card-stories { border-color: rgba(208,17,111,0.22); z-index: 2; }
   .card-places  { border-color: rgba(26,107,58,0.22);  z-index: 3; }
-  .card-talks   { border-color: rgba(26,107,58,0.2);   z-index: 4; }
+  .card-talks   { border-color: rgba(26,107,58,0.2);   z-index: 3; }
   .card-readme  { border-color: rgba(208,17,111,0.18); z-index: 4; }
-  .card-garden  { border-color: rgba(26,107,58,0.18);  z-index: 3; }
+  .card-garden  { border-color: rgba(26,107,58,0.18);  z-index: 4; }
   .card-vizardry { border-color: rgba(26,107,58,0.22); z-index: 5; }
 
   /* ── Tag (heading) ── */
@@ -217,6 +229,29 @@
     font-weight: 600;
     letter-spacing: 0.12em;
     text-transform: uppercase;
+    color: #d0116f;
+  }
+
+  .upcoming-entry {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    padding-bottom: 5px;
+    border-bottom: 1px dashed rgba(26,107,58,0.12);
+  }
+
+  .upcoming-entry:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .card-title.upcoming-title {
+    font-size: 13px;
+    color: #d0116f;
+  }
+
+  .card-detail.upcoming-sub {
+    font-weight: 400;
     color: #d0116f;
   }
 

@@ -4,6 +4,18 @@
 
   const items = [
     {
+      id: '11',
+      type: 'talk',
+      year: 2026,
+      title: 'The Other Interface: Designing to minimise the need for shadow systems',
+      event: 'GitLab',
+      location: 'Bangalore',
+      description: 'On how we to minimise shadow data systems in large-scale organisations through better interface design.',
+      tags: ['data systems', 'design'],
+      image: '/images/talk-the-other-interface.png',
+      link: 'https://luma.com/wo9kofo5?tk=iB0AYk',
+    },
+    {
       id: '1',
       type: 'panel',
       year: 2026,
@@ -131,8 +143,8 @@
 
   const typeColor = { talk: '#1a6b3a', training: '#1a6b3a', panel: '#1a6b3a' };
 
-  const ejnItem = items.find(i => i.id === '4');
-  onMount(() => { gardenPanel.set(ejnItem); });
+  const defaultPanelItem = items.find(i => i.id === '11');
+  onMount(() => { gardenPanel.set(defaultPanelItem); });
 
   function handleClick(item) {
     gardenPanel.set(item);
@@ -144,12 +156,12 @@
 </svelte:head>
 
 <section class="section">
-  <!-- TRAININGS -->
+  <!-- TALKS -->
   <div class="group">
-    <div class="group-label">Trainings</div>
-    {#each trainings as item}
+    <div class="group-label">Talks</div>
+    {#each talks as item}
       <a class="item-card" href={item.link !== '#' ? item.link : null} target={item.link !== '#' ? '_blank' : null} rel="noopener noreferrer" on:click|preventDefault={() => handleClick(item)}>
-        {#if item.year}<div class="item-year">{item.year}</div>{/if}
+        <div class="item-year">{item.year}</div>
         <div class="item-title">{item.title}</div>
         <div class="item-event">{item.event}{#if item.location}, <span class="item-location">{item.location}</span>{/if}</div>
         {#if item.description}
@@ -164,12 +176,12 @@
     {/each}
   </div>
 
-  <!-- TALKS -->
+  <!-- TRAININGS -->
   <div class="group">
-    <div class="group-label">Talks</div>
-    {#each talks as item}
+    <div class="group-label">Trainings</div>
+    {#each trainings as item}
       <a class="item-card" href={item.link !== '#' ? item.link : null} target={item.link !== '#' ? '_blank' : null} rel="noopener noreferrer" on:click|preventDefault={() => handleClick(item)}>
-        <div class="item-year">{item.year}</div>
+        {#if item.year}<div class="item-year">{item.year}</div>{/if}
         <div class="item-title">{item.title}</div>
         <div class="item-event">{item.event}{#if item.location}, <span class="item-location">{item.location}</span>{/if}</div>
         {#if item.description}

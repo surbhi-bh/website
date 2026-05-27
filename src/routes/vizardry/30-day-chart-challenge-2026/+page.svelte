@@ -19,38 +19,37 @@
   //   source — data source string
   //   tags   — array of theme tags for filtering, e.g. ['food', 'demographics']
   //   bg     — background hex of the chart, e.g. '#fff8e7' (used by light → dark sort)
-  //   rank   — favourite rank, 1 = most favourite, 30 = least (used by fav sort)
   const dayInfo = {
-    1:  { title: 'Part-to-Whole',             intro: '', outro: '', source: '', tags: ['food', 'culture'],          bg: '#fff8e7', rank: 3  },
-    2:  { title: 'Pictogram',                 intro: '', outro: '', source: '', tags: ['demographics'],             bg: '#f4f0e8', rank: 18 },
-    3:  { title: 'Mosaic',                    intro: '', outro: '', source: '', tags: ['cities', 'demographics'],   bg: '#e8eef2', rank: 12 },
-    4:  { title: 'Slope',                     intro: '', outro: '', source: '', tags: ['finance'],                  bg: '#fafafa', rank: 22 },
-    5:  { title: 'Experimental',              intro: '', outro: '', source: '', tags: ['design'],                   bg: '#1a1a2e', rank: 7  },
-    6:  { title: 'Reporters Without Borders', intro: '', outro: '', source: '', tags: ['politics', 'media'],        bg: '#2b3a55', rank: 5  },
-    7:  { title: 'Multiscale',                intro: '', outro: '', source: '', tags: ['cities'],                   bg: '#f5f0e6', rank: 14 },
-    8:  { title: 'Circular',                  intro: '', outro: '', source: '', tags: ['environment'],              bg: '#e6f0e8', rank: 9  },
-    9:  { title: 'Wealth',                    intro: '', outro: '', source: '', tags: ['finance', 'demographics'],  bg: '#fdf6e3', rank: 4  },
-    10: { title: 'Pop Culture',               intro: '', outro: '', source: '', tags: ['culture', 'media'],         bg: '#f9e8ee', rank: 11 },
-    11: { title: 'Physical',                  intro: '', outro: '', source: '', tags: ['design'],                   bg: '#efe9dd', rank: 25 },
-    12: { title: 'Flowing Data',              intro: '', outro: '', source: '', tags: ['environment'],              bg: '#e0eef5', rank: 16 },
-    13: { title: 'Ecosystems',                intro: '', outro: '', source: '', tags: ['environment', 'cities'],    bg: '#dde6d8', rank: 1  },
-    14: { title: 'Trade',                     intro: '', outro: '', source: '', tags: ['trade', 'finance'],         bg: '#222831', rank: 8  },
-    15: { title: 'Correlation',               intro: '', outro: '', source: '', tags: ['health'],                   bg: '#f0f0f0', rank: 21 },
-    16: { title: 'Causation',                 intro: '', outro: '', source: '', tags: ['health'],                   bg: '#fff5f0', rank: 27 },
-    17: { title: 'Remake',                    intro: '', outro: '', source: '', tags: ['design', 'media'],          bg: '#3a3a3a', rank: 10 },
-    18: { title: 'UNICEF',                    intro: '', outro: '', source: '', tags: ['health', 'demographics'],   bg: '#ffffff', rank: 13 },
-    19: { title: 'Evolution',                 intro: '', outro: '', source: '', tags: ['environment'],              bg: '#3d2c1e', rank: 6  },
-    20: { title: 'Global Change',             intro: '', outro: '', source: '', tags: ['environment', 'politics'],  bg: '#f7f3ec', rank: 19 },
-    21: { title: 'Historical',                intro: '', outro: '', source: '', tags: ['culture'],                  bg: '#ede4d3', rank: 24 },
-    22: { title: 'New Tool',                  intro: '', outro: '', source: '', tags: ['design'],                   bg: '#0e1116', rank: 28 },
-    23: { title: 'Seasons',                   intro: '', outro: '', source: '', tags: ['environment', 'food'],      bg: '#fde9c8', rank: 15 },
-    24: { title: 'South China Morning Post',  intro: '', outro: '', source: '', tags: ['cities', 'media'],          bg: '#1c2a3a', rank: 2  },
-    25: { title: 'Space',                     intro: '', outro: '', source: '', tags: ['science'],                  bg: '#0a0a1a', rank: 20 },
-    26: { title: 'Trend',                     intro: '', outro: '', source: '', tags: ['finance'],                  bg: '#fafafa', rank: 26 },
-    27: { title: 'Animation',                 intro: '', outro: '', source: '', tags: ['design'],                   bg: '#222', rank: 17 },
-    28: { title: 'Modeling',                  intro: '', outro: '', source: '', tags: ['science', 'health'],        bg: '#eaeaea', rank: 23 },
-    29: { title: 'Monochrome',                intro: '', outro: '', source: '', tags: ['design', 'culture'],        bg: '#1d1d1d', rank: 29 },
-    30: { title: 'Global Health Data Exchange', intro: '', outro: '', source: '', tags: ['health', 'demographics'], bg: '#fff', rank: 30 },
+    1:  { title: 'Part-to-Whole',             intro: '', outro: '', source: '', tags: ['technology'],                  bg: '#F8F8F6' },
+    2:  { title: 'Pictogram',                 intro: '', outro: '', source: '', tags: ['demographics', 'population'],  bg: '#A22D0D' },
+    3:  { title: 'Mosaic',                    intro: '', outro: '', source: '', tags: ['technology', 'transport'],     bg: '#F2F1ED' },
+    4:  { title: 'Slope',                     intro: '', outro: '', source: '', tags: ['entertainment'],               bg: '#E5E6E3' },
+    5:  { title: 'Experimental',              intro: '', outro: '', source: '', tags: ['food'],                        bg: '#FFFFFF' },
+    6:  { title: 'Reporters Without Borders', intro: '', outro: '', source: '', tags: ['politics'],                    bg: '#F2ECE6' },
+    7:  { title: 'Multiscale',                intro: '', outro: '', source: '', tags: ['finance'],                     bg: '#FFFFFF' },
+    8:  { title: 'Circular',                  intro: '', outro: '', source: '', tags: ['health', 'environment'],       bg: '#EDF6FD' },
+    9:  { title: 'Wealth',                    intro: '', outro: '', source: '', tags: ['wealth'],                      bg: '#FFFFFF' },
+    10: { title: 'Pop Culture',               intro: '', outro: '', source: '', tags: ['entertainment'],               bg: '#EAE6DA' },
+    11: { title: 'Physical',                  intro: '', outro: '', source: '', tags: ['entertainment'],               bg: '#D0DED3' },
+    12: { title: 'Flowing Data',              intro: '', outro: '', source: '', tags: ['demographics', 'gender'],      bg: '#FFFFFF' },
+    13: { title: 'Ecosystems',                intro: '', outro: '', source: '', tags: ['urbanisation', 'transport'],   bg: '#FBFBFB' },
+    14: { title: 'Trade',                     intro: '', outro: '', source: '', tags: ['trade'],                       bg: '#FFFEEE' },
+    15: { title: 'Correlation',               intro: '', outro: '', source: '', tags: ['rule of law'],                 bg: '#F8D1B2' },
+    16: { title: 'Causation',                 intro: '', outro: '', source: '', tags: ['finance'],                     bg: '#F8F5F2' },
+    17: { title: 'Remake',                    intro: '', outro: '', source: '', tags: ['linguistics'],                 bg: '#E5E7EB' },
+    18: { title: 'UNICEF',                    intro: '', outro: '', source: '', tags: ['demographics', 'health'],      bg: '#FFFFFF' },
+    19: { title: 'Evolution',                 intro: '', outro: '', source: '', tags: ['history'],                     bg: '#FFF6DF' },
+    20: { title: 'Global Change',             intro: '', outro: '', source: '', tags: ['environment', 'climate change'], bg: '#E2E2E2' },
+    21: { title: 'Historical',                intro: '', outro: '', source: '', tags: ['history'],                     bg: '#FFFFFF' },
+    22: { title: 'New Tool',                  intro: '', outro: '', source: '', tags: ['cities'],                      bg: '#EDF6F7' },
+    23: { title: 'Seasons',                   intro: '', outro: '', source: '', tags: ['cities', 'climate change'],    bg: '#FDF9B6' },
+    24: { title: 'South China Morning Post',  intro: '', outro: '', source: '', tags: ['linguistics'],                 bg: '#E89867' },
+    25: { title: 'Space',                     intro: '', outro: '', source: '', tags: ['science'],                     bg: '' },
+    26: { title: 'Trend',                     intro: '', outro: '', source: '', tags: ['trade', 'food'],               bg: '#EAF1DB' },
+    27: { title: 'Animation',                 intro: '', outro: '', source: '', tags: ['trade'],                       bg: '#7E7E7E' },
+    28: { title: 'Modeling',                  intro: '', outro: '', source: '', tags: ['climate change'],              bg: '#EBF0EC' },
+    29: { title: 'Monochrome',                intro: '', outro: '', source: '', tags: ['food'],                        bg: '#CACACA' },
+    30: { title: 'Global Health Data Exchange', intro: '', outro: '', source: '', tags: ['health', 'environment'],     bg: '#D8D8D8' },
   };
 
   // Collect every tag used across days, sorted alphabetically.
@@ -70,7 +69,7 @@
 
   // Filter + sort state. Filter is single-select.
   let activeTag = null;
-  let sortMode = 'week'; // 'week' (default, weekly headers) | 'favourite' | 'colour'
+  let sortMode = 'week'; // 'week' (default, weekly headers) | 'filter' | 'colour'
 
   function selectTag(tag) {
     activeTag = activeTag === tag ? null : tag;
@@ -99,20 +98,21 @@
         return lb - la; // lighter (higher luma) first
       });
     }
-    if (sortMode === 'favourite') {
+    if (sortMode === 'filter') {
       return [...all].sort((a, b) => {
-        const ra = dayInfo[a]?.rank;
-        const rb = dayInfo[b]?.rank;
-        if (ra == null && rb == null) return a - b;
-        if (ra == null) return 1;
-        if (rb == null) return -1;
-        return ra - rb; // rank 1 first
+        const ta = (dayInfo[a]?.tags ?? [])[0] ?? '';
+        const tb = (dayInfo[b]?.tags ?? [])[0] ?? '';
+        if (!ta && !tb) return a - b;
+        if (!ta) return 1;
+        if (!tb) return -1;
+        const cmp = ta.localeCompare(tb);
+        return cmp !== 0 ? cmp : a - b;
       });
     }
     return all; // 'week' default
   })();
 
-  const SHEET_EMBED = 'https://docs.google.com/spreadsheets/d/1gIfy29NpunmZFod69Y3bSmU_Wf3rKz3KDAQa6k-KwWM/pubhtml?widget=true&headers=false';
+  const SHEET_EMBED = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRijWxVG77VWZY924K-ZKydj7ysFO_1q0sl4_l6PSaoHh64TrTquXcvACGYNBBLx3nRc_a8SVvwRVM2/pubhtml?widget=true&headers=false';
 
   let lightboxDay = null;
   function openLightbox(day) {
@@ -168,9 +168,21 @@
       <span class="challenge-tag">#30DayChartChallenge2026</span>
     </div>
     <h1 class="challenge-title">Thirty charts in thirty days</h1>
-    <div class="challenge-byline">Surbhi Bhatia</div>
+    <p class="challenge-strap">
+      Notes from the #30DayChartChallenge and the process of making something every day.
+    </p>
+    <div class="challenge-byline">24 May 2026</div>
     <p class="challenge-intro">
-      My experience doing the 30-day chart challenge — one chart every day in April, exploring a different prompt, dataset, or technique each time.
+      Four years ago, I signed up for the #30DayMapChallenge started by Topi Tjukanov because I wanted to get better at making maps. What was supposed to be a month-long task, took me nearly a year to complete. A year spent in github rabbitholes and codebases, learning multiple mapping tools, new libraries, finding data, unfamiliar workflows, just learning the technique of how things were made.
+    </p>
+    <p class="challenge-intro">
+      A lot has changed since then. It's a strange new world, where making is easier than ever. Data is in abundance. Code is abundant. Agents who will write it for you for cheap, are abundant. What feels scarce now is human attention, and the ability to find what is actually worth paying attention to.
+    </p>
+    <p class="challenge-intro">
+      This abundance made me want to take the #30DayChartChallenge created by Cédric Scherer and Zan Armstrong this year. I took it up because I wanted to rediscover the joy of exploratory making, in times when it can be done in minutes.
+    </p>
+    <p class="challenge-intro">
+      Here are the outputs:
     </p>
   </div>
 
@@ -201,9 +213,9 @@
         >By Week</button>
         <button
           class="sort-btn"
-          class:active={sortMode === 'favourite'}
-          on:click={() => (sortMode = 'favourite')}
-        >By Most Favourite</button>
+          class:active={sortMode === 'filter'}
+          on:click={() => (sortMode = 'filter')}
+        >By Filter</button>
         <button
           class="sort-btn"
           class:active={sortMode === 'colour'}
@@ -263,16 +275,33 @@
     {/each}
   </div>
 
-  <!-- Sheet embed -->
-  <div class="sheet-section">
-    <div class="sheet-title">Challenge log</div>
-    <iframe
-      src={SHEET_EMBED}
-      class="sheet-iframe"
-      title="30-day chart challenge log"
-      frameborder="0"
-      scrolling="no"
-    ></iframe>
+  <!-- Begin section: framing notes before the drip feed -->
+  <div class="begin-section">
+    <h2 class="begin-title">But where does one begin?</h2>
+    <p class="begin-lead">Here's what I kept in mind:</p>
+
+    <div class="begin-image-placeholder">[ image placeholder ]</div>
+
+    <div class="begin-note">
+      <h3 class="begin-note-title">Constraint one</h3>
+      <p class="begin-note-body">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+      </p>
+    </div>
+
+    <div class="begin-note">
+      <h3 class="begin-note-title">Constraint two</h3>
+      <p class="begin-note-body">
+        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+      </p>
+    </div>
+
+    <div class="begin-note">
+      <h3 class="begin-note-title">Constraint three</h3>
+      <p class="begin-note-body">
+        Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+      </p>
+    </div>
   </div>
 
   <!-- Detailed list: each chart, top to bottom -->
@@ -316,6 +345,18 @@
     {/each}
   </div>
 
+  <!-- Sheet embed (at the end) -->
+  <div class="sheet-section">
+    <div class="sheet-title">Challenge log</div>
+    <iframe
+      src={SHEET_EMBED}
+      class="sheet-iframe"
+      title="30-day chart challenge log"
+      frameborder="0"
+      scrolling="no"
+    ></iframe>
+  </div>
+
 </section>
 
 <!-- Lightbox -->
@@ -340,7 +381,7 @@
 
   .challenge-header {
     margin-bottom: 2.5rem;
-    max-width: 600px;
+    max-width: 900px;
   }
 
   .back-link {
@@ -367,27 +408,108 @@
   }
 
   .challenge-title {
-    font-size: 28px;
+    font-size: 32px;
     font-weight: 700;
     color: #111;
     line-height: 1.2;
-    margin-bottom: 6px;
+    margin-bottom: 10px;
     font-family: "Inter", sans-serif;
+    letter-spacing: -0.01em;
+  }
+
+  .challenge-strap {
+    font-size: 16px;
+    font-weight: 400;
+    color: #333;
+    line-height: 1.5;
+    margin: 0 0 6px 0;
   }
 
   .challenge-byline {
     font-family: "DM Mono", monospace;
-    font-size: 10px;
-    color: #aaa;
+    font-size: 11px;
+    color: #777;
     letter-spacing: 0.08em;
-    margin-bottom: 16px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
   }
 
   .challenge-intro {
     font-size: 14px;
-    font-weight: 300;
-    color: #555;
+    font-weight: 400;
+    color: #111;
     line-height: 1.7;
+    margin-bottom: 14px;
+  }
+
+  .challenge-intro:last-child { margin-bottom: 0; }
+
+  /* ── Begin section: framing notes between log and drip feed ── */
+  .begin-section {
+    margin-top: 3.5rem;
+    margin-bottom: 1rem;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  .begin-title {
+    font-family: "Inter", sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #111;
+    line-height: 1.25;
+    margin: 0;
+  }
+
+  .begin-lead {
+    font-size: 14px;
+    font-weight: 400;
+    color: #111;
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  .begin-image-placeholder {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "DM Mono", monospace;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #bbb;
+    background-image:
+      linear-gradient(rgba(26,107,58,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(26,107,58,0.05) 1px, transparent 1px);
+    background-size: 16px 16px;
+    border: 1px solid rgba(26,107,58,0.12);
+  }
+
+  .begin-note {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .begin-note-title {
+    font-family: "Inter", sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: #111;
+    margin: 0;
+    line-height: 1.3;
+  }
+
+  .begin-note-body {
+    font-size: 14px;
+    font-weight: 400;
+    color: #111;
+    line-height: 1.7;
+    margin: 0;
   }
 
   /* ── Filter + sort controls ── */
@@ -593,7 +715,10 @@
 
   /* ── Sheet embed ── */
   .sheet-section {
-    margin-top: 3rem;
+    margin-top: 4rem;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .sheet-title {
@@ -608,7 +733,8 @@
 
   .sheet-iframe {
     width: 100%;
-    height: 640px;
+    max-width: 900px;
+    height: 480px;
     border: 1px solid rgba(26,107,58,0.15);
     background: #f9faf9;
   }
@@ -618,17 +744,24 @@
     margin-top: 4rem;
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 3rem;
   }
 
   .detail-entry {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    text-align: center;
     gap: 14px;
-    max-width: 820px;
+    width: 100%;
+    max-width: 640px;
     padding-bottom: 2.5rem;
     border-bottom: 1px solid rgba(26,107,58,0.08);
   }
+
+  .detail-entry .detail-header { justify-content: center; }
+  .detail-entry .detail-theme { margin-left: 0; }
 
   .detail-entry:last-child { border-bottom: none; }
 
@@ -680,6 +813,9 @@
 
   .detail-media {
     width: 100%;
+    max-width: 560px;
+    margin-left: auto;
+    margin-right: auto;
     border: 1px solid rgba(26,107,58,0.12);
     background: #f9faf9;
     overflow: hidden;

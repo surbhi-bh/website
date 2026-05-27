@@ -58,8 +58,10 @@
       <div class="card-divider"></div>
       <div class="card-title">Speaking, teaching & in conversation</div>
       <div class="card-divider dashed"></div>
-      <div class="card-detail">10 events</div>
-      <div class="card-detail muted">CGIAR · Columbia · IIIT Bengaluru</div>
+      <div class="card-detail upcoming-label">upcoming</div>
+      <div class="card-detail upcoming-item"><span class="upcoming-date">Jun 2026</span> DraftGPT · Outlier Conference</div>
+      <div class="card-detail upcoming-item"><span class="upcoming-date">Jul 2026</span> Kuch Kuch Data Hai · Vizchitra</div>
+      <div class="card-detail upcoming-item"><span class="upcoming-date">Jul 2026</span> Too hot to open · Data, Otherwise @ Vizchitra</div>
     </a>
 
     <!-- READ.ME — bottom left, overlapping talks -->
@@ -238,6 +240,29 @@
 
   .card-detail.muted { color: #bbb; }
   .coming { font-style: italic; }
+
+  .upcoming-label {
+    font-weight: 700;
+    color: #d0116f;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 7.5px;
+    margin-top: 2px;
+  }
+
+  .upcoming-item {
+    font-size: 8px;
+    color: #444;
+    line-height: 1.45;
+    align-items: flex-start;
+  }
+
+  .upcoming-date {
+    color: #1a6b3a;
+    font-weight: 600;
+    flex-shrink: 0;
+    min-width: 48px;
+  }
 
   /* ── Live pip ── */
   .live-pip {

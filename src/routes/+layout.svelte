@@ -12,6 +12,9 @@
   // Clear the panel on every page navigation
   beforeNavigate(() => gardenPanel.set(null));
 
+  // Routes that need a wide main column (no 700px cap)
+  $: isWideRoute = $page.url.pathname.startsWith('/vizardry/');
+
   const mainLinks = [
     { href: '/readme', label: 'read.me' },
     { href: '/visual-stories', label: 'visual stories' },
@@ -103,7 +106,7 @@
 
   <!-- MAIN CONTENT -->
   <main class="main">
-    <div class="main-inner">
+    <div class="main-inner" class:main-inner-wide={isWideRoute}>
       <slot />
     </div>
   </main>
@@ -163,6 +166,11 @@
   /* Three-column layout when panel is open */
   :global(.container.has-panel) {
     grid-template-columns: 280px 1fr 320px;
+  }
+
+  /* Wide route (e.g. vizardry challenge pages): remove the 700px cap on main-inner */
+  :global(.main-inner.main-inner-wide) {
+    max-width: none;
   }
 
   /* Third panel */
