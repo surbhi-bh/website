@@ -629,7 +629,7 @@
     color: #111;
     line-height: 1.2;
     margin-bottom: 10px;
-    font-family: "Inter", sans-serif;
+    font-family: "TT Jenevers", serif;
     letter-spacing: -0.01em;
   }
 
@@ -658,7 +658,7 @@
   .inline-link:hover { color: #8a0a4a; }
 
   .challenge-intro {
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 400;
     color: #111;
     line-height: 1.7;
@@ -678,7 +678,7 @@
   }
 
   .begin-title {
-    font-family: "Inter", sans-serif;
+    font-family: "TT Jenevers", serif;
     font-size: 22px;
     font-weight: 700;
     color: #111;
@@ -693,7 +693,7 @@
   }
 
   .begin-note-title {
-    font-family: "Inter", sans-serif;
+    font-family: "TT Jenevers", serif;
     font-size: 22px;
     font-weight: 700;
     color: #111;
@@ -712,7 +712,7 @@
   }
 
   .begin-note-body {
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 400;
     color: #111;
     line-height: 1.7;
@@ -828,7 +828,7 @@
     border: none;
     padding: 2px 0;
     cursor: pointer;
-    font-family: "Inter", sans-serif;
+    font-family: "TT Jenevers", serif;
     font-size: 13px;
     font-weight: 400;
     color: #999;
@@ -862,7 +862,7 @@
 
   .week-num,
   .week-theme {
-    font-family: "Inter", sans-serif;
+    font-family: "TT Jenevers", serif;
     font-size: 17px;
     font-weight: 600;
     letter-spacing: -0.005em;
@@ -993,7 +993,7 @@
   }
 
   .closing-body {
-    font-size: 15px;
+    font-size: 16px;
     color: #111;
     line-height: 1.7;
     margin: 0;
@@ -1020,7 +1020,7 @@
     font-size: 22px;
     font-weight: 700;
     color: #d0116f;
-    font-family: "Inter", sans-serif;
+    font-family: "TT Jenevers", serif;
     margin: 0;
     line-height: 1.3;
   }
@@ -1052,7 +1052,7 @@
   .closing-figure img:hover { opacity: 0.92; }
 
   .workbook-intro {
-    font-size: 15px;
+    font-size: 16px;
     color: #111;
     line-height: 1.7;
     margin: 0 0 1.5rem 0;
@@ -1155,13 +1155,13 @@
     font-weight: 700;
     color: #111;
     margin: 0;
-    font-family: "Inter", sans-serif;
+    font-family: "TT Jenevers", serif;
     line-height: 1.2;
     letter-spacing: -0.005em;
   }
 
   .detail-notes {
-    font-size: 14px;
+    font-size: 15px;
     line-height: 1.7;
     color: #111;
     font-weight: 400;
