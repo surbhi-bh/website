@@ -20,36 +20,36 @@
   //   tags   — array of theme tags for filtering, e.g. ['food', 'demographics']
   //   bg     — background hex of the chart, e.g. '#fff8e7' (used by light → dark sort)
   const dayInfo = {
-    1:  { title: 'Part-to-Whole',             intro: '', outro: `The chart I made for this prompt is actually the one from <a href="#day-29" class="inline-link">Day 29</a>, on protein bars. It went into my pile of discarded charts, refurbished in a monochrome theme, when the idea of phone screens struck me.\n\nFor a while, I've been wanting to do a project on how phones no longer fit our hands. I could have collecting dimensions for every phone model of a certain brand over time from GSMArena to show this change. But with little time left after this last-minute change, I turned to personal data to quickly make this. Personal can be universal, I guess.`, source: '', tags: ['technology'], bg: '#F8F8F6' },
-    2:  { title: 'Pictogram',                 intro: '', outro: `I don't know how to draw digitally. But I have a rough sense of embedding SVGs in code after cleaning them up in Figma. These tiny Warli-style figures — girls, boys, middle-aged, old, Indian people — are derived from Anu Artastic's Warli figure tutorial (https://www.facebook.com/reel/1362632957890249/). I've been calling it "Our Warli in Data."`, source: '', tags: ['demographics', 'population'], bg: '#A22D0D' },
-    3:  { title: 'Mosaic',                    intro: '', outro: `What I tried for this one is now the season's chart of Day XYZ. Half way through making that one, I realised it's not mosaic, if the width of the stacked bars is all the same. Abandoned it and found data from IEA that lent itself beautifully to this format. I gained another discarded chart idea that came handy later!`, source: '', tags: ['technology', 'transport'], bg: '#F2F1ED' },
-    4:  { title: 'Slope',                     intro: '', outro: `Slope charts are slippery. I updated the data from an old <a href="https://www.livemint.com/industry/media/bollywoods-eternal-struggle-with-original-ideas-here-s-what-data-shows-11661772790605.html" target="_blank" rel="noopener" class="inline-link">story on Bollywood remakes</a> (<a href="https://public.tableau.com/app/profile/surbhi.bhatia/viz/Bollywoodoriginalvsremake/Dashboard1" target="_blank" rel="noopener" class="inline-link">old chart here</a>).\n\nWas it tempting to save this for a meta-day release on Day XYZ, prompt: remake? Yes. But did I have no other idea for this and plenty of chart remakes for that prompt? Yes. You know what they say about a bird in hand.`, source: '', tags: ['entertainment'], bg: '#E5E6E3' },
-    5:  { title: 'Experimental',              intro: '', outro: `Food recipes are probably humanity's greatest experiment, and few dishes invite stronger opinions than sambar. I love a nuanced culinary war! This chart is inspired by <a href="https://x.com/surbhaai/status/1708727084187873689/" target="_blank" rel="noopener" class="inline-link">one of my all-time favourite charts by @davidawaldron</a>.`, source: '', tags: ['food'], bg: '#FFFFFF' },
-    6:  { title: 'Reporters Without Borders', intro: '', outro: `The labels and tables have turned. Found a repo of dates at Ashoka University Archives.`, source: '', tags: ['politics'], bg: '#F2ECE6' },
-    7:  { title: 'Multiscale',                intro: '', outro: `From my early career days, when I used to make a lot of <a href="https://blog.theleapjournal.org/2018/09/watching-markets-work-structural-change.html#gsc.tab=0" target="_blank" rel="noopener" class="inline-link">structural breaks, back-annotation charts in R on financial markets</a>. Glad to have learnt some colour theory in life!`, source: '', tags: ['finance'], bg: '#FFFFFF' },
+    1:  { title: 'Part-to-Whole',             intro: '', outro: `The chart originally made for this prompt, on protein bars, moved to <a href="#day-29" class="inline-link">Day 29</a>. It sat in my pile of discarded charts to be refurbished in monochrome, when the idea of phone screens struck me.\n\nFor a while, I've been wanting to do a project on how phones no longer fit our hands. I could have got the dimensions of every phone model of a certain brand from GSMArena, and show change over time. But with little time left after this last-minute change, I turned to personal data to quickly make this. Personal can be universal, I guess.`, source: '', tags: ['technology'], bg: '#F8F8F6' },
+    2:  { title: 'Pictogram',                 intro: '', outro: `I don't know how to draw digitally. But I have a rough sense of embedding SVGs in code after cleaning them up in Figma. These tiny Warli-style figures: girls, boys, middle-aged, old, Indian people, are derived from <a href="https://www.facebook.com/reel/1362632957890249/" target="_blank" rel="noopener" class="inline-link">Anu's Artastic Warli figure tutorial</a>. I've been calling it "Our Warli in Data."`, source: '', tags: ['demographics', 'population'], bg: '#A22D0D' },
+    3:  { title: 'Mosaic',                    intro: '', outro: `Another one for the stockpile. What I originally tried for this prompt became the seasons chart on <a href="#day-23" class="inline-link">Day 23</a>. Realised halfway through making it that the bar widths were all the same, which makes it <em>not</em> a mosaic. Found IEA data last minute that fit the format beautifully.`, source: '', tags: ['technology', 'transport'], bg: '#F2F1ED' },
+    4:  { title: 'Slope',                     intro: '', outro: `Slope charts can be slippery because you are comparing positions and angles at the same time. For this one, I updated the data from an <a href="https://www.livemint.com/industry/media/bollywoods-eternal-struggle-with-original-ideas-here-s-what-data-shows-11661772790605.html" target="_blank" rel="noopener" class="inline-link">old story on bollywood remakes</a>, and <a href="https://public.tableau.com/app/profile/surbhi.bhatia/viz/Bollywoodoriginalvsremake/Dashboard1" target="_blank" rel="noopener" class="inline-link">a chart</a> that inspired the story.\n\nWas it tempting to save this for a meta-day release for <a href="#day-17" class="inline-link">Day 17</a> prompt: remake? Yes. But did I have no other idea for this and plenty of chart remakes for that prompt? Yes. You know what they say about a bird in hand.`, source: '', tags: ['entertainment'], bg: '#E5E6E3' },
+    5:  { title: 'Experimental',              intro: '', outro: `Food recipes are probably humanity's greatest experiment, and few dishes invite stronger opinions than sambar. I love a nuanced culinary war! This chart is inspired by one of my <a href="https://x.com/surbhaai/status/1708727084187873689/" target="_blank" rel="noopener" class="inline-link">all-time favourite charts</a> by David Waldron.`, source: '', tags: ['food'], bg: '#FFFFFF' },
+    6:  { title: 'Reporters Without Borders', intro: '', outro: `The labels and tables have turned.`, source: '', tags: ['politics'], bg: '#F2ECE6' },
+    7:  { title: 'Multiscale',                intro: '', outro: `From my early career days, when I used to make a lot of <a href="https://blog.theleapjournal.org/2018/09/watching-markets-work-structural-change.html#gsc.tab=0" target="_blank" rel="noopener" class="inline-link">structural break charts</a> in R on financial markets. Glad to have learnt some colour theory in life!`, source: '', tags: ['finance'], bg: '#FFFFFF' },
     8:  { title: 'Circular',                  intro: '', outro: `This is less of a comparison between cities and more a ranking of how differently we're all doomed.`, source: '', tags: ['health', 'environment'], bg: '#EDF6FD' },
-    9:  { title: 'Wealth',                    intro: '', outro: `I first came across Caroline Freund and Sarah Oliver's paper from PIIE on the origins of the superrich a few years ago, and it changed how I looked at billionaires. Recently, <a href="https://www.economist.com/interactive/business/2026/04/09/a-giant-succession-wave-is-coming-for-family-businesses" target="_blank" rel="noopener" class="inline-link">The Economist revisited a similar question</a>: what happens when massive family fortunes begin changing hands. In countries like South Korea, where conglomerates and dynasties dominate business, inheritance is practically an economic system of its own.`, source: '', tags: ['wealth'], bg: '#FFFFFF' },
+    9:  { title: 'Wealth',                    intro: '', outro: `I came across this Peterson Institute of International Economics paper, <a href="https://www.piie.com/publications/working-papers/2016/origins-superrich-billionaire-characteristics-database" target="_blank" rel="noopener" class="inline-link">The origins of the superrich</a> a few years ago, and it changed how I looked at billionaires.`, source: '', tags: ['wealth'], bg: '#FFFFFF' },
     10: { title: 'Pop Culture',               intro: '', outro: `We all know watching Dhurandhar is a four-day commitment, right? For this, I already had a list of top 10 movies per year, all I had to do was scrape run-time from IMDb. I don't think the numbers are dramatically spiraling upwards, but the data says what the data says.`, source: '', tags: ['entertainment'], bg: '#EAE6DA' },
-    11: { title: 'Physical',                  intro: '', outro: `There's something nostalgic about charting CDs. This one came together in about 20 minutes. Possibly the only <a href="https://public.tableau.com/shared/4Z36JM5NN?" target="_blank" rel="noopener" class="inline-link">US-looking chart</a> I have in the series.`, source: '', tags: ['entertainment'], bg: '#D0DED3' },
-    12: { title: 'Flowing Data',              intro: '', outro: `FlowingData had the template, my friends at Diagram Chasing had the data — I mostly just had to connect the two and watch it come alive.`, source: '', tags: ['demographics', 'gender'], bg: '#FFFFFF' },
-    13: { title: 'Ecosystems',                intro: '', outro: `This idea traced back to a talk by Leewardists organised by Revisual Labs, but also to a very personal irritation: the near absence of last-mile connectivity around metro stations in Indian cities. In cities like New York City or Tokyo, you can step into the subway almost from below your apartment building. In many Indian suburbs, meanwhile, gated enclaves swallow up land parcels, pedestrian access disappears, and metro lines end up awkwardly shadowing ring roads instead of neighbourhood life.`, source: '', tags: ['cities'], bg: '#FBFBFB' },
-    14: { title: 'Trade',                     intro: '', outro: '', source: '', tags: ['trade'],                       bg: '#FFFEEE' },
-    15: { title: 'Correlation',               intro: '', outro: '', source: '', tags: ['rule of law'],                 bg: '#F8D1B2' },
-    16: { title: 'Causation',                 intro: '', outro: '', source: '', tags: ['finance'],                     bg: '#F8F5F2' },
+    11: { title: 'Physical',                  intro: '', outro: `There's something nostalgic about charting CDs. This one came together in about 20 minutes. A lone <a href="https://public.tableau.com/shared/4Z36JM5NN?" target="_blank" rel="noopener" class="inline-link">US-only chart</a> in the series.`, source: '', tags: ['entertainment'], bg: '#D0DED3' },
+    12: { title: 'Flowing Data',              intro: '', outro: `FlowingData had the template, my friends at <a href="https://diagramchasing.fun/2025/time-use-explorer" target="_blank" rel="noopener" class="inline-link">Diagram Chasing</a> had the data. I mostly just had to assemble the pieces together.`, source: '', tags: ['demographics', 'gender'], bg: '#FFFFFF' },
+    13: { title: 'Ecosystems',                intro: '', outro: `This idea traces back to a talk by <a href="https://leewardists.com/" target="_blank" rel="noopener" class="inline-link">Leewardists</a> organised by <a href="http://revisual.co/" target="_blank" rel="noopener" class="inline-link">Revisual Labs</a>, but also to a very personal irritation: the near absence of last-mile connectivity around metro stations in Indian cities.\n\nIn cities like New York City or Tokyo, you can step into the subway literally from below your apartment building. It's possible to find that in older, denser parts of Indian cities. But in the suburbs, gated enclaves swallow up land parcels and metro lines end up shadowing ring roads.`, source: '', tags: ['cities'], bg: '#FBFBFB' },
+    14: { title: 'Trade',                     intro: '', outro: `I spent a while wandering through <a href="https://atlas.hks.harvard.edu/" target="_blank" rel="noopener" class="inline-link">The Atlas of Economic Complexity</a> hoping to start with data and arrive at an insight. A few hours later, abandoned it fully to answer a simple question: what do Indian states export the most? Within it, simplified it further to just one commodity: rice.`, source: '', tags: ['trade'], bg: '#FFFEEE' },
+    15: { title: 'Correlation',               intro: '', outro: `The Indian Constitution, with 146,385 words, is the longest in the world. But does that correlate with better rule of law? This chart is a refurbished version of an <a href="https://presidentialsystem.org/2019/04/02/indias-long-constitution-is-harmful-for-its-democracy-and-administration/" target="_blank" rel="noopener" class="inline-link">early days piece</a>: The Long and Winding Constitution at ThinkPragati.`, source: '', tags: ['rule of law'], bg: '#F8D1B2' },
+    16: { title: 'Causation',                 intro: '', outro: `When's the last time you made an ATM run?`, source: '', tags: ['finance'], bg: '#F8F5F2' },
     17: { title: 'Remake',                    intro: '', outro: `If Greek sounds like nonsense to English speakers, what sounds like nonsense to the Greek? (Answer: Chinese.) Remaking <a href="https://x.com/surbhaai/status/1143580636986216448" target="_blank" rel="noopener" class="inline-link">an old chart</a> from back when I didn't realise messing with reading direction is a design sin.`, source: '', tags: ['linguistics'], bg: '#E5E7EB' },
     18: { title: 'UNICEF',                    intro: '', outro: `With hospitals bombed, food and medicines in short supply, and access to essentials collapsing, the war on Palestine has undone decades of progress in child survival.`, source: '', tags: ['demographics', 'health'], bg: '#FFFFFF' },
-    19: { title: 'Evolution',                 intro: '', outro: `Tried a chart about the evolution of charts by Michael Friendly! Centuries of trying to understand the world through data and graphics, visualised.`, source: '', tags: ['history'], bg: '#FFF6DF' },
+    19: { title: 'Evolution',                 intro: '', outro: `Tried a chart about the <a href="https://www.datavis.ca/milestones/" target="_blank" rel="noopener" class="inline-link">evolution of charts</a>, by Michael Friendly and D.J. Denis. A centuries long attempt to make sense of the world through diagrams, geometry, and better ways of seeing what numbers are doing.`, source: '', tags: ['history'], bg: '#FFF6DF' },
     20: { title: 'Global Change',             intro: '', outro: `How do countries power themselves? Over the last two decades, the world's electricity mix has been slowly turning green, but not everywhere.`, source: '', tags: ['environment', 'climate change'], bg: '#E2E2E2' },
-    21: { title: 'Historical',                intro: '', outro: `In my lifetime alone, Indian airlines have appeared, merged, vanished, and rebranded faster than most people can keep track of. India's aviation history is full of ambitious takeoffs and abrupt endings.`, source: '', tags: ['history'], bg: '#FFFFFF' },
-    22: { title: 'New Tool',                  intro: '', outro: `I made this version with Orange Data Mining, which is fantastic for tracing workflows but far less helpful when you want bespoke charts. Here's a chart anyway. Did you know just 0.1% of people in Myanmar live in the capital?`, source: '', tags: ['cities'], bg: '#EDF6F7' },
-    23: { title: 'Seasons',                   intro: '', outro: `A cheat sheet for the best time to visit Indian cities. Data from last year, does not capture current conditions of this mad April heat in Bangalore!`, source: '', tags: ['cities', 'climate change'], bg: '#FDF9B6' },
-    24: { title: 'South China Morning Post',  intro: '', outro: `इনடఇಅ/India, a living mosaic of diverse languages. Inspired by <a href="https://multimedia.scmp.com/culture/article/SCMP-printed-graphics-memory/lonelyGraphics/201505A51.html" target="_blank" rel="noopener" class="inline-link">@aLucasLopez's genius</a>.`, source: '', tags: ['linguistics'], bg: '#E89867' },
+    21: { title: 'Historical',                intro: '', outro: `India's aviation history is full of ambitious takeoffs and abrupt endings. In my lifetime alone, Indian airlines have appeared, merged, vanished, and rebranded faster than most people can keep track of.`, source: '', tags: ['history'], bg: '#FFFFFF' },
+    22: { title: 'New Tool',                  intro: '', outro: `I tried Orange as a tool first to make this. It was fantastic at tracing no-code workflows but less helpful when you want bespoke charts. Here's a chart anyway. Did you know just 0.1% of people in Myanmar live in Naypyidaw, its capital?`, source: '', tags: ['cities'], bg: '#EDF6F7' },
+    23: { title: 'Seasons',                   intro: '', outro: `A cheat sheet for the best time to visit Indian cities. They are all getting hotter so data may not hold by next year.`, source: '', tags: ['cities', 'climate change'], bg: '#FDF9B6' },
+    24: { title: 'South China Morning Post',  intro: '', outro: `इনடఇಅ, a potpourri of languages. Inspired by Alberto Lucas López's <a href="https://multimedia.scmp.com/culture/article/SCMP-printed-graphics-memory/lonelyGraphics/201505A51.html" target="_blank" rel="noopener" class="inline-link">"A world of languages"</a>.`, source: '', tags: ['linguistics'], bg: '#E89867' },
     25: { title: 'Space',                     intro: '', outro: `A space race between countries to reach the Earth's orbit, and how often the attempts succeed.`, source: '', tags: ['science'], bg: '' },
-    26: { title: 'Trend',                     intro: '', outro: `What's more trendy than matcha? Iced matcha, hojicha latte… Japan's green teas are the trend in cafes around the world. But at home, both consumption and production are falling, while exports rise to match the growing demand abroad.`, source: '', tags: ['trade', 'food'], bg: '#EAF1DB' },
+    26: { title: 'Trend',                     intro: '', outro: `Japan's green teas are the trend in cafes around the world. But at home, both consumption and production are falling, while exports rise to match the growing demand abroad.`, source: '', tags: ['trade', 'food'], bg: '#EAF1DB' },
     27: { title: 'Animation',                 intro: '', outro: `Ship traffic through the Strait of Hormuz comes to a halt and has yet to recover. A prolonged disruption to one of the world's busiest oil routes amid the US war on Iran. So much fun making this on Flourish!`, source: '', tags: ['trade'], bg: '#7E7E7E' },
     28: { title: 'Modeling',                  intro: '', outro: `None of the three largest emitting nations are on track, or even pledging to meet the 1.5°C climate target of the Paris agreement, projections show.`, source: '', tags: ['climate change'], bg: '#EBF0EC' },
     29: { title: 'Monochrome',                intro: '', outro: `The original part-to-whole chart. Spending ~₹100 on a protein bar? Here's unpacking what you're paying for across popular options.`, source: '', tags: ['food'], bg: '#CACACA' },
-    30: { title: 'Global Health Data Exchange', intro: '', outro: `India's health risk profile is shifting. Risks from unsafe water, poor sanitation, and undernutrition have declined. New threats such as air pollution and high blood pressure have climbed the ranks.`, source: '', tags: ['health', 'environment'], bg: '#D8D8D8' },
+    30: { title: 'Global Health Data Exchange', intro: '', outro: `India's health risk profile is shifting. Risks from unsafe water, poor sanitation, and undernutrition have declined. New threats such as air pollution and high blood pressure have moved to the top of the list.`, source: '', tags: ['health', 'environment'], bg: '#D8D8D8' },
   };
 
   // Collect every tag used across days, sorted alphabetically.
@@ -495,6 +495,9 @@
     </div>
   </div>
 
+  <!-- Transition line into the individual charts -->
+  <p class="detail-intro">And now, to the charts.</p>
+
   <!-- Detailed list: each chart, top to bottom -->
   <div class="detail-list">
     {#each weeks as week, wi}
@@ -540,7 +543,7 @@
   <!-- Closing section (after the 30 individual charts) -->
   <div class="closing-section">
     <p class="closing-body">
-      I was very happy to see some of the work getting featured in <a href="https://www.datawrapper.de/blog/data-vis-dispatch-april-14-2026-hungary-transportation-and-30daychartchallenge" target="_blank" rel="noopener" class="inline-link">Data Vis Dispatch's April 14 edition</a> and on <a href="https://www.linkedin.com/posts/flourishstudio_take-a-look-activity-7457428987229659136-qDG3?utm_source=share&utm_medium=member_desktop&rcm=ACoAABKahisB4LtaxpO2QgtmVgFvoE_cCH2ba08" target="_blank" rel="noopener" class="inline-link">Flourish</a>.
+      I was very happy to see some of the work getting featured in <a href="https://www.datawrapper.de/blog/data-vis-dispatch-april-14-2026-hungary-transportation-and-30daychartchallenge" target="_blank" rel="noopener" class="inline-link">Data Vis Dispatch's April 14 edition</a> and by <a href="https://www.linkedin.com/posts/flourishstudio_take-a-look-activity-7457428987229659136-qDG3?utm_source=share&utm_medium=member_desktop&rcm=ACoAABKahisB4LtaxpO2QgtmVgFvoE_cCH2ba08" target="_blank" rel="noopener" class="inline-link">Flourish</a>.
     </p>
     <div class="closing-image-row">
       <figure class="closing-figure">
@@ -675,7 +678,7 @@
 
   .challenge-byline {
     font-family: "TT Jenevers", serif;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     color: #111;
     margin-bottom: 24px;
   }
@@ -1127,7 +1130,7 @@
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 12px;
-    margin: 1rem 0;
+    margin: 0.3rem 0 1rem;
   }
 
   @media (max-width: 600px) {
@@ -1195,9 +1198,20 @@
     display: block;
   }
 
+  /* Transition line above the per-chart detail list */
+  .detail-intro {
+    margin: 3.5rem auto 0;
+    max-width: 900px;
+    font-family: "TT Jenevers", serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #111;
+    text-align: left;
+  }
+
   /* ── Detail list (one chart per row, top to bottom) ── */
   .detail-list {
-    margin-top: 4rem;
+    margin-top: 1.5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
