@@ -260,10 +260,10 @@
       A lot has changed since then. It's a strange new world where making is easier than ever. Data is abundant. Agents who will write code for you for cheap are abundant. We're drowning in things to look at. What feels scarce now is human attention, and the rare skill of knowing where to point it.
     </p>
     <p class="challenge-intro">
-      This abundance drew me to the <a href="https://github.com/30DayChartChallenge/Edition2026" target="_blank" rel="noopener" class="inline-link">#30DayChartChallenge</a> by Dominic Royé and Cédric Scherer this year. It was an excuse to chase small curiosities, the kind that are either too small for a full-length project or too slow to ever become one. I took it purely to rediscover the joy of exploratory making, in a time when almost nothing stands in the way of making, not especially time and skills.
+      This abundance drew me to the <a href="https://github.com/30DayChartChallenge/Edition2026" target="_blank" rel="noopener" class="inline-link">#30DayChartChallenge</a> by Dominic Royé and Cédric Scherer this year. It was <s>an excuse</s> thirty excuses to chase small curiosities, the kind that are either too small for a full-length project or too slow to ever become one. I took it purely to rediscover the joy of exploratory making, in a time when almost nothing stands in the way, least of all time and skills.
     </p>
     <p class="challenge-intro">
-      I completed the challenge on time. If I were manually writing code, it would have definitely stretched. So having Claude to speed that up was a huge help. Often, I'd make a rough chart by hand, or on any familiar tool like Flourish or Datawrapper, or in R, and then ask Claude to translate it using D3.js. The technical layer, code, data fetching, scraping, tagging, came together in minutes with this collaboration. Everything else, the concept, data sampling, structuring, analysis, colours, titles, framing, every micro-decision in between, was mine.
+      I completed the challenge on time. If I were manually writing code, it would have stretched for sure. So having claude to speed that up was a huge help. Often, I'd make a rough chart by hand, or on any familiar tool like <a href="https://flourish.studio/" target="_blank" rel="noopener" class="inline-link">flourish</a> or <a href="https://app.datawrapper.de" target="_blank" rel="noopener" class="inline-link">datawrapper</a>, or in R, and then ask claude to translate it using D3.js. The technical layer, code, data fetching, scraping, tagging, came together in minutes with this collaboration. Everything else, the concept, data sampling, structuring, analysis, colours, titles, framing, every micro-decision in between, is mine.
     </p>
     <p class="challenge-intro challenge-intro-last">
       Here are all thirty charts and a glimpse of my process below:
@@ -380,31 +380,66 @@
         <img src="/flower.svg" class="begin-bullet" alt="" />The data followed my curiosity
       </h3>
       <p class="begin-note-body">
-        There are at least two ways to approach making a chart where all you have is a one-word prompt. Either start with a <em>dataset</em>, and find something to plot, like how the #TidyTuesday challenge works. Or start with a <em>question</em>, and go looking for the data to answer it.
+        There are at least two ways to approach making a chart where all you have is a one-word prompt. You can either start with a <em>dataset</em>, and find something to plot, like how <a href="https://github.com/rfordatascience/tidytuesday" target="_blank" rel="noopener" class="inline-link">#TidyTuesday</a> works. Or start with a <em>question</em>, and go looking for the data to answer it.
       </p>
       <p class="begin-note-body">
-        Early in my career I was the data-first type. I used to think if there's no data, there's no story. This has changed considerably with years of experience as a data journalist. I had built, without quite realising it, a mental landscape of sources: an instinct for where to look, what to trust, how to create proxies, how to arrive at insight through simple math operations. It also helps that sources of data have <em>exponentially</em> exploded, and accessing them has never been easier. The data is almost always out there. The harder part is knowing what you are looking for.
+        Early in my career I was the data-first type. I used to think if there's no data, there's no story. This has changed considerably with years of experience as a data journalist. Without quite realising it, I had built a personal directory of sources: where to look, what to trust, how to do back-of-envelope math to get from data to insight. It also helps that sources have exploded and accessing them is easier than ever. The data was almost always out there.
       </p>
       <p class="begin-note-body">
-        Starting with a question came naturally to me during this challenge. But it is not the only way.
+        Starting with a question came naturally to me during this challenge. My approach to each prompt was <strong>question-first</strong>:
+      </p>
+      <div class="begin-flow">
+        <span class="flow-step"><span class="flow-icon" data-icon="question"></span>Question</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-step"><span class="flow-icon" data-icon="data"></span>Data</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-step"><span class="flow-icon" data-icon="analysis"></span>Analysis</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-step"><span class="flow-icon" data-icon="insight"></span>Insight</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-step"><span class="flow-icon" data-icon="chart"></span>Chart Type</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-step"><span class="flow-icon" data-icon="design"></span>Design</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-step"><span class="flow-icon" data-icon="annotation"></span>Annotation</span>
+      </div>
+      <p class="begin-note-body">
+        But it is not the only way. For some it can be <strong>data-first</strong>:
+      </p>
+      <div class="begin-flow">
+        <span class="flow-step"><span class="flow-icon" data-icon="data"></span>Data</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-step"><span class="flow-icon" data-icon="question"></span>Question</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-step"><span class="flow-icon" data-icon="analysis"></span>Analysis</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-step"><span class="flow-icon" data-icon="insight"></span>Insight</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-step"><span class="flow-icon" data-icon="chart"></span>Chart Type</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-step"><span class="flow-icon" data-icon="design"></span>Design</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-step"><span class="flow-icon" data-icon="annotation"></span>Annotation</span>
+      </div>
+      <p class="begin-note-body">
+        People are loyal to tools they spent years learning. The Tableau community sticks by it. Datawrapper devotees stick to that. There is wisdom in designing within the constraints of the language and grammar you know best:
+      </p>
+      <div class="begin-flow">
+        <span class="flow-step"><span class="flow-icon" data-icon="tool"></span>Tool</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-step"><span class="flow-icon" data-icon="data"></span>Data</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-step"><span class="flow-icon" data-icon="chart"></span>Chart</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-step"><span class="flow-icon" data-icon="insight"></span>Insight</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-step"><span class="flow-icon" data-icon="annotation"></span>Annotation</span>
+      </div>
+      <p class="begin-note-body">
+        More of these permutations are possible and out there. It looks neat and linear here, but is rarely so in practice.
       </p>
       <p class="begin-note-body">
-        My approach to each prompt was <strong>question-first</strong>:
-      </p>
-      <div class="begin-flow">Question → Data → Analysis → Insight → Chart Type → Design → Annotation</div>
-      <p class="begin-note-body">
-        But for some it's <strong>data-first</strong>, and finding insights from a given dataset is a huge skill:
-      </p>
-      <div class="begin-flow">Data → Question → Analysis → Insight → Chart Type → Design → Annotation</div>
-      <p class="begin-note-body">
-        Some others might be <strong>tool-first</strong>, people who know Tableau stick to it, those who love Datawrapper, stick to that, for example. Chart what is available in the design language and possible grammar of the tools.
-      </p>
-      <div class="begin-flow">Tool → Data → Chart → Insight → Annotation</div>
-      <p class="begin-note-body">
-        I'm sure there are more permutations possible. These flows look neat and linear on paper, but rarely are so in practice.
-      </p>
-      <p class="begin-note-body">
-        What the challenge gave me, more than anything, was <strong>stamina</strong>: the appetite to repeat the entire process end to end, every single day. Finding data, verifying sources, testing the insight, building the chart, writing annotations. Like any workout or meditation routine, the first few days are rough, but slowly the morning stops feeling hard.
+        What the challenge gave me, more than anything, was <strong>stamina</strong>: the appetite to repeat the entire process end to end, every single day. Like any new workout or meditation routine, the first few days are rough, but slowly the mornings stop feeling hard.
       </p>
     </div>
 
@@ -416,10 +451,10 @@
         In research and writing, there is always a conscious moment when reading has to stop and writing must begin. Writing becomes thinking, a traffic management of paragraphs, thoughts, ideas.
       </p>
       <p class="begin-note-body">
-        Chart-making is the same. At some point you have to stop collecting and start making. It's traffic-management of attention, hierarchy, design, inference.
+        Chart-making is the same. At some point you have to stop collecting and start making. It's traffic-management of attention, hierarchy, and inference.
       </p>
       <p class="begin-note-body">
-        It is very tempting, once you have some data, to want "longer data": another decade, another city, another source, another scrape. But meaning-making must begin at a cut-off, and a daily challenge forces that upon you. You learn to sample, hand-collect data points because that's faster than writing a tiny script, jump intervals, test an insight on a small slice before scaling, know when to pivot or altogether abandon a hunch. Ideas can be pursued forever and ever, that format has a name called a PhD. The smallest dataset I used had less than 10 observations, and the largest over 76k values.
+        It is very tempting, once you have some data, to want <em>longer</em> data: another decade, another city, another source, another scrape. But meaning-making must begin at a cut-off and a daily challenge is a great force for it. You learn to sample, hand-collect data points because that's faster than writing a tiny script, jump intervals, test an insight on a small slice before scaling, learn to pivot or altogether abandon a hunch. The smallest dataset I used had less than 10 observations, and the largest over 76k values.
       </p>
       <figure class="begin-figure">
         <img
@@ -434,10 +469,13 @@
         <figcaption>It is chaotic and full of doubt, and that is fine. This slide by <a href="https://jonathansoma.com/" target="_blank" rel="noopener" class="inline-link">Jonathan Soma</a> says it better than I can.</figcaption>
       </figure>
       <p class="begin-note-body">
-        Charting an insight has its own infinity. The same dataset can splinter into many charts. The same insight can dress up as many chart types. I liked that <a href="https://perthirtysix.com/essay/30-day-chart-challenge-2024" target="_blank" rel="noopener" class="inline-link">Shri Khalpada</a> locked in the fonts, formats, colours, tools, bringing standardisation and reducing time and number of decisions, taking the challenge some years ago. And that <a href="https://karaman.is/blog/2026/04/30daychartchallenge-2026" target="_blank" rel="noopener" class="inline-link">Georgios Karamanis</a> defined his data universe as Uppsala's transport data, only and stayed within it. Constraints make their work stand out, in the same way as a fence that helps separate a garden from a field.
+        Charting an insight can tend to infinity. The same dataset can splinter into many charts. The same insight can dress up as many chart types.
       </p>
       <p class="begin-note-body">
-        The cool thing about continuity is that nothing is wasted. A dataset set aside comes back to fit a later prompt. A chart type abandoned gets a second life. Every effort made adds a word to the vocabulary, ready to be recalled when needed.
+        I liked that Shri Khalpada <a href="https://perthirtysix.com/essay/30-day-chart-challenge-2024" target="_blank" rel="noopener" class="inline-link">locked in the fonts</a>, formats, colours, tools, bringing standardisation and reducing time and number of decisions. And that <a href="https://karaman.is/blog/2026/04/30daychartchallenge-2026" target="_blank" rel="noopener" class="inline-link">Georgios Karamanis</a> defined his data universe around Uppsala's transport data and worked entirely within those bounds. Constraints make their work stand out, in the same way as a fence that helps separate a garden from a field.
+      </p>
+      <p class="begin-note-body">
+        One cool thing about continuing the challenge till the very end, is that nothing is wasted. A dataset set aside comes back to fit a later prompt. A chart type abandoned gets a second life. Happened with me a lot.
       </p>
     </div>
 
@@ -452,10 +490,7 @@
         And so, I was very conscious that every chart of the challenge has an answer to the one and only question of life: <em>"What's the point???"</em>
       </p>
       <p class="begin-note-body">
-        A lot of my time was spent on titles, annotations, stripping back anything that didn't earn its place on the canvas. Every reader takes a few seconds to a few minutes to get the point when engaging with a chart. Some charts are intentionally demanding, like a Marimekko chart which needs some patience to unlock the insight. It's a learning curve for consumers of data visualisation, for whom a chart could be hard, but should not be hostile. A reader should never feel punished for trying to engage.
-      </p>
-      <p class="begin-note-body">
-        This is where the human role becomes most important. When AI handles the technical work, what remains is the cognitive work of framing: the headline, the annotation, what to show and what to leave out, who this is for. These decisions carry a lot of social responsibility in how data gets communicated. An example of this is the chart on languages of India, which can be very divisive.
+        A lot of my time was spent on titles, annotations, stripping back anything that didn't earn its place on the canvas. Every reader takes a few seconds to a few minutes to get the point when engaging with a chart. Some charts are intentionally demanding, like a <a href="https://vizzendata.com/2019/10/18/dont-mekko-with-my-marimekko/" target="_blank" rel="noopener" class="inline-link">Marimekko chart</a> which asks for patience and a certain bit of chart literacy. A chart can demand effort, but your reader should never feel punished for trying to engage.
       </p>
     </div>
   </div>
@@ -505,9 +540,6 @@
   <!-- Closing section (after the 30 individual charts) -->
   <div class="closing-section">
     <p class="closing-body">
-      So, thirty charts later, what did I learn?
-    </p>
-    <p class="closing-body">
       I was very happy to see some of the work getting featured in <a href="https://www.datawrapper.de/blog/data-vis-dispatch-april-14-2026-hungary-transportation-and-30daychartchallenge" target="_blank" rel="noopener" class="inline-link">Data Vis Dispatch's April 14 edition</a> and on <a href="https://www.linkedin.com/posts/flourishstudio_take-a-look-activity-7457428987229659136-qDG3?utm_source=share&utm_medium=member_desktop&rcm=ACoAABKahisB4LtaxpO2QgtmVgFvoE_cCH2ba08" target="_blank" rel="noopener" class="inline-link">Flourish</a>.
     </p>
     <div class="closing-image-row">
@@ -547,7 +579,7 @@
   <!-- Sheet embed -->
   <div class="sheet-section">
     <p class="workbook-intro">
-      I also maintain an open workbook with all the data that you can access here:
+      The data for all thirty charts lives in an open workbook, here:
     </p>
     <div class="sheet-wrap">
       <iframe
@@ -628,7 +660,7 @@
     font-weight: 700;
     color: #111;
     line-height: 1.2;
-    margin-bottom: 10px;
+    margin-bottom: 2px;
     font-family: "TT Jenevers", serif;
     letter-spacing: -0.01em;
   }
@@ -642,10 +674,9 @@
   }
 
   .challenge-byline {
-    font-family: "DM Mono", monospace;
-    font-size: 11px;
-    color: #777;
-    letter-spacing: 0.04em;
+    font-family: "TT Jenevers", serif;
+    font-size: 0.8rem;
+    color: #111;
     margin-bottom: 24px;
   }
 
@@ -726,10 +757,77 @@
     font-weight: 700;
     color: #1a6b3a;
     background: rgba(26,107,58,0.07);
-    padding: 8px 14px;
+    padding: 10px 14px;
     margin-left: 32px;
     letter-spacing: 0.02em;
-    line-height: 1.6;
+    line-height: 1.8;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px 8px;
+  }
+
+  .flow-step {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    white-space: nowrap;
+  }
+
+  .flow-arrow {
+    color: #1a6b3a;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1;
+    padding: 0 2px;
+  }
+
+  .flow-icon {
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    background-color: #1a6b3a;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    -webkit-mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: contain;
+    flex-shrink: 0;
+  }
+
+  /* Inline SVG icons via CSS mask, tinted with currentColor's green. */
+  .flow-icon[data-icon="question"] {
+    -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='10'/><path d='M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3'/><line x1='12' y1='17' x2='12.01' y2='17'/></svg>");
+            mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='10'/><path d='M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3'/><line x1='12' y1='17' x2='12.01' y2='17'/></svg>");
+  }
+  .flow-icon[data-icon="data"] {
+    -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><ellipse cx='12' cy='5' rx='9' ry='3'/><path d='M21 12c0 1.66-4 3-9 3s-9-1.34-9-3'/><path d='M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5'/></svg>");
+            mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><ellipse cx='12' cy='5' rx='9' ry='3'/><path d='M21 12c0 1.66-4 3-9 3s-9-1.34-9-3'/><path d='M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5'/></svg>");
+  }
+  .flow-icon[data-icon="analysis"] {
+    -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='11' cy='11' r='7'/><line x1='21' y1='21' x2='16.5' y2='16.5'/></svg>");
+            mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='11' cy='11' r='7'/><line x1='21' y1='21' x2='16.5' y2='16.5'/></svg>");
+  }
+  .flow-icon[data-icon="insight"] {
+    -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M9 18h6'/><path d='M10 21h4'/><path d='M12 3a6 6 0 0 0-4 10.5c.7.7 1 1.6 1 2.5h6c0-.9.3-1.8 1-2.5A6 6 0 0 0 12 3z'/></svg>");
+            mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M9 18h6'/><path d='M10 21h4'/><path d='M12 3a6 6 0 0 0-4 10.5c.7.7 1 1.6 1 2.5h6c0-.9.3-1.8 1-2.5A6 6 0 0 0 12 3z'/></svg>");
+  }
+  .flow-icon[data-icon="chart"] {
+    -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><line x1='12' y1='20' x2='12' y2='10'/><line x1='18' y1='20' x2='18' y2='4'/><line x1='6' y1='20' x2='6' y2='14'/></svg>");
+            mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><line x1='12' y1='20' x2='12' y2='10'/><line x1='18' y1='20' x2='18' y2='4'/><line x1='6' y1='20' x2='6' y2='14'/></svg>");
+  }
+  .flow-icon[data-icon="design"] {
+    -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='13.5' cy='6.5' r='.5'/><circle cx='17.5' cy='10.5' r='.5'/><circle cx='8.5' cy='7.5' r='.5'/><circle cx='6.5' cy='12.5' r='.5'/><path d='M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z'/></svg>");
+            mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='13.5' cy='6.5' r='.5'/><circle cx='17.5' cy='10.5' r='.5'/><circle cx='8.5' cy='7.5' r='.5'/><circle cx='6.5' cy='12.5' r='.5'/><path d='M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z'/></svg>");
+  }
+  .flow-icon[data-icon="annotation"] {
+    -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z'/></svg>");
+            mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z'/></svg>");
+  }
+  .flow-icon[data-icon="tool"] {
+    -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z'/></svg>");
+            mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z'/></svg>");
   }
 
   .begin-figure {
@@ -1055,7 +1153,7 @@
     font-size: 0.8rem;
     color: #111;
     line-height: 1.7;
-    margin: 0 0 1.5rem 0;
+    margin: 0 0 0.5rem 0;
     text-align: left;
   }
 
