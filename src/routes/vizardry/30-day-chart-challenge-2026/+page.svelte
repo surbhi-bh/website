@@ -31,7 +31,7 @@
     9:  { title: 'Wealth',                    intro: '', outro: `I came across this Peterson Institute of International Economics paper, <a href="https://www.piie.com/publications/working-papers/2016/origins-superrich-billionaire-characteristics-database" target="_blank" rel="noopener" class="inline-link">The origins of the superrich</a> a few years ago, and it changed how I looked at billionaires.`, source: '', tags: ['wealth'], bg: '#FFFFFF' },
     10: { title: 'Pop Culture',               intro: '', outro: `We all know watching Dhurandhar is a four-day commitment, right? For this, I already had a list of top 10 movies per year, all I had to do was scrape run-time from IMDb. I don't think the numbers are dramatically spiraling upwards, but the data says what the data says.`, source: '', tags: ['entertainment'], bg: '#EAE6DA' },
     11: { title: 'Physical',                  intro: '', outro: `There's something nostalgic about charting CDs. This one came together in about 20 minutes. A lone <a href="https://public.tableau.com/shared/4Z36JM5NN?" target="_blank" rel="noopener" class="inline-link">US-only chart</a> in the series.`, source: '', tags: ['entertainment'], bg: '#D0DED3' },
-    12: { title: 'Flowing Data',              intro: '', outro: `FlowingData had the template, my friends at <a href="https://diagramchasing.fun/2025/time-use-explorer" target="_blank" rel="noopener" class="inline-link">Diagram Chasing</a> had the data. I mostly just had to assemble the pieces together.`, source: '', tags: ['demographics', 'gender'], bg: '#FFFFFF' },
+    12: { title: 'Flowing Data',              intro: '', outro: `FlowingData had the template, my friends at <a href="https://diagramchasing.fun/2025/time-use-explorer" target="_blank" rel="noopener" class="inline-link">Diagram Chasing</a> had the data. I just had to assemble the pieces together.`, source: '', tags: ['demographics', 'gender'], bg: '#FFFFFF' },
     13: { title: 'Ecosystems',                intro: '', outro: `This idea traces back to a talk by <a href="https://leewardists.com/" target="_blank" rel="noopener" class="inline-link">Leewardists</a> organised by <a href="http://revisual.co/" target="_blank" rel="noopener" class="inline-link">Revisual Labs</a>, but also to a very personal irritation: the near absence of last-mile connectivity around metro stations in Indian cities.\n\nIn cities like New York City or Tokyo, you can step into the subway literally from below your apartment building. It's possible to find that in older, denser parts of Indian cities. But in the suburbs, gated enclaves swallow up land parcels and metro lines end up shadowing ring roads.`, source: '', tags: ['cities'], bg: '#FBFBFB' },
     14: { title: 'Trade',                     intro: '', outro: `I spent a while wandering through <a href="https://atlas.hks.harvard.edu/" target="_blank" rel="noopener" class="inline-link">The Atlas of Economic Complexity</a> hoping to start with data and arrive at an insight. A few hours later, abandoned it fully to answer a simple question: what do Indian states export the most? Within it, simplified it further to just one commodity: rice.`, source: '', tags: ['trade'], bg: '#FFFEEE' },
     15: { title: 'Correlation',               intro: '', outro: `The Indian Constitution, with 146,385 words, is the longest in the world. But does that correlate with better rule of law? This chart is a refurbished version of an <a href="https://presidentialsystem.org/2019/04/02/indias-long-constitution-is-harmful-for-its-democracy-and-administration/" target="_blank" rel="noopener" class="inline-link">early days piece</a>: The Long and Winding Constitution at ThinkPragati.`, source: '', tags: ['rule of law'], bg: '#F8D1B2' },
@@ -260,7 +260,7 @@
       A lot has changed since then. It's a strange new world where making is easier than ever. Data is abundant. Agents who will write code for you for cheap are abundant. We're drowning in things to look at. What feels scarce now is human attention, and the rare skill of knowing where to point it.
     </p>
     <p class="challenge-intro">
-      This abundance drew me to the <a href="https://github.com/30DayChartChallenge/Edition2026" target="_blank" rel="noopener" class="inline-link">#30DayChartChallenge</a> by Dominic Royé and Cédric Scherer this year. It was <s>an excuse</s> thirty excuses to chase small curiosities, the kind that are either too small for a full-length project or too slow to ever become one. I took it purely to rediscover the joy of exploratory making, in a time when almost nothing stands in the way, least of all time and skills.
+      This abundance drew me to the <a href="https://github.com/30DayChartChallenge/Edition2026" target="_blank" rel="noopener" class="inline-link">#30DayChartChallenge</a> by Dominic Royé and Cédric Scherer this year. It was <s>an excuse</s> thirty excuses to chase small curiosities. I took it purely to rediscover the joy of exploratory making, in a time when almost nothing stands in the way, least of all time and skills.
     </p>
     <p class="challenge-intro">
       I completed the challenge on time. If I were manually writing code, it would have stretched for sure. So having claude to speed that up was a huge help. Often, I'd make a rough chart by hand, or on any familiar tool like <a href="https://flourish.studio/" target="_blank" rel="noopener" class="inline-link">flourish</a> or <a href="https://app.datawrapper.de" target="_blank" rel="noopener" class="inline-link">datawrapper</a>, or in R, and then ask claude to translate it using D3.js. The technical layer, code, data fetching, scraping, tagging, came together in minutes with this collaboration. Everything else, the concept, data sampling, structuring, analysis, colours, titles, framing, every micro-decision in between, is mine.
@@ -472,7 +472,7 @@
         Charting an insight can tend to infinity. The same dataset can splinter into many charts. The same insight can dress up as many chart types.
       </p>
       <p class="begin-note-body">
-        I liked that Shri Khalpada <a href="https://perthirtysix.com/essay/30-day-chart-challenge-2024" target="_blank" rel="noopener" class="inline-link">locked in the fonts</a>, formats, colours, tools, bringing standardisation and reducing time and number of decisions. And that <a href="https://karaman.is/blog/2026/04/30daychartchallenge-2026" target="_blank" rel="noopener" class="inline-link">Georgios Karamanis</a> defined his data universe around Uppsala's transport data and worked entirely within those bounds. Constraints make their work stand out, in the same way as a fence that helps separate a garden from a field.
+        I liked that Shri Khalpada <a href="https://perthirtysix.com/essay/30-day-chart-challenge-2024" target="_blank" rel="noopener" class="inline-link">locked in the fonts</a>, formats, colours, tools, bringing standardisation and reducing time and number of decisions. And that Georgios Karamanis <a href="https://karaman.is/blog/2026/04/30daychartchallenge-2026" target="_blank" rel="noopener" class="inline-link">defined his data universe</a> around Uppsala's transport data and worked entirely within those bounds. Constraints make their work stand out, in the same way as a fence that helps separate a garden from a field.
       </p>
       <p class="begin-note-body">
         One cool thing about continuing the challenge till the very end, is that nothing is wasted. A dataset set aside comes back to fit a later prompt. A chart type abandoned gets a second life. Happened with me a lot.
@@ -491,12 +491,11 @@
       </p>
       <p class="begin-note-body">
         A lot of my time was spent on titles, annotations, stripping back anything that didn't earn its place on the canvas. Every reader takes a few seconds to a few minutes to get the point when engaging with a chart. Some charts are intentionally demanding, like a <a href="https://vizzendata.com/2019/10/18/dont-mekko-with-my-marimekko/" target="_blank" rel="noopener" class="inline-link">Marimekko chart</a> which asks for patience and a certain bit of chart literacy. A chart can demand effort, but your reader should never feel punished for trying to engage.
+        <br /><br />
+        And now, to the charts.
       </p>
     </div>
   </div>
-
-  <!-- Transition line into the individual charts -->
-  <p class="detail-intro">And now, to the charts.</p>
 
   <!-- Detailed list: each chart, top to bottom -->
   <div class="detail-list">
@@ -1198,20 +1197,9 @@
     display: block;
   }
 
-  /* Transition line above the per-chart detail list */
-  .detail-intro {
-    margin: 3.5rem auto 0;
-    max-width: 900px;
-    font-family: "TT Jenevers", serif;
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: #111;
-    text-align: left;
-  }
-
   /* ── Detail list (one chart per row, top to bottom) ── */
   .detail-list {
-    margin-top: 1.5rem;
+    margin-top: 4rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1279,8 +1267,7 @@
     font-weight: 400;
     margin: 0 auto;
     max-width: 600px;
-    text-align: justify;
-    hyphens: auto;
+    text-align: left;
   }
 
   .detail-notes p {
