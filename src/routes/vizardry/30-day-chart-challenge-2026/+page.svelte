@@ -24,15 +24,15 @@
     2:  { title: 'Pictogram',                 intro: '', outro: `I don't know how to draw digitally. But I have a rough sense of embedding SVGs in code after cleaning them up in Figma. These tiny Warli-style figures — girls, boys, middle-aged, old, Indian people — are derived from Anu Artastic's Warli figure tutorial (https://www.facebook.com/reel/1362632957890249/). I've been calling it "Our Warli in Data."`, source: '', tags: ['demographics', 'population'], bg: '#A22D0D' },
     3:  { title: 'Mosaic',                    intro: '', outro: `What I tried for this one is now the season's chart of Day XYZ. Half way through making that one, I realised it's not mosaic, if the width of the stacked bars is all the same. Abandoned it and found data from IEA that lent itself beautifully to this format. I gained another discarded chart idea that came handy later!`, source: '', tags: ['technology', 'transport'], bg: '#F2F1ED' },
     4:  { title: 'Slope',                     intro: '', outro: `Slope charts are slippery. I updated the data from an old <a href="https://www.livemint.com/industry/media/bollywoods-eternal-struggle-with-original-ideas-here-s-what-data-shows-11661772790605.html" target="_blank" rel="noopener" class="inline-link">story on Bollywood remakes</a> (<a href="https://public.tableau.com/app/profile/surbhi.bhatia/viz/Bollywoodoriginalvsremake/Dashboard1" target="_blank" rel="noopener" class="inline-link">old chart here</a>).\n\nWas it tempting to save this for a meta-day release on Day XYZ, prompt: remake? Yes. But did I have no other idea for this and plenty of chart remakes for that prompt? Yes. You know what they say about a bird in hand.`, source: '', tags: ['entertainment'], bg: '#E5E6E3' },
-    5:  { title: 'Experimental',              intro: '', outro: `Food recipes are probably humanity's greatest experiment, and few dishes invite stronger opinions than sambar. I love a nuanced culinary war!`, source: '', tags: ['food'], bg: '#FFFFFF' },
+    5:  { title: 'Experimental',              intro: '', outro: `Food recipes are probably humanity's greatest experiment, and few dishes invite stronger opinions than sambar. I love a nuanced culinary war! This chart is inspired by <a href="https://x.com/surbhaai/status/1708727084187873689/" target="_blank" rel="noopener" class="inline-link">one of my all-time favourite charts by @davidawaldron</a>.`, source: '', tags: ['food'], bg: '#FFFFFF' },
     6:  { title: 'Reporters Without Borders', intro: '', outro: `The labels and tables have turned. Found a repo of dates at Ashoka University Archives.`, source: '', tags: ['politics'], bg: '#F2ECE6' },
     7:  { title: 'Multiscale',                intro: '', outro: `From my early career days, when I used to make a lot of <a href="https://blog.theleapjournal.org/2018/09/watching-markets-work-structural-change.html#gsc.tab=0" target="_blank" rel="noopener" class="inline-link">structural breaks, back-annotation charts in R on financial markets</a>. Glad to have learnt some colour theory in life!`, source: '', tags: ['finance'], bg: '#FFFFFF' },
-    8:  { title: 'Circular',                  intro: '', outro: '', source: '', tags: ['health', 'environment'],       bg: '#EDF6FD' },
-    9:  { title: 'Wealth',                    intro: '', outro: '', source: '', tags: ['wealth'],                      bg: '#FFFFFF' },
-    10: { title: 'Pop Culture',               intro: '', outro: '', source: '', tags: ['entertainment'],               bg: '#EAE6DA' },
-    11: { title: 'Physical',                  intro: '', outro: '', source: '', tags: ['entertainment'],               bg: '#D0DED3' },
-    12: { title: 'Flowing Data',              intro: '', outro: '', source: '', tags: ['demographics', 'gender'],      bg: '#FFFFFF' },
-    13: { title: 'Ecosystems',                intro: '', outro: '', source: '', tags: ['cities'],                       bg: '#FBFBFB' },
+    8:  { title: 'Circular',                  intro: '', outro: `This is less of a comparison between cities and more a ranking of how differently we're all doomed.`, source: '', tags: ['health', 'environment'], bg: '#EDF6FD' },
+    9:  { title: 'Wealth',                    intro: '', outro: `I first came across Caroline Freund and Sarah Oliver's paper from PIIE on the origins of the superrich a few years ago, and it changed how I looked at billionaires. Recently, <a href="https://www.economist.com/interactive/business/2026/04/09/a-giant-succession-wave-is-coming-for-family-businesses" target="_blank" rel="noopener" class="inline-link">The Economist revisited a similar question</a>: what happens when massive family fortunes begin changing hands. In countries like South Korea, where conglomerates and dynasties dominate business, inheritance is practically an economic system of its own.`, source: '', tags: ['wealth'], bg: '#FFFFFF' },
+    10: { title: 'Pop Culture',               intro: '', outro: `We all know watching Dhurandhar is a four-day commitment, right? For this, I already had a list of top 10 movies per year, all I had to do was scrape run-time from IMDb. I don't think the numbers are dramatically spiraling upwards, but the data says what the data says.`, source: '', tags: ['entertainment'], bg: '#EAE6DA' },
+    11: { title: 'Physical',                  intro: '', outro: `There's something nostalgic about charting CDs. This one came together in about 20 minutes. Possibly the only <a href="https://public.tableau.com/shared/4Z36JM5NN?" target="_blank" rel="noopener" class="inline-link">US-looking chart</a> I have in the series.`, source: '', tags: ['entertainment'], bg: '#D0DED3' },
+    12: { title: 'Flowing Data',              intro: '', outro: `FlowingData had the template, my friends at Diagram Chasing had the data — I mostly just had to connect the two and watch it come alive.`, source: '', tags: ['demographics', 'gender'], bg: '#FFFFFF' },
+    13: { title: 'Ecosystems',                intro: '', outro: `This idea traced back to a talk by Leewardists organised by Revisual Labs, but also to a very personal irritation: the near absence of last-mile connectivity around metro stations in Indian cities. In cities like New York City or Tokyo, you can step into the subway almost from below your apartment building. In many Indian suburbs, meanwhile, gated enclaves swallow up land parcels, pedestrian access disappears, and metro lines end up awkwardly shadowing ring roads instead of neighbourhood life.`, source: '', tags: ['cities'], bg: '#FBFBFB' },
     14: { title: 'Trade',                     intro: '', outro: '', source: '', tags: ['trade'],                       bg: '#FFFEEE' },
     15: { title: 'Correlation',               intro: '', outro: '', source: '', tags: ['rule of law'],                 bg: '#F8D1B2' },
     16: { title: 'Causation',                 intro: '', outro: '', source: '', tags: ['finance'],                     bg: '#F8F5F2' },
@@ -478,7 +478,7 @@
             {/if}
           </header>
 
-          <div class="detail-media">
+          <div class="detail-media detail-media-day-{day}">
             {#if media?.kind === 'image'}
               <img src={media.src} alt="Day {day} — {info?.title ?? ''}" loading="lazy" on:click={() => openLightbox(day)} />
             {:else if media?.kind === 'video'}
@@ -634,7 +634,7 @@
   }
 
   .challenge-strap {
-    font-size: 16px;
+    font-size: 0.8rem;
     font-weight: 400;
     color: #333;
     line-height: 1.5;
@@ -658,7 +658,7 @@
   .inline-link:hover { color: #8a0a4a; }
 
   .challenge-intro {
-    font-size: 15px;
+    font-size: 0.8rem;
     font-weight: 400;
     color: #111;
     line-height: 1.7;
@@ -712,7 +712,7 @@
   }
 
   .begin-note-body {
-    font-size: 15px;
+    font-size: 0.8rem;
     font-weight: 400;
     color: #111;
     line-height: 1.7;
@@ -993,7 +993,7 @@
   }
 
   .closing-body {
-    font-size: 16px;
+    font-size: 0.8rem;
     color: #111;
     line-height: 1.7;
     margin: 0;
@@ -1052,7 +1052,7 @@
   .closing-figure img:hover { opacity: 0.92; }
 
   .workbook-intro {
-    font-size: 16px;
+    font-size: 0.8rem;
     color: #111;
     line-height: 1.7;
     margin: 0 0 1.5rem 0;
@@ -1161,7 +1161,7 @@
   }
 
   .detail-notes {
-    font-size: 15px;
+    font-size: 0.8rem;
     line-height: 1.7;
     color: #111;
     font-weight: 400;
@@ -1195,6 +1195,9 @@
     height: auto;
     display: block;
   }
+
+  /* Per-day height tweaks */
+  .detail-media-day-9 { max-width: 520px; }
 
   .detail-media img { cursor: pointer; }
 
