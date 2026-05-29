@@ -466,7 +466,7 @@
           role="button"
           tabindex="0"
         />
-        <figcaption>It is chaotic and full of doubt, and that is fine. This slide by <a href="https://jonathansoma.com/" target="_blank" rel="noopener" class="inline-link">Jonathan Soma</a> says it better than I can.</figcaption>
+        <figcaption>It is chaotic and full of doubt, and that is fine.<br />This slide by <a href="https://jonathansoma.com/" target="_blank" rel="noopener" class="inline-link">Jonathan Soma</a> says it better than I can.</figcaption>
       </figure>
       <p class="begin-note-body">
         Charting an insight can tend to infinity. The same dataset can splinter into many charts. The same insight can dress up as many chart types.
