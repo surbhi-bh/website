@@ -240,7 +240,7 @@
 </script>
 
 <svelte:head>
-  <title>Thirty charts in thirty days — Surbhi Bhatia</title>
+  <title>Thirty charts in thirty days</title>
   <meta name="description" content="Notes from the #30DayChartChallenge and the process of making a chart every day of the month" />
 
   <!-- Open Graph (LinkedIn, Facebook, WhatsApp, Slack, iMessage, etc.) -->
