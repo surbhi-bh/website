@@ -426,7 +426,7 @@
         <span class="flow-step"><span class="flow-icon" data-icon="annotation"></span>Annotation</span>
       </div>
       <p class="begin-note-body">
-        Like any new workout or meditation routine, the first few days are rough, but slowly the mornings stop feeling hard. It built stamina, and gave me the appetite to repeat the entire process end to end, every single day.
+        Like any new workout or meditation routine, the first few days are rough, but slowly the mornings stop feeling hard. It built stamina, and gave me the appetite to repeat the entire process end to end, day after day.
       </p>
       <p class="begin-note-body">
         But this is not the only way. For some, the entry point is data:
