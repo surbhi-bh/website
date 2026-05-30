@@ -274,13 +274,10 @@
       A lot has changed since then. It's a strange new world where making is easier than ever. Data is abundant. Agents who will write code for you for cheap are abundant. This abundance drew me to sign up for the <a href="https://github.com/30DayChartChallenge/Edition2026" target="_blank" rel="noopener" class="inline-link">#30DayChartChallenge</a> by Dominic Royé and Cédric Scherer this year.
     </p>
     <p class="challenge-intro">
-      The challenge was <s>a great excuse</s> thirty great excuses to chase small curiosities. I completed it on time in collab with claude on code. Often, I'd make a rough chart by hand, or on any familiar tool like <a href="https://flourish.studio/" target="_blank" rel="noopener" class="inline-link">flourish</a> or <a href="https://app.datawrapper.de" target="_blank" rel="noopener" class="inline-link">datawrapper</a>, or in R, and then ask claude to translate it using D3.js.
-    </p>
-    <p class="challenge-intro">
-      I found myself in four roles over the course of the challenge. A <strong>forager</strong>, out in the field to hunt for the right data; an <strong>athlete</strong>, faithful to one more lap, one more rep; a <strong>tailor</strong>, custom-stitching for the right fit; and a <strong>traffic controller</strong> guiding the reader's attention.
+      The challenge gave me <s>a great excuse</s> thirty great excuses to chase small curiosities. I completed it on time with claude as my collaborator. Often, I'd make a rough chart by hand, or on a familiar tool like <a href="https://flourish.studio/" target="_blank" rel="noopener" class="inline-link">flourish</a> or <a href="https://app.datawrapper.de" target="_blank" rel="noopener" class="inline-link">datawrapper</a>, or in R, and then ask claude to translate it using D3.js. I found myself in four roles over the course of the challenge. A <strong>forager</strong> out in the wild to hunt for data; an <strong>athlete</strong> faithful to one more rep, one more lap; a <strong>tailor</strong> custom-stitching for the right fit; and a <strong>traffic controller</strong> guiding the reader's attention.
     </p>
     <p class="challenge-intro challenge-intro-last">
-      Here are all thirty charts:
+      Here are all thirty charts, and below is a glimpse of how each role showed up in the work:
     </p>
   </div>
 
@@ -387,26 +384,29 @@
 
   <!-- Begin section: framing notes before the drip feed -->
   <div class="begin-section">
-    <h2 class="begin-title">If you're wondering where does one begin? Here's how I approached it:</h2>
+    <h2 class="begin-title">If you're wondering where to begin, here's how I approached it:</h2>
 
     <div class="begin-note">
       <h3 class="begin-note-title">
-        <img src="/flower.svg" class="begin-bullet" alt="" />A forager out in the field to hunt for the right data
+        <img src="/flower.svg" class="begin-bullet" alt="" />A forager out in the wild to hunt for the right data
       </h3>
       <p class="begin-note-body">
         There are at least two ways to approach making a chart where all you have is a one-word prompt. You can either start with a <em>dataset</em>, and find something to plot, like how <a href="https://github.com/rfordatascience/tidytuesday" target="_blank" rel="noopener" class="inline-link">#TidyTuesday</a> works. Or start with a <em>question</em>, and go looking for the data to answer it.
       </p>
       <p class="begin-note-body">
-        Early in my career I was the data-first type. I used to think if there's no data, there's no story. This has changed considerably with years of experience as a data journalist. Without quite realising it, I had built a personal directory of sources: where to look, what to trust, how to do back-of-envelope math to get from data to insight. It also helps that sources have exploded and accessing them is easier than ever. The data was almost always out there.
+        Early in my career I was the data-first type. I used to think if there's no data, there's no story. This has changed with years of experience as a data journalist. Without realising it, I had built a personal directory of sources: where to look, what to trust, how to do back-of-envelope math to get from data to insight.
+      </p>
+      <p class="begin-note-body">
+        Starting with a question came naturally to me during this challenge. Data sources have exploded and accessing them is easier than ever. The data was almost always out there.
       </p>
     </div>
 
     <div class="begin-note">
       <h3 class="begin-note-title">
-        <img src="/flower.svg" class="begin-bullet" alt="" />An athlete faithful to one more lap, one more rep
+        <img src="/flower.svg" class="begin-bullet" alt="" />An athlete faithful to one more rep, one more lap
       </h3>
       <p class="begin-note-body">
-        Starting with a question came naturally to me during this challenge. My approach to each prompt was <strong>question-first</strong>:
+        Every day, I was back at the same starting line, running the same sequence:
       </p>
       <div class="begin-flow">
         <span class="flow-step"><span class="flow-icon" data-icon="question"></span>Question</span>
@@ -426,7 +426,10 @@
         <span class="flow-step"><span class="flow-icon" data-icon="annotation"></span>Annotation</span>
       </div>
       <p class="begin-note-body">
-        But it is not the only way. For some it can be <strong>data-first</strong>:
+        Like any new workout or meditation routine, the first few days are rough, but slowly the mornings stop feeling hard. It built stamina, and gave me the appetite to repeat the entire process end to end, every single day.
+      </p>
+      <p class="begin-note-body">
+        But this is not the only way. For some, the entry point is data:
       </p>
       <div class="begin-flow">
         <span class="flow-step"><span class="flow-icon" data-icon="data"></span>Data</span>
@@ -446,12 +449,14 @@
         <span class="flow-step"><span class="flow-icon" data-icon="annotation"></span>Annotation</span>
       </div>
       <p class="begin-note-body">
-        People are loyal to tools they spent years learning. The Tableau community sticks by it. Datawrapper devotees stick to that. There is wisdom in designing within the constraints of the language and grammar you know best:
+        People are loyal to the tools they spend years learning. The Tableau community sticks by it. Datawrapper devotees stick to it. There is wisdom in working within the grammar of the tools you know best:
       </p>
       <div class="begin-flow">
         <span class="flow-step"><span class="flow-icon" data-icon="tool"></span>Tool</span>
         <span class="flow-arrow">→</span>
         <span class="flow-step"><span class="flow-icon" data-icon="data"></span>Data</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-step"><span class="flow-icon" data-icon="analysis"></span>Analysis</span>
         <span class="flow-arrow">→</span>
         <span class="flow-step"><span class="flow-icon" data-icon="chart"></span>Chart</span>
         <span class="flow-arrow">→</span>
@@ -460,10 +465,7 @@
         <span class="flow-step"><span class="flow-icon" data-icon="annotation"></span>Annotation</span>
       </div>
       <p class="begin-note-body">
-        More of these permutations are possible and out there. It looks neat and linear here, but is rarely so in practice.
-      </p>
-      <p class="begin-note-body">
-        A daily return to the starting line built stamina. It gave me the appetite to repeat the entire process end to end, every single day. Like any new workout or meditation routine, the first few days are rough, but slowly the mornings stop feeling hard.
+        The sequence looks neat on paper, but in practice it rarely holds a linear shape. For example, some days the prompt is a chart type to work backwards from.
       </p>
     </div>
 
@@ -472,10 +474,13 @@
         <img src="/flower.svg" class="begin-bullet" alt="" />A tailor custom-stitching for the right fit
       </h3>
       <p class="begin-note-body">
-        It is very tempting, once you have some data, to want <em>longer</em> data: another decade, another city, another source, another scrape.
+        It is very tempting, once you have some data, to want more data: another decade, another city, another source, another scrape.
       </p>
       <p class="begin-note-body">
-        A daily challenge teaches you to work with the cloth on the table. From the same cloth you can cut a handkerchief, a curtain, or a pair of trousers. The same dataset can be cut into many charts. The same insight can dress up as many chart types. The smallest dataset I used had less than 10 observations, and the largest over 76k values. The challenge was less about the amount of fabric and more about the cut.
+        A daily challenge teaches you to work with the fabric on the table. You can cut the same fabric to make a handkerchief, a scarf, or join many pieces to sew a skirt. In some instances I chose to stitch just 10 data points even if there were a lot more available. In others, I chose to waste nothing and made a chart with all 76k data points. The challenge was less about the amount of fabric and more about the cut.
+      </p>
+      <p class="begin-note-body">
+        Nothing is wasted when you tailor this way. Any cloth left behind comes together in another form. A dataset kept aside fits a later prompt. A chart type abandoned gets thrifted into a second life. The offcuts came together as patchwork.
       </p>
       <p class="begin-note-body">
         A few well-chosen rules can carry the project a long way. Shri Khalpada <a href="https://perthirtysix.com/essay/30-day-chart-challenge-2024" target="_blank" rel="noopener" class="inline-link">locked in the fonts</a>, formats, colours, tools, to reduce the number of micro-decisions. Georgios Karamanis <a href="https://karaman.is/blog/2026/04/30daychartchallenge-2026" target="_blank" rel="noopener" class="inline-link">defined the data universe</a> entirely around Uppsala's transport data and worked within those bounds to chisel out the charts. Constraints make their work stand out in the same way as a fence that helps separate a garden from a field.
@@ -487,19 +492,16 @@
         <img src="/flower.svg" class="begin-bullet" alt="" />A traffic controller guiding the reader's attention
       </h3>
       <p class="begin-note-body">
-        I once had an editor who used to say one chart is not the story. But they also said that if a chart is screenshotted and shared as a standalone image on WhatsApp, it should be able to explain the story.
+        I once had an editor who used to say one chart is not the story. But they also said that if a chart is screenshotted and shared as a standalone image on WhatsApp, it should be able to explain the story. So I was very conscious that every chart had an answer to the one and only question of life: <em>"What's the point???"</em>
       </p>
       <p class="begin-note-body">
-        And so, I was very conscious that every chart had an answer to the one and only question of life: <em>"What's the point???"</em>
+        A lot of my time was spent on titles, annotations, stripping back anything that didn't earn its place on the canvas. It was like traffic-managing attention, hierarchy, and inference. The green signals have to be very clear for a reader to reach the point.
       </p>
       <p class="begin-note-body">
-        A lot of my time was spent on titles, annotations, stripping back anything that didn't earn its place on the canvas. Every reader takes a few seconds to a few minutes to get the point when engaging with a chart. Some charts are intentionally demanding, like a <a href="https://vizzendata.com/2019/10/18/dont-mekko-with-my-marimekko/" target="_blank" rel="noopener" class="inline-link">Marimekko chart</a> which asks for patience and a certain bit of chart literacy. A chart can demand effort, but your reader should never feel punished for trying to engage.
+        Some charts are demanding by design, like a <a href="https://vizzendata.com/2019/10/18/dont-mekko-with-my-marimekko/" target="_blank" rel="noopener" class="inline-link">Marimekko chart</a>, which asks for patience and a degree of chart literacy. A chart can demand effort, but the reader should never feel punished for trying to engage.
       </p>
       <p class="begin-note-body">
-        One cool thing about continuing the challenge till the very end, is that nothing is wasted. A dataset set aside comes back to fit a later prompt. A chart type abandoned gets a second life. Happened with me a lot.
-      </p>
-      <p class="begin-note-body">
-        And now, to the charts.
+        And now, on to the charts.
       </p>
     </div>
   </div>
