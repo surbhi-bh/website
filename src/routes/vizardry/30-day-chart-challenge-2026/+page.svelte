@@ -245,14 +245,14 @@
 
   <!-- Open Graph (LinkedIn, Facebook, WhatsApp, Slack, iMessage, etc.) -->
   <meta property="og:type" content="article" />
-  <meta property="og:title" content="Thirty charts in thirty days by Surbhi Bhatia" />
+  <meta property="og:title" content="Thirty charts in thirty days" />
   <meta property="og:description" content="Notes from the #30DayChartChallenge and the process of making a chart every day of the month" />
   <meta property="og:image" content="https://surbhibhatia.com/images/og-30-day-chart-challenge-2026.png" />
   <meta property="og:url" content="https://surbhibhatia.com/vizardry/30-day-chart-challenge-2026" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Thirty charts in thirty days by Surbhi Bhatia" />
+  <meta name="twitter:title" content="Thirty charts in thirty days" />
   <meta name="twitter:description" content="Notes from the #30DayChartChallenge and the process of making a chart every day of the month" />
   <meta name="twitter:image" content="https://surbhibhatia.com/images/og-30-day-chart-challenge-2026.png" />
 </svelte:head>
