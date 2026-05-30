@@ -38,7 +38,7 @@
     16: { title: 'Causation',                 intro: '', outro: `When's the last time you made an ATM run?`, source: '', tags: ['finance'], bg: '#F8F5F2' },
     17: { title: 'Remake',                    intro: '', outro: `If Greek sounds like nonsense to English speakers, what sounds like nonsense to the Greek? (Answer: Chinese.) Remaking <a href="https://x.com/surbhaai/status/1143580636986216448" target="_blank" rel="noopener" class="inline-link">an old chart</a> from back when I didn't realise messing with reading direction is a design sin.`, source: '', tags: ['linguistics'], bg: '#E5E7EB' },
     18: { title: 'UNICEF',                    intro: '', outro: `With hospitals bombed, food and medicines in short supply, and access to essentials collapsing, the war on Palestine has undone decades of progress in child survival.`, source: '', tags: ['demographics', 'health'], bg: '#FFFFFF' },
-    19: { title: 'Evolution',                 intro: '', outro: `Tried a chart about the <a href="https://www.datavis.ca/milestones/" target="_blank" rel="noopener" class="inline-link">evolution of charts</a>, by Michael Friendly and D.J. Denis. A centuries long attempt to make sense of the world through diagrams, geometry, and better ways of seeing what numbers are doing.`, source: '', tags: ['history'], bg: '#FFF6DF' },
+    19: { title: 'Evolution',                 intro: '', outro: `Tried a chart about the <a href="https://www.datavis.ca/milestones/" target="_blank" rel="noopener" class="inline-link">evolution of charts</a>, by Michael Friendly and D.J. Denis. A centuries long attempt to make sense of the world through diagrams, geometry, and better ways to see what numbers are doing.`, source: '', tags: ['history'], bg: '#FFF6DF' },
     20: { title: 'Global Change',             intro: '', outro: `How do countries power themselves? Over the last two decades, the world's electricity mix has been slowly turning green, but not everywhere.`, source: '', tags: ['environment', 'climate change'], bg: '#E2E2E2' },
     21: { title: 'Historical',                intro: '', outro: `India's aviation history is full of ambitious takeoffs and abrupt endings. In my lifetime alone, Indian airlines have appeared, merged, vanished, and rebranded faster than most people can keep track of.`, source: '', tags: ['history'], bg: '#FFFFFF' },
     22: { title: 'New Tool',                  intro: '', outro: `I tried Orange as a tool first to make this. It was fantastic at tracing no-code workflows but less helpful when you want bespoke charts. Here's a chart anyway. Did you know just 0.1% of people in Myanmar live in Naypyidaw, its capital?`, source: '', tags: ['cities'], bg: '#EDF6F7' },
@@ -277,7 +277,7 @@
       The challenge was <s>a great excuse</s> thirty great excuses to chase small curiosities. I completed it on time in collab with claude on code. Often, I'd make a rough chart by hand, or on any familiar tool like <a href="https://flourish.studio/" target="_blank" rel="noopener" class="inline-link">flourish</a> or <a href="https://app.datawrapper.de" target="_blank" rel="noopener" class="inline-link">datawrapper</a>, or in R, and then ask claude to translate it using D3.js.
     </p>
     <p class="challenge-intro">
-      I found myself in four roles every so often. A <strong>forager</strong>, out in the field to hunt for the right data; an <strong>athlete</strong>, faithful to one more lap, one more rep; a <strong>tailor</strong>, custom-stitching for the right fit; and a <strong>traffic controller</strong> guiding the reader's attention.
+      I found myself in four roles over the course of the challenge. A <strong>forager</strong>, out in the field to hunt for the right data; an <strong>athlete</strong>, faithful to one more lap, one more rep; a <strong>tailor</strong>, custom-stitching for the right fit; and a <strong>traffic controller</strong> guiding the reader's attention.
     </p>
     <p class="challenge-intro challenge-intro-last">
       Here are all thirty charts:
@@ -419,6 +419,8 @@
         <span class="flow-arrow">→</span>
         <span class="flow-step"><span class="flow-icon" data-icon="chart"></span>Chart Type</span>
         <span class="flow-arrow">→</span>
+        <span class="flow-step"><span class="flow-icon" data-icon="tool"></span>Tool</span>
+        <span class="flow-arrow">→</span>
         <span class="flow-step"><span class="flow-icon" data-icon="design"></span>Design</span>
         <span class="flow-arrow">→</span>
         <span class="flow-step"><span class="flow-icon" data-icon="annotation"></span>Annotation</span>
@@ -430,6 +432,8 @@
         <span class="flow-step"><span class="flow-icon" data-icon="data"></span>Data</span>
         <span class="flow-arrow">→</span>
         <span class="flow-step"><span class="flow-icon" data-icon="question"></span>Question</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-step"><span class="flow-icon" data-icon="tool"></span>Tool</span>
         <span class="flow-arrow">→</span>
         <span class="flow-step"><span class="flow-icon" data-icon="analysis"></span>Analysis</span>
         <span class="flow-arrow">→</span>
@@ -459,7 +463,7 @@
         More of these permutations are possible and out there. It looks neat and linear here, but is rarely so in practice.
       </p>
       <p class="begin-note-body">
-        Daily returns to the start line built stamina. It gave me the appetite to repeat the entire process end to end, every single day. Like any new workout or meditation routine, the first few days are rough, but slowly the mornings stop feeling hard.
+        A daily return to the starting line built stamina. It gave me the appetite to repeat the entire process end to end, every single day. Like any new workout or meditation routine, the first few days are rough, but slowly the mornings stop feeling hard.
       </p>
     </div>
 
