@@ -388,7 +388,7 @@
 
     <div class="begin-note">
       <h3 class="begin-note-title">
-        <img src="/flower.svg" class="begin-bullet" alt="" />A forager out in the wild to hunt for the right data
+        <img src="/flower.svg" class="begin-bullet" alt="" />A forager out in the wild to hunt for data
       </h3>
       <p class="begin-note-body">
         There are at least two ways to approach making a chart where all you have is a one-word prompt. You can either start with a <em>dataset</em>, and find something to plot, like how <a href="https://github.com/rfordatascience/tidytuesday" target="_blank" rel="noopener" class="inline-link">#TidyTuesday</a> works. Or start with a <em>question</em>, and go looking for the data to answer it.
