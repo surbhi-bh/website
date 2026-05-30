@@ -1,7 +1,7 @@
 <script>
   import '../app.css';
   import { page } from '$app/stores';
-  import { beforeNavigate } from '$app/navigation';
+  import { beforeNavigate, afterNavigate } from '$app/navigation';
   import FootnoteChart from '$lib/components/FootnoteChart.svelte';
   import HierogylphWidget from '$lib/components/HieroglyphWidget.svelte';
   import { gardenPanel, footerExpanded } from '$lib/gardenStore.js';
@@ -13,6 +13,12 @@
 
   // Clear the panel and close mobile menu on every page navigation
   beforeNavigate(() => { gardenPanel.set(null); mobileMenuOpen = false; });
+
+  // Scroll to top on every route change so the new page doesn't appear to
+  // load "below" the previous one when the user was scrolled down.
+  afterNavigate(() => {
+    if (typeof window !== 'undefined') window.scrollTo(0, 0);
+  });
 
   // Routes that need a wide main column (no 700px cap)
   $: isWideRoute = $page.url.pathname.startsWith('/vizardry/');
@@ -381,12 +387,14 @@
     height: 24px;
     display: block;
     transform-origin: 50% 50%;
-    /* Gentle continuous rotation as a subtle "this is interactive" cue */
+    /* Slow continuous rotation when the menu is closed */
     animation: menu-flower-spin 14s linear infinite;
   }
 
   .mobile-menu-btn.menu-open .mobile-menu-flower {
-    animation: menu-flower-spin 14s linear infinite;
+    /* When the drawer is open: spin slightly faster + pink drop shadow */
+    animation: menu-flower-spin 6s linear infinite;
+    filter: drop-shadow(0 0 6px rgba(208,17,111,0.45));
   }
 
   @keyframes menu-flower-spin {

@@ -281,14 +281,17 @@
       // Hand-drawn label box — pinned to left edge of viewport (not the shifted g)
       // Draw in a separate fixed group so offsetX doesn't affect it
       const labelW = labelMargin - 4, labelH = 22;
+      // Clamp the box vertically so it never extends above/below the SVG.
+      const boxY = Math.max(2, Math.min(height - labelH - 2, refY - labelH / 2));
+      const labelCenterY = boxY + labelH / 2;
       const fixedG = svgEl.append('g'); // no transform — stays fixed in viewport
       const rc2 = rough.svg(svgEl.node());
-      fixedG.node().appendChild(rc2.rectangle(2, refY - labelH / 2, labelW, labelH, {
+      fixedG.node().appendChild(rc2.rectangle(2, boxY, labelW, labelH, {
         fill: 'rgba(208,17,111,0.08)', fillStyle: 'solid',
         stroke: 'rgba(208,17,111,0.5)', strokeWidth: 1.2, roughness: 2.2
       }));
       fixedG.append('text')
-        .attr('x', labelMargin / 2).attr('y', refY + 1)
+        .attr('x', labelMargin / 2).attr('y', labelCenterY + 1)
         .attr('text-anchor', 'middle').attr('dominant-baseline', 'middle')
         .style('font-size', isMobile ? '13px' : '15px').style('fill', 'rgba(208,17,111,0.9)')
         .style('font-family', 'DM Mono, monospace').style('font-weight', '700')

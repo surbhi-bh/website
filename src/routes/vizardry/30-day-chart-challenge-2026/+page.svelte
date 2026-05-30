@@ -486,7 +486,7 @@
         Charting an insight can tend to infinity. The same dataset can splinter into many charts. The same insight can dress up as many chart types.
       </p>
       <p class="begin-note-body">
-        I liked that Shri Khalpada <a href="https://perthirtysix.com/essay/30-day-chart-challenge-2024" target="_blank" rel="noopener" class="inline-link">locked in the fonts</a>, formats, colours, tools, bringing standardisation and reducing time and number of decisions. And that Georgios Karamanis <a href="https://karaman.is/blog/2026/04/30daychartchallenge-2026" target="_blank" rel="noopener" class="inline-link">defined his data universe</a> around Uppsala's transport data and worked entirely within those bounds. Constraints make their work stand out, in the same way as a fence that helps separate a garden from a field.
+        I liked that Shri Khalpada <a href="https://perthirtysix.com/essay/30-day-chart-challenge-2024" target="_blank" rel="noopener" class="inline-link">locked in the fonts</a>, formats, colours, tools, bringing standardisation and reducing time and number of decisions. And that Georgios Karamanis <a href="https://karaman.is/blog/2026/04/30daychartchallenge-2026" target="_blank" rel="noopener" class="inline-link">defined the data universe</a> around Uppsala's transport data and worked entirely within those bounds. Constraints make their work stand out, in the same way as a fence that helps separate a garden from a field.
       </p>
       <p class="begin-note-body">
         One cool thing about continuing the challenge till the very end, is that nothing is wasted. A dataset set aside comes back to fit a later prompt. A chart type abandoned gets a second life. Happened with me a lot.

@@ -143,8 +143,12 @@
 
   const typeColor = { talk: '#1a6b3a', training: '#1a6b3a', panel: '#1a6b3a' };
 
-  const defaultPanelItem = items.find(i => i.id === '11');
-  onMount(() => { gardenPanel.set(defaultPanelItem); });
+  onMount(() => {
+    const isMobile = typeof window !== 'undefined' && window.innerWidth <= 768;
+    const defaultId = isMobile ? '4' : '11';
+    const defaultItem = items.find(i => i.id === defaultId);
+    if (defaultItem) gardenPanel.set(defaultItem);
+  });
 
   function handleClick(item) {
     gardenPanel.set(item);
