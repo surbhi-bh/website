@@ -9,8 +9,10 @@
   // Reset footer when navigating away from home or readme
   $: if ($page.url.pathname !== '/' && $page.url.pathname !== '/readme') footerExpanded.set(false);
 
-  // Clear the panel on every page navigation
-  beforeNavigate(() => gardenPanel.set(null));
+  let mobileMenuOpen = false;
+
+  // Clear the panel and close mobile menu on every page navigation
+  beforeNavigate(() => { gardenPanel.set(null); mobileMenuOpen = false; });
 
   // Routes that need a wide main column (no 700px cap)
   $: isWideRoute = $page.url.pathname.startsWith('/vizardry/');
@@ -53,10 +55,29 @@
   <script src="https://cdn.jsdelivr.net/npm/roughjs@4.5.2/bundled/rough.js"></script>
 </svelte:head>
 
+<!-- MOBILE TOP BAR -->
+<header class="mobile-topbar">
+  <a href="/" class="brand-name" class:active={isActive('/', $page.url.pathname)}>
+    <img src="/flower.svg" class="brand-flower" class:brand-flower-visible={isActive('/', $page.url.pathname)} alt="" />Surbhi Bhatia
+  </a>
+  <button class="mobile-menu-btn" aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'} on:click={() => mobileMenuOpen = !mobileMenuOpen}>
+    {#if mobileMenuOpen}
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="2" y1="2" x2="16" y2="16"/><line x1="16" y1="2" x2="2" y2="16"/></svg>
+    {:else}
+      <svg width="20" height="14" viewBox="0 0 20 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="0" y1="1" x2="20" y2="1"/><line x1="0" y1="7" x2="20" y2="7"/><line x1="0" y1="13" x2="20" y2="13"/></svg>
+    {/if}
+  </button>
+</header>
+
+<!-- MOBILE OVERLAY -->
+{#if mobileMenuOpen}
+  <div class="mobile-overlay" role="presentation" on:click={() => mobileMenuOpen = false}></div>
+{/if}
+
 <div class="container" class:has-panel={$gardenPanel !== null}>
 
   <!-- SIDEBAR -->
-  <aside class="sidebar">
+  <aside class="sidebar" class:mobile-open={mobileMenuOpen}>
     <a href="/" class="brand-name" class:active={isActive('/', $page.url.pathname)}>
       <img src="/flower.svg" class="brand-flower" class:brand-flower-visible={isActive('/', $page.url.pathname)} alt="" />Surbhi Bhatia
     </a>
@@ -329,5 +350,79 @@
     cursor: default;
     padding: 0px 0 0px 28px;
     display: block;
+  }
+
+  /* ── Mobile top bar (hidden on desktop, shown on narrow viewports) ── */
+  .mobile-topbar {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 52px;
+    background: #fff;
+    border-bottom: 1px solid rgba(26,107,58,0.12);
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    z-index: 400;
+  }
+
+  .mobile-menu-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #1a6b3a;
+    display: flex;
+    align-items: center;
+    padding: 6px;
+    margin-right: -6px;
+    transition: opacity 0.15s;
+  }
+
+  .mobile-menu-btn:hover { opacity: 0.6; }
+
+  .mobile-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.28);
+    z-index: 250;
+  }
+
+  /* ── Mobile breakpoint: collapse sidebar into a slide-out drawer ── */
+  @media (max-width: 768px) {
+    .mobile-topbar { display: flex; }
+
+    :global(.container) {
+      display: block !important;
+    }
+
+    :global(.sidebar) {
+      position: fixed !important;
+      top: 0 !important;
+      left: -290px !important;
+      width: 260px !important;
+      height: 100dvh !important;
+      height: 100vh !important;
+      overflow-y: auto !important;
+      overflow-x: hidden !important;
+      transition: left 0.25s ease, box-shadow 0.25s ease !important;
+      z-index: 300 !important;
+    }
+
+    :global(.sidebar.mobile-open) {
+      left: 0 !important;
+      box-shadow: 6px 0 28px rgba(0,0,0,0.14) !important;
+    }
+
+    :global(.main) {
+      padding-top: 68px !important;
+      padding-left: 1.25rem !important;
+      padding-right: 1.25rem !important;
+    }
+
+    :global(.footnote-band) {
+      grid-template-columns: 1fr !important;
+    }
   }
 </style>
