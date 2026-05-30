@@ -154,7 +154,11 @@
 
     const dataMap = { daily: fnDaily, weekly: fnWeekly, monthly: fnMonthly };
     const rawData = dataMap[period];
-    const data    = period === 'daily' ? rawData.slice(-45) : rawData;
+    // On narrow viewports, show fewer daily points so the chart fits without
+    // 1500+ pixels of pixel-positioned content drifting off-screen.
+    const isMobile = typeof window !== 'undefined' && window.innerWidth <= 768;
+    const dailyCount = isMobile ? 14 : 45;
+    const data    = period === 'daily' ? rawData.slice(-dailyCount) : rawData;
     const latest = data[data.length - 1].steps;
 
     const numEl = document.getElementById('footnoteNumber');
@@ -163,7 +167,7 @@
     const subEl = document.getElementById('footnoteSub');
     if (subEl) subEl.textContent = fnSubLabels[period];
 
-    const futureBuf  = period === 'daily' ? 31 : (period === 'weekly' ? 6 : 2);
+    const futureBuf  = period === 'daily' ? (isMobile ? 7 : 31) : (period === 'weekly' ? 6 : 2);
     const bandHeight = chartContainer.parentElement.offsetHeight;
     const containerW = chartContainer.parentElement.offsetWidth;
     const height = bandHeight;
@@ -175,8 +179,9 @@
       ? 2 * GRID
       : Math.round(containerW / (data.length + futureBuf) / GRID) * GRID || GRID;
 
-    // Left margin reserved for the 10k label (3 grid cells)
-    const labelMargin = period === 'daily' ? 3 * GRID : 0;
+    // Left margin reserved for the 10k label.
+    // Daily mode: 3 grid cells on desktop, 5 on mobile so "10k" doesn't get clipped.
+    const labelMargin = period === 'daily' ? (isMobile ? 5 : 3) * GRID : 0;
 
     const totalSlots = data.length + futureBuf;
     const chartWidth = totalSlots * slotW;
@@ -285,7 +290,7 @@
       fixedG.append('text')
         .attr('x', labelMargin / 2).attr('y', refY + 1)
         .attr('text-anchor', 'middle').attr('dominant-baseline', 'middle')
-        .style('font-size', '15px').style('fill', 'rgba(208,17,111,0.9)')
+        .style('font-size', isMobile ? '13px' : '15px').style('fill', 'rgba(208,17,111,0.9)')
         .style('font-family', 'DM Mono, monospace').style('font-weight', '700')
         .text('10k');
 
@@ -407,6 +412,19 @@
       .catch(() => {
         // API failed — nothing to draw
       });
+
+    // Redraw on viewport resize (e.g., orientation change, desktop ↔ mobile breakpoint).
+    // Throttle via a debounce so we don't redraw on every pixel of a drag.
+    let resizeTimer;
+    const onResize = () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => drawChart(currentFnPeriod), 150);
+    };
+    window.addEventListener('resize', onResize);
+    return () => {
+      window.removeEventListener('resize', onResize);
+      clearTimeout(resizeTimer);
+    };
   });
 
 </script>

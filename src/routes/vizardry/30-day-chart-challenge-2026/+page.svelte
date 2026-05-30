@@ -1392,4 +1392,58 @@
     letter-spacing: 0.12em;
     color: rgba(255,255,255,0.7);
   }
+
+  /* ── Mobile: collapse 6-col grid, single-panel theme view, tighter type ── */
+  @media (max-width: 768px) {
+    .challenge-title { font-size: 24px; line-height: 1.15; }
+    .challenge-strap { font-size: 0.85rem; }
+    .begin-title,
+    .begin-note-title { font-size: 18px; }
+
+    .begin-note-body,
+    .begin-flow,
+    .begin-figure { margin-left: 0; padding-left: 0; }
+
+    .begin-flow { font-size: 11px; padding: 8px 10px; }
+    .flow-arrow { font-size: 14px; }
+
+    /* Chart grid: 2 cols of flexible cells (was 6 × 140px) */
+    .chart-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 10px;
+      row-gap: 16px;
+    }
+
+    /* Theme-mode placement: ignore the assigned col/row, single column instead */
+    .chart-grid-themed { display: flex; flex-direction: column; gap: 18px; }
+    .chart-grid-themed .chart-cell,
+    .chart-grid-themed .theme-header {
+      grid-column: auto !important;
+      grid-row: auto !important;
+      margin: 0;
+    }
+
+    .week-header,
+    .theme-header { margin-top: 4px; }
+
+    .controls { gap: 12px 16px; }
+    .pill, .sort-btn { font-size: 9px; padding: 3px 8px; }
+
+    /* Hide sort options on mobile — filters only */
+    .sort-control { display: none; }
+
+    /* Detail entries: tighter, image fills the column */
+    .detail-entry { max-width: 100%; }
+    .detail-media { max-width: 100%; }
+    .detail-title { font-size: 20px; }
+    .detail-notes { max-width: 100%; }
+
+    /* Closing image row: collapse 3 cols to 1 (the existing 600px breakpoint already
+       covered this, but on narrow phones we want it earlier too) */
+    .closing-image-row { grid-template-columns: 1fr; }
+
+    .signoff-answer { font-size: 18px; }
+
+    .sheet-wrap { height: 360px; }
+  }
 </style>

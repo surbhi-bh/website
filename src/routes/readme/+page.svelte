@@ -47,4 +47,8 @@
   .bio-paragraph:last-child {
     margin-bottom: 0;
   }
+
+  @media (max-width: 768px) {
+    .bio-body { font-size: 15px; }
+  }
 </style>

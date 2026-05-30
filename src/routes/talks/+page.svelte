@@ -303,4 +303,11 @@
     border: 1px solid rgba(26,107,58,0.25);
     padding: 2px 6px;
   }
+
+  /* ── Mobile: remove right-padding on descriptions, tighten layout ── */
+  @media (max-width: 768px) {
+    .item-desc { padding-right: 0; }
+    .item-title { font-size: 16px; }
+    .group { margin-bottom: 2rem; }
+  }
 </style>

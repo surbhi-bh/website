@@ -456,4 +456,39 @@
     flex-shrink: 0;
     filter: grayscale(8%);
   }
+
+  /* ── Mobile: stack absolute-positioned cards, keep pin + slight slant ── */
+  @media (max-width: 768px) {
+    .board {
+      height: auto;
+      max-height: none;
+      min-height: 0;
+      padding: 32px 16px 36px;
+      display: flex;
+      flex-direction: column;
+      gap: 36px;
+      overflow: visible;
+    }
+
+    /* Stack cards but keep their per-card --rot for the pinned-card slant */
+    .card {
+      position: static !important;
+      width: 88% !important;
+      top: auto !important;
+      left: auto !important;
+      transform: rotate(var(--rot, 0deg)) !important;
+    }
+
+    /* Alternate alignment so cards lean and shift left/right, not all centered */
+    .card:nth-child(odd)  { align-self: flex-start; margin-left: 4px; }
+    .card:nth-child(even) { align-self: flex-end;   margin-right: 4px; }
+
+    .footer-btn {
+      position: static;
+      align-self: flex-end;
+      margin-top: 8px;
+      transform: none;
+    }
+
+  }
 </style>

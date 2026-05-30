@@ -395,4 +395,12 @@
     letter-spacing: 0.02em;
     margin-top: auto;
   }
+
+  /* ── Mobile: collapse grid to 1 column ── */
+  @media (max-width: 768px) {
+    .vs-grid {
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+  }
 </style>

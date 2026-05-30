@@ -57,15 +57,9 @@
 
 <!-- MOBILE TOP BAR -->
 <header class="mobile-topbar">
-  <a href="/" class="brand-name" class:active={isActive('/', $page.url.pathname)}>
-    <img src="/flower.svg" class="brand-flower" class:brand-flower-visible={isActive('/', $page.url.pathname)} alt="" />Surbhi Bhatia
-  </a>
-  <button class="mobile-menu-btn" aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'} on:click={() => mobileMenuOpen = !mobileMenuOpen}>
-    {#if mobileMenuOpen}
-      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="2" y1="2" x2="16" y2="16"/><line x1="16" y1="2" x2="2" y2="16"/></svg>
-    {:else}
-      <svg width="20" height="14" viewBox="0 0 20 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="0" y1="1" x2="20" y2="1"/><line x1="0" y1="7" x2="20" y2="7"/><line x1="0" y1="13" x2="20" y2="13"/></svg>
-    {/if}
+  <a href="/" class="brand-name brand-name-mobile" class:active={isActive('/', $page.url.pathname)}>Surbhi Bhatia</a>
+  <button class="mobile-menu-btn" class:menu-open={mobileMenuOpen} aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'} on:click={() => mobileMenuOpen = !mobileMenuOpen}>
+    <img src="/flower.svg" class="mobile-menu-flower" alt="" />
   </button>
 </header>
 
@@ -380,7 +374,26 @@
     transition: opacity 0.15s;
   }
 
-  .mobile-menu-btn:hover { opacity: 0.6; }
+  .mobile-menu-btn:hover { opacity: 0.85; }
+
+  .mobile-menu-flower {
+    width: 24px;
+    height: 24px;
+    display: block;
+    transform-origin: 50% 50%;
+    /* Gentle continuous rotation as a subtle "this is interactive" cue */
+    animation: menu-flower-spin 14s linear infinite;
+  }
+
+  .mobile-menu-btn.menu-open .mobile-menu-flower {
+    animation: menu-flower-spin 14s linear infinite;
+  }
+
+  @keyframes menu-flower-spin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+  }
+
 
   .mobile-overlay {
     position: fixed;
@@ -400,8 +413,8 @@
     :global(.sidebar) {
       position: fixed !important;
       top: 0 !important;
-      left: -290px !important;
-      width: 260px !important;
+      left: -260px !important;
+      width: 240px !important;
       height: 100dvh !important;
       height: 100vh !important;
       overflow-y: auto !important;
@@ -421,8 +434,121 @@
       padding-right: 1.25rem !important;
     }
 
+    /* ── Footnote/step-chart band on mobile ──
+       Stack the left (stat + toggles) and right (chart) vertically so the chart
+       can use the full width. Override the desktop 280px+1fr columns. */
     :global(.footnote-band) {
       grid-template-columns: 1fr !important;
+      grid-template-rows: auto auto;
+      height: auto !important;
+      min-height: 0;
     }
+
+    :global(.footnote-left) {
+      padding: 8px 14px !important;
+      grid-template-columns: 1fr auto !important;
+      gap: 10px !important;
+    }
+
+    :global(.footnote-number) { font-size: 22px !important; }
+    :global(.footnote-label)  { font-size: 12px !important; }
+    :global(.footnote-sub)    { font-size: 11px !important; }
+    :global(.footnote-tog)    { font-size: 10px !important; }
+
+    :global(.footnote-right) {
+      height: 80px !important;
+      width: 100% !important;
+      min-width: 0 !important;
+    }
+
+    :global(.footnote-right svg) {
+      width: 100% !important;
+      height: 80px !important;
+      display: block;
+    }
+
+    /* Collapsed strip on non-home pages */
+    :global(.footnote-collapsed) {
+      height: 26px !important;
+      padding: 0 14px !important;
+    }
+    :global(.footnote-label-slim) { font-size: 12px !important; }
+
+    /* Inside the drawer: hide the brand name and the first nav section title
+       so the menu starts straight with the nav items (read.me first). */
+    :global(.sidebar > .brand-name) { display: none !important; }
+    :global(.sidebar .nav-title)    { display: none !important; }
+    /* Push the drawer content below the fixed 52px topbar so the first item
+       (read.me) isn't hidden under it. */
+    :global(.sidebar) { padding: 68px 0.8rem 1.25rem 0.75rem !important; }
+
+    /* Nav link gutter: room for the leading flower marker (20px wide) plus a
+       small visual gap before the word. */
+    :global(.sidebar .nav-link),
+    :global(.sidebar .nav-link-dim) {
+      padding-left: 28px !important;
+      font-size: 17px !important;
+      padding-top: 5px !important;
+      padding-bottom: 5px !important;
+    }
+
+    /* Active links: clear black; disabled (.nav-link-dim) keeps its grey */
+    :global(.sidebar .nav-link:not(.nav-link-dim)) {
+      color: #111 !important;
+      font-weight: 400 !important;
+    }
+
+    /* ── Third panel (talks/garden item detail) as a bottom sheet on mobile ── */
+    .third-panel {
+      position: fixed !important;
+      left: 0 !important;
+      right: 0 !important;
+      bottom: 0 !important;
+      top: auto !important;
+      height: 78vh !important;
+      max-height: 78dvh !important;
+      width: 100% !important;
+      border-left: none !important;
+      border-top: 1px solid rgba(26,107,58,0.18) !important;
+      border-top-left-radius: 14px !important;
+      border-top-right-radius: 14px !important;
+      box-shadow: 0 -8px 28px rgba(0,0,0,0.18) !important;
+      padding: 28px 20px 32px !important;
+      overflow-y: auto !important;
+      z-index: 320 !important;
+      animation: third-panel-slide-up 0.28s ease-out;
+    }
+
+    /* Grab-handle hint at the top of the sheet */
+    .third-panel::before {
+      content: '';
+      position: sticky;
+      top: 0;
+      display: block;
+      width: 40px;
+      height: 4px;
+      border-radius: 2px;
+      background: rgba(26,107,58,0.22);
+      margin: -10px auto 8px;
+    }
+
+    .third-panel-close {
+      top: 14px !important;
+      right: 16px !important;
+      font-size: 26px !important;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: rgba(26,107,58,0.06);
+      color: #1a6b3a;
+    }
+  }
+
+  @keyframes third-panel-slide-up {
+    from { transform: translateY(100%); }
+    to   { transform: translateY(0); }
   }
 </style>

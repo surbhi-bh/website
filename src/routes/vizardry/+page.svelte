@@ -9,10 +9,9 @@
 <section class="section">
   <div class="vz-grid">
     <a href="/vizardry/30-day-chart-challenge-2026" class="vz-card" target="_blank" rel="noopener noreferrer">
-      <div class="vz-eyebrow">April 2026</div>
+      <div class="vz-eyebrow">May 2026</div>
       <div class="vz-heading">Thirty charts in thirty days</div>
-      <div class="vz-title">My experience doing the 30 day chart challenge</div>
-      <div class="vz-hashtag">#30DayChartChallenge2026</div>
+      <div class="vz-title">Notes from the #30DayChartChallenge and the process of making a chart every day of the month.</div>
       <div class="vz-arrow">↗</div>
     </a>
   </div>
