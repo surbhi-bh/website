@@ -22,7 +22,7 @@
   const dayInfo = {
     1:  { title: 'Part-to-Whole',             intro: '', outro: `The chart originally made for this prompt, on protein bars, moved to <a href="#day-29" class="inline-link">Day 29</a>. It sat in my pile of discarded charts to be refurbished in monochrome, when the idea of phone screens struck me.\n\nFor a while, I've been wanting to do a project on how phones no longer fit our hands. I could have got the dimensions of every phone model of a certain brand from GSMArena, and show change over time. But with little time left after this last-minute change, I turned to personal data to quickly make this. Personal can be universal, I guess.`, source: '', tags: ['technology'], bg: '#F8F8F6' },
     2:  { title: 'Pictogram',                 intro: '', outro: `I don't know how to draw digitally. But I have a rough sense of embedding SVGs in code after cleaning them up in Figma. These tiny Warli-style figures: girls, boys, middle-aged, old, Indian people, are derived from <a href="https://www.facebook.com/reel/1362632957890249/" target="_blank" rel="noopener" class="inline-link">Anu's Artastic Warli figure tutorial</a>. I've been calling it "Our Warli in Data."`, source: '', tags: ['demographics', 'population'], bg: '#A22D0D' },
-    3:  { title: 'Mosaic',                    intro: '', outro: `Another one for the stockpile. What I originally tried for this prompt became the seasons chart on <a href="#day-23" class="inline-link">Day 23</a>. Realised halfway through making it that the bar widths were all the same, which makes it <em>not</em> a mosaic. Found IEA data last minute that fit the format beautifully.`, source: '', tags: ['technology', 'transport'], bg: '#F2F1ED' },
+    3:  { title: 'Mosaic',                    intro: '', outro: `A last-minute chart again. What I originally tried for this prompt became the seasons chart on <a href="#day-23" class="inline-link">Day 23</a>. Realised halfway through it that the bar widths were all the same, which makes it <em>not</em> a mosaic. Found IEA data last minute that fit the format beautifully.`, source: '', tags: ['technology', 'transport'], bg: '#F2F1ED' },
     4:  { title: 'Slope',                     intro: '', outro: `Slope charts can be slippery because you are comparing positions and angles at the same time. For this one, I updated the data from an <a href="https://www.livemint.com/industry/media/bollywoods-eternal-struggle-with-original-ideas-here-s-what-data-shows-11661772790605.html" target="_blank" rel="noopener" class="inline-link">old story on bollywood remakes</a>, and <a href="https://public.tableau.com/app/profile/surbhi.bhatia/viz/Bollywoodoriginalvsremake/Dashboard1" target="_blank" rel="noopener" class="inline-link">a chart</a> that inspired the story.\n\nWas it tempting to save this for a meta-day release for <a href="#day-17" class="inline-link">Day 17</a> prompt: remake? Yes. But did I have no other idea for this and plenty of chart remakes for that prompt? Yes. You know what they say about a bird in hand.`, source: '', tags: ['entertainment'], bg: '#E5E6E3' },
     5:  { title: 'Experimental',              intro: '', outro: `Food recipes are probably humanity's greatest experiment, and few dishes invite stronger opinions than sambar. I love a nuanced culinary war! This chart is inspired by one of my <a href="https://x.com/surbhaai/status/1708727084187873689/" target="_blank" rel="noopener" class="inline-link">all-time favourite charts</a> by David Waldron.`, source: '', tags: ['food'], bg: '#FFFFFF' },
     6:  { title: 'Reporters Without Borders', intro: '', outro: `The labels and tables have turned.`, source: '', tags: ['politics'], bg: '#F2ECE6' },
@@ -142,6 +142,24 @@
 
   import { flip } from 'svelte/animate';
   import { fade } from 'svelte/transition';
+  import { onMount } from 'svelte';
+
+  // After the grid paints with lightweight thumbnails, warm the browser cache
+  // with full-res assets so the lightbox + detail list feel instant.
+  onMount(() => {
+    const idle = window.requestIdleCallback ?? ((cb) => setTimeout(cb, 200));
+    const cancel = window.cancelIdleCallback ?? clearTimeout;
+    const handle = idle(() => {
+      for (let d = 1; d <= 30; d++) {
+        const m = dayMedia[d];
+        if (!m || m.kind !== 'image' || m.src === m.thumb) continue;
+        const img = new Image();
+        img.decoding = 'async';
+        img.src = m.src;
+      }
+    }, { timeout: 2000 });
+    return () => cancel(handle);
+  });
 
   // The each-block iterates `displayDays`. When sortMode changes, this array
   // reorders → animate:flip measures before/after and animates each cell.
@@ -274,7 +292,10 @@
       A lot has changed since then. It's a strange new world where making is easier than ever. Data is abundant. Agents who will write code for you for cheap are abundant. This abundance drew me to sign up for the <a href="https://github.com/30DayChartChallenge/Edition2026" target="_blank" rel="noopener" class="inline-link">#30DayChartChallenge</a> by Dominic Royé and Cédric Scherer this year.
     </p>
     <p class="challenge-intro">
-      The challenge gave me <s>a great excuse</s> thirty great excuses to chase small curiosities. I completed it on time with claude as my collaborator. Often, I'd make a rough chart by hand, or on a familiar tool like <a href="https://flourish.studio/" target="_blank" rel="noopener" class="inline-link">flourish</a> or <a href="https://app.datawrapper.de" target="_blank" rel="noopener" class="inline-link">datawrapper</a>, or in R, and then ask claude to translate it using D3.js. I found myself in four roles over the course of the challenge. A <strong>forager</strong> out in the wild to hunt for data; an <strong>athlete</strong> faithful to one more rep, one more lap; a <strong>tailor</strong> custom-stitching for the right fit; and a <strong>traffic controller</strong> guiding the reader's attention.
+      The challenge gave me <s>a great excuse</s> thirty great excuses to chase small curiosities. I completed it on time with claude as my collaborator. Often, I'd make a rough chart by hand, or on a familiar tool like <a href="https://flourish.studio/" target="_blank" rel="noopener" class="inline-link">flourish</a> or <a href="https://app.datawrapper.de" target="_blank" rel="noopener" class="inline-link">datawrapper</a>, or in R, and then ask claude to translate it using D3.js.
+    </p>
+    <p class="challenge-intro">
+      I found myself in four roles over the course of the challenge. A <strong>forager</strong> out in the wild to hunt for data; an <strong>athlete</strong> faithful to one more rep, one more lap; a <strong>tailor</strong> custom-stitching for the right fit; and a <strong>traffic controller</strong> guiding the reader's attention.
     </p>
     <p class="challenge-intro challenge-intro-last">
       Here are all thirty charts, and below is a glimpse of how each role showed up in the work:
@@ -365,7 +386,7 @@
       >
         <div class="chart-thumb">
           {#if media?.kind === 'image'}
-            <img src={media.src} alt="Day {day}" loading="lazy" />
+            <img src={media.thumb} alt="Day {day}" loading="lazy" decoding="async" />
           {:else if media?.kind === 'video'}
             <video src={media.src} muted loop playsinline autoplay preload="metadata"></video>
           {:else}
@@ -394,10 +415,10 @@
         There are at least two ways to approach making a chart where all you have is a one-word prompt. You can either start with a <em>dataset</em>, and find something to plot, like how <a href="https://github.com/rfordatascience/tidytuesday" target="_blank" rel="noopener" class="inline-link">#TidyTuesday</a> works. Or start with a <em>question</em>, and go looking for the data to answer it.
       </p>
       <p class="begin-note-body">
-        Early in my career I was the data-first type. I used to think if there's no data, there's no story. This has changed with years of experience as a data journalist. Without realising it, I had built a personal directory of sources: where to look, what to trust, how to do back-of-envelope math to get from data to insight.
+        Early in my career I was the data-first type. I used to think if there's no data, there's no story. This has changed with years of experience as a data journalist. Without realising it, I had built a personal directory of sources: where to look, what to trust, how to do back-of-the-envelope math to get from data to insight.
       </p>
       <p class="begin-note-body">
-        Starting with a question came naturally to me during this challenge. Data sources have exploded and accessing them is easier than ever. The data was almost always out there.
+        Starting with a question came naturally to me during this challenge. Between open portals, APIs, scraping, easy OCRs and simple downloads, access to data was the easy part. The data was almost always out there if I could frame what I was looking for.
       </p>
     </div>
 
@@ -406,7 +427,7 @@
         <img src="/flower.svg" class="begin-bullet" alt="" />An athlete faithful to one more rep, one more lap
       </h3>
       <p class="begin-note-body">
-        Every day, I was back at the same starting line, running the same sequence:
+        Every day, I was back at the same start line, to run the same sequence:
       </p>
       <div class="begin-flow">
         <span class="flow-step"><span class="flow-icon" data-icon="question"></span>Question</span>
@@ -449,7 +470,7 @@
         <span class="flow-step"><span class="flow-icon" data-icon="annotation"></span>Annotation</span>
       </div>
       <p class="begin-note-body">
-        People are loyal to the tools they spend years learning. The Tableau community sticks by it. Datawrapper devotees stick to it. There is wisdom in working within the grammar of the tools you know best:
+        For others, it could be the tool. People are loyal to the tools they spent years learning. The Tableau community sticks by it. Datawrapper devotees stick to it. There is wisdom in working within the grammar of the tools you know best:
       </p>
       <div class="begin-flow">
         <span class="flow-step"><span class="flow-icon" data-icon="tool"></span>Tool</span>
@@ -465,7 +486,7 @@
         <span class="flow-step"><span class="flow-icon" data-icon="annotation"></span>Annotation</span>
       </div>
       <p class="begin-note-body">
-        The sequence looks neat on paper, but in practice it rarely holds a linear shape. For example, some days the prompt is a chart type to work backwards from.
+        The sequence looks neat on paper, but in practice it rarely holds a linear shape. For example, some days the prompt was a chart type I worked backwards from.
       </p>
     </div>
 
@@ -480,7 +501,7 @@
         A daily challenge teaches you to work with the fabric on the table. You can cut the same fabric to make a handkerchief, a scarf, or join many pieces to sew a skirt. In some instances I chose to stitch just 10 data points even if there were a lot more available. In others, I chose to waste nothing and made a chart with all 76k data points. The challenge was less about the amount of fabric and more about the cut.
       </p>
       <p class="begin-note-body">
-        Nothing is wasted when you tailor this way. Any cloth left behind comes together in another form. A dataset kept aside fits a later prompt. A chart type abandoned gets thrifted into a second life. The offcuts came together as patchwork.
+        Nothing is wasted when you tailor this way. Any cloth left behind comes together in another form. A dataset kept aside fit a later prompt. A chart type abandoned got thrifted into a second life. The offcuts came together as patchwork all the time.
       </p>
       <p class="begin-note-body">
         A few well-chosen rules can carry the project a long way. Shri Khalpada <a href="https://perthirtysix.com/essay/30-day-chart-challenge-2024" target="_blank" rel="noopener" class="inline-link">locked in the fonts</a>, formats, colours, tools, to reduce the number of micro-decisions. Georgios Karamanis <a href="https://karaman.is/blog/2026/04/30daychartchallenge-2026" target="_blank" rel="noopener" class="inline-link">defined the data universe</a> entirely around Uppsala's transport data and worked within those bounds to chisel out the charts. Constraints make their work stand out in the same way as a fence that helps separate a garden from a field.
@@ -492,7 +513,7 @@
         <img src="/flower.svg" class="begin-bullet" alt="" />A traffic controller guiding the reader's attention
       </h3>
       <p class="begin-note-body">
-        I once had an editor who used to say one chart is not the story. But they also said that if a chart is screenshotted and shared as a standalone image on WhatsApp, it should be able to explain the story. So I was very conscious that every chart had an answer to the one and only question of life: <em>"What's the point???"</em>
+        An editor I worked with used to say one chart is not the story. But they also said that if a chart is screenshotted and shared as a standalone image on WhatsApp, it should be able to explain the story. So I was very conscious that every chart had an answer to the one and only question of life: <em>"What's the point???"</em>
       </p>
       <p class="begin-note-body">
         A lot of my time was spent on titles, annotations, stripping back anything that didn't earn its place on the canvas. It was like traffic-managing attention, hierarchy, and inference. The green signals have to be very clear for a reader to reach the point.
