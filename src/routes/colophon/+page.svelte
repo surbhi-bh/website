@@ -8,7 +8,7 @@
 </script>
 
 <svelte:head>
-  <title>Surbhi Bhatia — Colophon</title>
+  <title>Colophon | Surbhi Bhatia</title>
 </svelte:head>
 
 <section class="section">

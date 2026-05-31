@@ -63,7 +63,7 @@
 </script>
 
 <svelte:head>
-  <title>Surbhi Bhatia — Garden</title>
+  <title>Garden | Surbhi Bhatia</title>
 </svelte:head>
 
 <section class="section garden-section">

@@ -156,7 +156,7 @@
 </script>
 
 <svelte:head>
-  <title>Surbhi Bhatia — Talks</title>
+  <title>Talks | Surbhi Bhatia</title>
 </svelte:head>
 
 <section class="section">

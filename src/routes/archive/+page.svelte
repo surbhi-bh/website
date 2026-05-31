@@ -3,7 +3,7 @@
 </script>
 
 <svelte:head>
-  <title>Surbhi Bhatia — Archive</title>
+  <title>Archive | Surbhi Bhatia</title>
 </svelte:head>
 
 <section class="section">

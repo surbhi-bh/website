@@ -188,7 +188,7 @@
 </script>
 
 <svelte:head>
-  <title>Surbhi Bhatia — Visual Stories</title>
+  <title>Visual Stories | Surbhi Bhatia</title>
 </svelte:head>
 
 <section class="section">

@@ -15,7 +15,7 @@
 </script>
 
 <svelte:head>
-  <title>Surbhi Bhatia — read.me</title>
+  <title>About | Surbhi Bhatia</title>
 </svelte:head>
 
 <section class="section" id="readme">
