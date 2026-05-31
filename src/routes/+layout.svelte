@@ -23,17 +23,11 @@
   // Routes that need a wide main column (no 700px cap)
   $: isWideRoute = $page.url.pathname.startsWith('/vizardry/');
 
-  const mainLinks = [
+  const navLinks = [
     { href: '/readme', label: 'read.me' },
     { href: '/visual-stories', label: 'visual stories' },
     { href: '/talks', label: 'talks' },
     { href: '/vizardry', label: 'vizardry' },
-  ];
-
-  const gardenLinks = [
-    { href: '/seeds', label: 'seeds', disabled: true },
-    { href: '/thoughts', label: 'thoughts', disabled: true },
-    { href: '/bookmarks', label: 'bookmarks', disabled: true },
     { href: '/garden', label: 'garden' },
     { href: '/places', label: 'places' },
     { href: '/colophon', label: 'colophon', disabled: true },
@@ -83,27 +77,8 @@
     </a>
 
     <div class="nav-section">
-      <div class="nav-title">now · here</div>
       <ul class="nav-links">
-        {#each mainLinks as link}
-          <li>
-            {#if link.disabled}
-              <span class="nav-link nav-link-dim">{link.label}</span>
-            {:else}
-              <a
-                href={link.href}
-                class="nav-link"
-                class:active={isActive(link.href, $page.url.pathname)}
-              >{link.label}</a>
-            {/if}
-          </li>
-        {/each}
-      </ul>
-    </div>
-
-    <div class="nav-section">
-      <ul class="nav-links">
-        {#each gardenLinks as link}
+        {#each navLinks as link}
           <li class:li-garden={link.href === '/garden'}>
             {#if link.disabled}
               <span class="nav-link nav-link-dim">{link.label}</span>
@@ -113,7 +88,6 @@
                 class="nav-link"
                 class:nav-link-garden={link.href === '/garden'}
                 class:active={isActive(link.href, $page.url.pathname)}
-                style={link.label === 'places' ? 'margin-top: 1rem;' : ''}
               >{link.label}</a>
             {/if}
           </li>
