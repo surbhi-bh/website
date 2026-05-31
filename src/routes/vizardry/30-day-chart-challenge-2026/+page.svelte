@@ -202,6 +202,12 @@
     if (iTech !== -1 && iCities !== -1) {
       [groups[iTech], groups[iCities]] = [groups[iCities], groups[iTech]];
     }
+    // Swap environment and health so health sits next to wealth.
+    const iEnv = groups.findIndex(g => g.theme === 'environment');
+    const iHealth = groups.findIndex(g => g.theme === 'health');
+    if (iEnv !== -1 && iHealth !== -1) {
+      [groups[iEnv], groups[iHealth]] = [groups[iHealth], groups[iEnv]];
+    }
     return groups;
   })();
 
