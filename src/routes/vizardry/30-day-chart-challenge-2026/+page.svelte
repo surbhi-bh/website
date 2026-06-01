@@ -424,7 +424,7 @@
         Early in my career I was the data-first type. I used to think if there's no data, there's no story. This has changed with years of experience as a data journalist. Without realising it, I had built a personal directory of sources: where to look, what to trust, how to do back-of-the-envelope math to get from data to insight.
       </p>
       <p class="begin-note-body">
-        Starting with a question came naturally to me during this challenge. Between open portals, APIs, scraping, easy OCRs and simple downloads, access to data was the easy part. The data was almost always out there if I could frame what I was looking for.
+        Starting with a question came naturally to me during this challenge. Between open portals, APIs, scraping, easy OCRs and simple downloads, access to data was the easy part. The data was almost always out there if I could frame what I was looking for. The thirty questions I pursued are in an <a href="#workbook" class="inline-link">open workbook</a> towards the end of this page.
       </p>
     </div>
 
@@ -615,7 +615,7 @@
   </div>
 
   <!-- Sheet embed -->
-  <div class="sheet-section">
+  <div id="workbook" class="sheet-section">
     <p class="workbook-intro">
       The data for all thirty charts lives in an open workbook, here:
     </p>
