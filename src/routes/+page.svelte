@@ -3,6 +3,10 @@
   footerExpanded.set(false);
 </script>
 
+<svelte:head>
+  <title>Surbhi Bhatia | Data Journalist & Visual Storyteller</title>
+</svelte:head>
+
 
 <section class="section" id="home">
 
