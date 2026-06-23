@@ -3,9 +3,6 @@
   footerExpanded.set(false);
 </script>
 
-<svelte:head>
-  <title>Surbhi Bhatia</title>
-</svelte:head>
 
 <section class="section" id="home">
 
