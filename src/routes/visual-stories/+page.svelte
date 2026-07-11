@@ -3,6 +3,17 @@
   // Columns: id, title, date, publisher, image, tags, link, description
   const allStories = [
     {
+      id: 16,
+      title: "Panes of Heat",
+      date: "Jul 2026",
+      publisher: "Data, Otherwise @ VizChitra 2026",
+      image: "/images/panes-of-heat.png",
+      tags: ["climate"],
+      link: "https://surbhi-bh.github.io/panes-of-heat/",
+      description: "Data installation using UTCI data to show the difference between the heat we measure and the heat we experience.",
+      pink: true
+    },
+    {
       id: 1,
       title: "Bollywood Falls out of Love",
       date: "Jan 2026",
