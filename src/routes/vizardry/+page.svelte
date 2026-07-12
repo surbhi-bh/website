@@ -8,7 +8,7 @@
 
 <section class="section">
   <div class="vz-grid">
-    <a href="/vizardry/panes-of-heat" class="vz-card" target="_blank" rel="noopener noreferrer">
+    <a href="https://surbhi-bh.github.io/panes-of-heat/" class="vz-card" target="_blank" rel="noopener noreferrer">
       <div class="vz-eyebrow">Jul 2026</div>
       <div class="vz-heading">Panes of Heat</div>
       <div class="vz-title">A data installation that visualises the gap between the heat we measure and the heat we experience.</div>

@@ -1,9 +1,6 @@
 #!/bin/bash
 set -e
 
-echo "Updating submodules..."
-git submodule update --init --recursive --remote
-
 echo "Installing dependencies..."
 npm install
 
