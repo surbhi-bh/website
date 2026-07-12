@@ -1,0 +1,3 @@
+[submodule "static/vizardry/panes-of-heat"]
+	path = static/vizardry/panes-of-heat
+	url = https://github.com/surbhi-bh/panes-of-heat.git
