@@ -125,15 +125,45 @@
 
   let lightboxDay = null;
   let lightboxImage = null; // { src, alt } for generic image lightbox
+  let copyStatus = ''; // 'copied' | 'failed' | ''
+
+  // Push ?chart=N to the URL when the lightbox opens so the link is shareable.
+  // Uses pushState so the browser back button closes the lightbox.
+  function syncUrl(day) {
+    if (typeof window === 'undefined') return;
+    const url = new URL(window.location.href);
+    if (day) url.searchParams.set('chart', String(day));
+    else url.searchParams.delete('chart');
+    const next = url.pathname + (url.search ? url.search : '') + url.hash;
+    window.history.pushState({ chart: day ?? null }, '', next);
+  }
+
   function openLightbox(day) {
-    if (dayMedia[day]) lightboxDay = day;
+    if (!dayMedia[day]) return;
+    lightboxDay = day;
+    copyStatus = '';
+    syncUrl(day);
   }
   function openImageLightbox(src, alt) {
     lightboxImage = { src, alt };
   }
   function closeLightbox() {
+    const wasChartLightbox = lightboxDay != null;
     lightboxDay = null;
     lightboxImage = null;
+    copyStatus = '';
+    if (wasChartLightbox) syncUrl(null);
+  }
+
+  async function copyShareLink() {
+    if (typeof window === 'undefined') return;
+    try {
+      await navigator.clipboard.writeText(window.location.href);
+      copyStatus = 'copied';
+    } catch {
+      copyStatus = 'failed';
+    }
+    setTimeout(() => (copyStatus = ''), 1800);
   }
 
   function handleKey(e) {
@@ -158,7 +188,29 @@
         img.src = m.src;
       }
     }, { timeout: 2000 });
-    return () => cancel(handle);
+
+    // Open the lightbox from ?chart=N on initial load. Use replaceState so
+    // there isn't a phantom "empty" entry in the back stack.
+    const params = new URLSearchParams(window.location.search);
+    const initial = Number(params.get('chart'));
+    if (initial >= 1 && initial <= 30 && dayMedia[initial]) {
+      lightboxDay = initial;
+      window.history.replaceState({ chart: initial }, '', window.location.href);
+    }
+
+    // Back/forward: sync lightbox to whatever ?chart=N the new URL carries.
+    const onPop = () => {
+      const p = new URLSearchParams(window.location.search);
+      const n = Number(p.get('chart'));
+      lightboxDay = n >= 1 && n <= 30 && dayMedia[n] ? n : null;
+      copyStatus = '';
+    };
+    window.addEventListener('popstate', onPop);
+
+    return () => {
+      cancel(handle);
+      window.removeEventListener('popstate', onPop);
+    };
   });
 
   // The each-block iterates `displayDays`. When sortMode changes, this array
@@ -648,9 +700,17 @@
     {:else if lbMedia}
       <img src={lbMedia.src} alt="Day {lightboxDay}" on:click|stopPropagation />
     {/if}
+    <button
+      class="lightbox-copy"
+      on:click|stopPropagation={copyShareLink}
+      title="Copy link to this chart"
+      aria-label="Copy link to this chart"
+    >
+      {#if copyStatus === 'copied'}link copied{:else if copyStatus === 'failed'}couldn't copy{:else}copy link{/if}
+    </button>
     <button class="lightbox-close" on:click={closeLightbox}>×</button>
     <div class="lightbox-label">
-      Day {lightboxDay}{#if lbInfo?.title} · {lbInfo.title}{/if}
+      Day {lightboxDay}{#if lbInfo?.title}, {lbInfo.title}{/if}
     </div>
   </div>
 {/if}
@@ -1403,6 +1463,24 @@
   }
 
   .lightbox-close:hover { opacity: 1; }
+
+  .lightbox-copy {
+    position: fixed;
+    top: 24px;
+    left: 28px;
+    background: none;
+    border: 1px solid rgba(255,255,255,0.4);
+    color: #fff;
+    font-family: "DM Mono", monospace;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 6px 10px;
+    cursor: pointer;
+    opacity: 0.75;
+    line-height: 1;
+  }
+  .lightbox-copy:hover { opacity: 1; border-color: rgba(255,255,255,0.85); }
 
   .lightbox-label {
     position: fixed;

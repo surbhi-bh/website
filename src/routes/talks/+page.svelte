@@ -1,5 +1,5 @@
 <script>
-  import { onMount } from 'svelte';
+  import { onMount, onDestroy } from 'svelte';
   import { gardenPanel } from '$lib/gardenStore.js';
 
   const items = [
@@ -7,6 +7,7 @@
       id: '11',
       type: 'talk',
       year: 2026,
+      month: 5,
       title: 'The Other Interface: Designing to minimise the need for shadow systems',
       event: 'GitLab',
       location: 'Bangalore',
@@ -14,6 +15,71 @@
       tags: ['data systems', 'design'],
       image: '/images/talk-the-other-interface.png',
       link: 'https://luma.com/wo9kofo5?tk=iB0AYk',
+    },
+    {
+      id: '12',
+      type: 'talk',
+      year: 2026,
+      month: 7,
+      title: 'Chart Party Night',
+      event: 'Design Demo Nights',
+      location: 'Bangalore',
+      description: 'A lightning talk showcasing the process behind my entries for the #30DayChartChallenge this year.',
+      tags: ['data visualisation'],
+      image: '/images/talk-design-demo-night.jpeg',
+      link: '#',
+    },
+    {
+      id: '13',
+      type: 'training',
+      year: 2026,
+      month: 7,
+      title: 'Plot Twist: Using AI in dataviz',
+      event: 'Lady Sri Ram College, University of Delhi',
+      location: 'Virtual',
+      description: 'A hands-on introduction to using AI across the data visualisation workflow.',
+      tags: ['AI', 'data visualisation'],
+      image: '/images/talk-plot-twist.jpeg',
+      link: '#',
+    },
+    {
+      id: '14',
+      type: 'exhibition',
+      year: 2026,
+      month: 7,
+      title: 'Panes of Heat: A window into hotter days and warmer nights across urban India',
+      event: 'Data, Otherwise @ Vizchitra',
+      location: 'Bangalore',
+      description: 'A physical data installation visualising the gap between recorded air temperature and felt heat across four Indian cities.',
+      tags: ['climate', 'data visualisation'],
+      image: '/images/exhibition-panes-of-heat.jpg',
+      link: 'https://vizchitra.com/2026/exhibition',
+    },
+    {
+      id: '15',
+      type: 'talk',
+      year: 2026,
+      month: 7,
+      title: 'Kuch Kuch Data Hai: Bollywood, Visualised',
+      event: 'Vizchitra',
+      location: 'Bangalore',
+      description: 'A visual journey through Bollywood, uncovering the data trails movies leave behind.',
+      tags: ['bollywood', 'data visualisation'],
+      image: '/images/talk-kuch-kuch-data-hai-stage.jpeg',
+      link: 'https://vizchitra.com/2026/sessions/kuch-kuch-data-hai',
+    },
+    {
+      id: '16',
+      type: 'talk',
+      year: 2026,
+      month: 6,
+      title: 'DraftGPT: Fast ≠ Finished in Vibe-Coding Data Visualisation',
+      event: 'Outlier Conference, Data Visualisation Society',
+      location: 'Virtual',
+      description: 'A behind-the-scenes walkthrough of the Kontinentalist story, exploring the promises and limits of vibe coding in data visualisation.',
+      tags: ['AI', 'data visualisation'],
+      image: '/images/talk-outlier-conference-dvs.jpeg',
+      link: 'https://outlier2026.vfairs.com/en/speakers-page',
     },
     {
       id: '1',
@@ -137,17 +203,30 @@
     },
   ];
 
-  $: talks     = items.filter(i => i.type === 'talk');
-  $: trainings = items.filter(i => i.type === 'training');
-  $: panels    = items.filter(i => i.type === 'panel');
+  // Reverse-chronological within each group. `year` may be null (undated
+  // trainings sink to the end); `month` is optional and defaults to 0.
+  function byRecency(a, b) {
+    const ya = a.year ?? -Infinity;
+    const yb = b.year ?? -Infinity;
+    if (ya !== yb) return yb - ya;
+    return (b.month ?? 0) - (a.month ?? 0);
+  }
+  $: talks       = items.filter(i => i.type === 'talk').sort(byRecency);
+  $: trainings   = items.filter(i => i.type === 'training').sort(byRecency);
+  $: panels      = items.filter(i => i.type === 'panel').sort(byRecency);
+  $: exhibitions = items.filter(i => i.type === 'exhibition').sort(byRecency);
 
-  const typeColor = { talk: '#1a6b3a', training: '#1a6b3a', panel: '#1a6b3a' };
+  const typeColor = { talk: '#1a6b3a', training: '#1a6b3a', panel: '#1a6b3a', exhibition: '#1a6b3a' };
 
   onMount(() => {
-    const isMobile = typeof window !== 'undefined' && window.innerWidth <= 768;
-    const defaultId = isMobile ? '4' : '11';
-    const defaultItem = items.find(i => i.id === defaultId);
+    const defaultItem = items.find(i => i.id === '12');
     if (defaultItem) gardenPanel.set(defaultItem);
+  });
+
+  // Belt-and-braces: clear the panel when leaving the talks page so the
+  // Chart Party Night default doesn't linger on the next route.
+  onDestroy(() => {
+    gardenPanel.set(null);
   });
 
   function handleClick(item) {
@@ -204,6 +283,26 @@
   <div class="group">
     <div class="group-label">Panels</div>
     {#each panels as item}
+      <a class="item-card" href={item.link !== '#' ? item.link : null} target={item.link !== '#' ? '_blank' : null} rel="noopener noreferrer" on:click|preventDefault={() => handleClick(item)}>
+        <div class="item-year">{item.year}</div>
+        <div class="item-title">{item.title}</div>
+        <div class="item-event">{item.event}{#if item.location}, <span class="item-location">{item.location}</span>{/if}</div>
+        {#if item.description}
+          <div class="item-desc">{item.description}</div>
+        {/if}
+        <div class="item-tags">
+          {#each item.tags as tag}
+            <span class="item-tag">{tag}</span>
+          {/each}
+        </div>
+      </a>
+    {/each}
+  </div>
+
+  <!-- EXHIBITIONS -->
+  <div class="group">
+    <div class="group-label">Exhibitions</div>
+    {#each exhibitions as item}
       <a class="item-card" href={item.link !== '#' ? item.link : null} target={item.link !== '#' ? '_blank' : null} rel="noopener noreferrer" on:click|preventDefault={() => handleClick(item)}>
         <div class="item-year">{item.year}</div>
         <div class="item-title">{item.title}</div>

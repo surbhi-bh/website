@@ -84,7 +84,7 @@
     {/if}
     <button class="lightbox-close" on:click={closeLightbox}>×</button>
     <div class="lightbox-label">
-      Day {lightboxDay}{#if lbInfo?.title} · {lbInfo.title}{/if}
+      Day {lightboxDay}{#if lbInfo?.title}, {lbInfo.title}{/if}
     </div>
   </div>
 {/if}

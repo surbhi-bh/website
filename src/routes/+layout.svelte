@@ -42,6 +42,9 @@
   const typeColor = {
     'visual story': '#1a6b3a',
     'talk':         '#d0116f',
+    'training':     '#d0116f',
+    'panel':        '#d0116f',
+    'exhibition':   '#d0116f',
     'thought':      '#7b5ea7',
     'seed':         '#b87333',
   };
@@ -127,11 +130,16 @@
         {#if item.image}
           <img src={item.image} alt={item.title} class="tp-photo" />
         {/if}
+        {#if item.images && item.images.length}
+          {#each item.images as extra}
+            <img src={extra} alt={item.title} class="tp-photo" />
+          {/each}
+        {/if}
         {#if item.publisher}
           <div class="tp-pub">{item.publisher}</div>
         {/if}
         {#if item.event}
-          <div class="tp-pub">{item.event}{#if item.location} · {item.location}{/if}</div>
+          <div class="tp-pub">{item.event}{#if item.location}, {item.location}{/if}</div>
         {/if}
         <div class="tp-year">{item.year}</div>
         {#if item.description}

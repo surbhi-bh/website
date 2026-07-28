@@ -23,8 +23,8 @@
       <div class="card-latest-img" style="background-image:url('/images/kontinentalist_bollywood.png')"></div>
       <div class="card-title">Bollywood Falls out of Love</div>
       <div class="card-divider dashed"></div>
-      <div class="card-detail">Kontinentalist · Jan 2026</div>
-      <div class="card-detail muted">15 stories · award-winning</div>
+      <div class="card-detail">Kontinentalist, Jan 2026</div>
+      <div class="card-detail muted">15 stories, award-winning</div>
     </a>
 
     <!-- PLACES — top centre, slightly overlapping -->
@@ -33,7 +33,7 @@
       <div class="card-tag">places</div>
       <div class="card-divider"></div>
       <div class="card-detail"><span class="live-pip"></span>currently: Bangalore</div>
-      <div class="card-detail muted">Delhi · Bombay · Auroville · New York</div>
+      <div class="card-detail muted">Delhi, Bombay, Auroville, New York</div>
       <div class="card-divider dashed"></div>
       <div class="mini-map">
         <svg class="india-map" viewBox="42 28 42 40" xmlns="http://www.w3.org/2000/svg">
@@ -54,14 +54,15 @@
     <!-- TALKS — top right -->
     <a class="card card-talks" href="/talks" style="top:24px; left:410px; --rot:-1deg;">
       <img src="/flower.svg" class="pin" alt="" />
-      <div class="card-tag">talks · trainings · panels</div>
+      <div class="card-tag">talks, trainings, panels</div>
       <div class="card-divider"></div>
       <div class="card-title">Speaking, teaching & in conversation</div>
       <div class="card-divider dashed"></div>
       <div class="card-detail upcoming-label">upcoming</div>
-      <div class="card-detail upcoming-item"><span class="upcoming-date">Jun 2026</span> DraftGPT · Outlier Conference</div>
-      <div class="card-detail upcoming-item"><span class="upcoming-date">Jul 2026</span> Kuch Kuch Data Hai · Vizchitra</div>
-      <div class="card-detail upcoming-item"><span class="upcoming-date">Jul 2026</span> Too hot to open · Data, Otherwise @ Vizchitra</div>
+      <div class="card-detail upcoming-item"><span class="upcoming-date">Jun 2026</span> DraftGPT, Outlier Conference</div>
+      <div class="card-detail upcoming-item"><span class="upcoming-date">Jul 2026</span> Kuch Kuch Data Hai, Vizchitra</div>
+      <div class="card-detail upcoming-item"><span class="upcoming-date">Jul 2026</span> Panes of Heat, Data, Otherwise @ Vizchitra</div>
+      <div class="card-detail upcoming-item"><span class="upcoming-date">Jul 2026</span> Chart Party Night, Design Demo Nights, Jul 24</div>
     </a>
 
     <!-- READ.ME — bottom left, overlapping talks -->
@@ -72,7 +73,7 @@
       <div class="card-title">Numbers into stories. Data into meaning. Curiosity into craft.</div>
       <div class="card-divider dashed"></div>
       <div class="card-detail">economics → newsroom → Columbia → freelance</div>
-      <div class="card-detail muted">~80 · ~270 · ~370 words</div>
+      <div class="card-detail muted">~80, ~270, ~370 words</div>
     </a>
 
     <!-- GARDEN — bottom centre -->
@@ -82,7 +83,7 @@
       <div class="card-divider"></div>
       <div class="card-title">Notes, curiosities & things half-thought</div>
       <div class="card-divider dashed"></div>
-      <div class="card-detail muted">data · design · cities · culture</div>
+      <div class="card-detail muted">data, design, cities, culture</div>
     </a>
 
     <!-- VIZARDRY — bottom right, dim -->

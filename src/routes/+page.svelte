@@ -63,9 +63,13 @@
         <div class="card-detail">Vizchitra, Jul 2026</div>
       </div>
       <div class="upcoming-entry">
-        <div class="card-title upcoming-title">Too hot to open</div>
+        <div class="card-title upcoming-title">Panes of Heat</div>
         <div class="card-detail upcoming-sub">India's extreme temperatures through doors</div>
         <div class="card-detail">Data, Otherwise @ Vizchitra, Jul 2026</div>
+      </div>
+      <div class="upcoming-entry">
+        <div class="card-title upcoming-title">Chart Party Night</div>
+        <div class="card-detail">Design Demo Nights, July 24</div>
       </div>
     </a>
 
