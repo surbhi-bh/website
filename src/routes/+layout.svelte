@@ -128,10 +128,12 @@
         <div class="tp-type" style="color:{typeColor[item.type] || '#888'}">{item.type}</div>
         <div class="tp-title">{item.title}</div>
         {#if item.image}
-          <img src={item.image} alt={item.title} class="tp-photo" />
+          {#key item.image}
+            <img src={item.image} alt={item.title} class="tp-photo" />
+          {/key}
         {/if}
         {#if item.images && item.images.length}
-          {#each item.images as extra}
+          {#each item.images as extra (extra)}
             <img src={extra} alt={item.title} class="tp-photo" />
           {/each}
         {/if}
