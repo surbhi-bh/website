@@ -1,5 +1,5 @@
 <script>
-  // All 15 stories from the Google Sheet (gid=0)
+  // All stories from the Google Sheet (gid=0)
   // Columns: id, title, date, publisher, image, tags, link, description
   const allStories = [
     {
@@ -91,6 +91,17 @@
       pink: false
     },
     {
+      id: 16,
+      title: "Shark Tank and India's startup story, in charts",
+      date: "Apr 2023",
+      publisher: "Mint",
+      image: "/images/mint-shark-tank.png",
+      tags: ["entertainment", "economy"],
+      link: "https://www.livemint.com/companies/start-ups/shark-tank-and-india-s-startup-story-in-charts-11681325377779.html",
+      description: "",
+      pink: true
+    },
+    {
       id: 8,
       title: "Bollywood's gender revolution: Women are rewriting the rules",
       date: "Mar 2023",
@@ -99,7 +110,7 @@
       tags: ["entertainment", "gender", "award-winning"],
       link: "https://asia.nikkei.com/Spotlight/The-Big-Story/Bollywood-s-gender-revolution-Women-are-rewriting-the-rules",
       description: "SABEW Award Winner",
-      pink: true
+      pink: false
     },
     {
       id: 9,
@@ -110,7 +121,7 @@
       tags: ["art & culture"],
       link: "https://surbhi-bh.github.io/words_of_wordle.html",
       description: "Analysis of Wordle words over a year",
-      pink: false
+      pink: true
     },
     {
       id: 10,
@@ -121,7 +132,7 @@
       tags: ["entertainment", "art & culture"],
       link: "https://www.livemint.com/industry/media/bollywoods-eternal-struggle-with-original-ideas-here-s-what-data-shows-11661772790605.html",
       description: "Analysis of Bollywood remakes",
-      pink: true
+      pink: false
     },
     {
       id: 11,
@@ -132,7 +143,7 @@
       tags: ["policy", "gender"],
       link: "https://www.indiaspend.com/gendercheck/why-there-have-been-so-few-women-in-indias-administrative-services-795991",
       description: "Gender analysis in Indian bureaucracy",
-      pink: false
+      pink: true
     },
     {
       id: 12,
@@ -143,7 +154,7 @@
       tags: ["economy", "policy"],
       link: "https://themorningcontext.com/chaos/the-real-value-of-indias-passport",
       description: "Analysis of Indian passport value",
-      pink: true
+      pink: false
     },
     {
       id: 13,
@@ -153,6 +164,61 @@
       image: "/images/mint-rbi.png",
       tags: ["economy", "policy"],
       link: "https://www.livemint.com/news/india/needed-a-new-relationship-contract-between-rbi-and-govt-11598025084129.html",
+      description: "",
+      pink: true
+    },
+    {
+      id: 17,
+      title: "Mapped: How India's boundaries evolved since 1947",
+      date: "Aug 2020",
+      publisher: "Mint",
+      image: "/images/mint-india-boundary.png",
+      tags: ["policy"],
+      link: "https://www.livemint.com/news/india/mapped-how-india-s-boundaries-evolved-since-1947-11597045290911.html",
+      description: "",
+      pink: false
+    },
+    {
+      id: 18,
+      title: "Are India's youth giving up on marriage?",
+      date: "Jun 2020",
+      publisher: "Mint",
+      image: "/images/mint-youth-marriage.png",
+      tags: [],
+      link: "https://www.livemint.com/news/india/are-india-s-youth-giving-up-on-marriage-11590763737075.html",
+      description: "",
+      pink: true
+    },
+    {
+      id: 19,
+      title: "Mapping Mumbai's slum challenge in coronavirus battle",
+      date: "Apr 2020",
+      publisher: "Mint",
+      image: "/images/mint-mumbai-covid.png",
+      tags: ["cities"],
+      link: "https://www.livemint.com/news/india/mapping-mumbai-s-slum-challenge-in-coronavirus-battle-11586334352966.html",
+      description: "",
+      pink: false
+    },
+    {
+      id: 20,
+      title: "The economic impact of coronavirus and the response so far, in nine charts",
+      date: "Mar 2020",
+      publisher: "Mint",
+      image: "/images/mint-covid-response.png",
+      tags: ["economy"],
+      link: "https://www.livemint.com/news/india/the-economic-impact-of-coronavirus-and-the-response-so-far-in-nine-charts-11584334473089.html",
+      description: "",
+      pink: true
+    },
+    {
+      id: 21,
+      title: "More women are joining corporate boards but very few get the corner office",
+      date: "Mar 2020",
+      publisher: "Mint",
+      image: "/images/mint-women-corporate.png",
+      tags: ["gender"],
+      link: "https://www.livemint.com/companies/news/more-women-are-joining-corporate-boards-but-very-few-get-the-corner-office-11583133282585.html",
       description: "",
       pink: false
     },
@@ -168,6 +234,39 @@
       pink: true
     },
     {
+      id: 22,
+      title: "Can UBI re-ignite the economy?",
+      date: "Jan 2020",
+      publisher: "Mint",
+      image: "/images/mint-ubi.png",
+      tags: ["economy", "policy"],
+      link: "https://www.livemint.com/news/india/can-ubi-reignite-the-economy-11580293689566.html",
+      description: "",
+      pink: false
+    },
+    {
+      id: 23,
+      title: "Long and short of budget speeches",
+      date: "Jan 2020",
+      publisher: "Mint",
+      image: "/images/mint-budget-speech.png",
+      tags: ["economy", "policy"],
+      link: "https://www.livemint.com/budget/news/long-and-short-of-budget-speeches-11580055345565.html",
+      description: "",
+      pink: true
+    },
+    {
+      id: 24,
+      title: "Rich states hit hard by slowdown",
+      date: "Jan 2020",
+      publisher: "Mint",
+      image: "/images/mint-state-tracker.png",
+      tags: ["economy", "policy"],
+      link: "https://www.livemint.com/news/india/rich-states-hit-hard-in-slowdown-11578389525946.html",
+      description: "",
+      pink: false
+    },
+    {
       id: 15,
       title: "What the Nobel says about economics",
       date: "Oct 2019",
@@ -176,7 +275,7 @@
       tags: ["economy", "policy"],
       link: "https://www.livemint.com/news/india/what-the-nobel-says-about-economics-11571680373108.html",
       description: "Analysis of Nobel Prize in Economics",
-      pink: false
+      pink: true
     }
   ];
 
