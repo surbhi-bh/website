@@ -219,10 +219,11 @@
   }
 
   .tp-title {
-    font-size: 17px;
-    font-weight: 700;
-    line-height: 1.35;
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 1.3;
     color: #111;
+    letter-spacing: -0.01em;
   }
 
   .tp-photo {
@@ -236,15 +237,16 @@
 
   .tp-pub {
     font-family: "DM Mono", monospace;
-    font-size: 10px;
-    color: #888;
-    letter-spacing: 0.04em;
+    font-size: 12px;
+    font-weight: 600;
+    color: #333;
+    letter-spacing: 0.02em;
   }
 
   .tp-year {
     font-family: "DM Mono", monospace;
-    font-size: 32px;
-    font-weight: 200;
+    font-size: 20px;
+    font-weight: 300;
     color: #1a6b3a;
     line-height: 1;
   }
@@ -264,10 +266,10 @@
   }
 
   .tp-label {
-    font-size: 8px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: #ccc;
+    font-size: 9px;
+    letter-spacing: 0.08em;
+    text-transform: lowercase;
+    color: #aaa;
     margin-right: 4px;
   }
 

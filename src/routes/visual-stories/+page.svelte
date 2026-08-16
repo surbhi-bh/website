@@ -91,7 +91,7 @@
       pink: false
     },
     {
-      id: 16,
+      id: 25,
       title: "Shark Tank and India's startup story, in charts",
       date: "Apr 2023",
       publisher: "Mint",
@@ -116,12 +116,23 @@
       id: 9,
       title: "Around the Wordle in 365 days",
       date: "Feb 2023",
-      publisher: "Personal project",
+      publisher: "",
       image: "/images/words-of-wordle.png",
       tags: ["art & culture"],
       link: "https://surbhi-bh.github.io/words_of_wordle.html",
       description: "Analysis of Wordle words over a year",
       pink: true
+    },
+    {
+      id: 26,
+      title: "Five charts tell the floundering story of multiplexes",
+      date: "Nov 2022",
+      publisher: "Mint",
+      image: "/images/mint-multiplexes.png",
+      tags: ["entertainment"],
+      link: "https://www.livemint.com/industry/media/multiplexes-long-road-to-recovery-in-charts-11668616460692.html",
+      description: "",
+      pink: false
     },
     {
       id: 10,
@@ -132,7 +143,7 @@
       tags: ["entertainment", "art & culture"],
       link: "https://www.livemint.com/industry/media/bollywoods-eternal-struggle-with-original-ideas-here-s-what-data-shows-11661772790605.html",
       description: "Analysis of Bollywood remakes",
-      pink: false
+      pink: true
     },
     {
       id: 11,
@@ -267,6 +278,17 @@
       pink: false
     },
     {
+      id: 27,
+      title: "Rethinking insurance on deposits",
+      date: "Dec 2019",
+      publisher: "Mint",
+      image: "/images/mint-deposit-insurance.png",
+      tags: ["economy", "policy"],
+      link: "https://www.livemint.com/industry/banking/rethinking-deposit-insurance-for-indian-banks-11576479588631.html",
+      description: "",
+      pink: false
+    },
+    {
       id: 15,
       title: "What the Nobel says about economics",
       date: "Oct 2019",
@@ -323,7 +345,7 @@
               {/each}
             </div>
             <div class="vs-title">{story.title}</div>
-            <div class="vs-pub">{story.publisher}, {story.date}</div>
+            <div class="vs-pub">{story.publisher ? `${story.publisher}, ${story.date}` : story.date}</div>
           </div>
         </a>
       {/each}

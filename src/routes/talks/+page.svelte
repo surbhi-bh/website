@@ -90,7 +90,7 @@
       location: 'Mumbai',
       description: 'On how to build an inclusive AI ecosystem in agriculture to empower women farmers and close systemic gaps.',
       tags: ['gender', 'AI', 'agriculture'],
-      image: null,
+      image: '/images/panel-mssrf.jpeg',
       link: 'https://ai4agri.maharashtra.gov.in/',
     },
     {
@@ -102,7 +102,7 @@
       location: 'Pune',
       description: 'Spoke about finding credible data in science communication: where to look, how to verify, and when to trust your datasets.',
       tags: ['data journalism', 'science'],
-      image: null,
+      image: '/images/panel-sjai.jpeg',
       link: 'https://www.sjai.in/program-details-sjai-conference-2024',
     },
     {
@@ -138,7 +138,7 @@
       location: 'Online',
       description: 'How gender-disaggregated data strengthens reporting, analysis, and public understanding.',
       tags: ['gender', 'data journalism'],
-      image: null,
+      image: '/images/panel-cgiar-online.jpeg',
       link: 'https://gender.cgiar.org/news/crafting-stories-about-gender-responsive-agricultural-solutions-why-and-how',
     },
     {
